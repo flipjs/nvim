@@ -64,6 +64,7 @@ Plug 'habamax/vim-skipit'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'skwp/greplace.vim'
 Plug 'vim-ruby/vim-ruby'
+Plug 'maciakl/vim-neatstatus'
 call plug#end()
 
 syntax on
@@ -120,6 +121,7 @@ set nolist
 set listchars=tab:▸\ ,eol:¬
 " Syntax coloring lines that are too long just slows down the world
 set synmaxcol=120
+set nohlsearch
 
 set splitbelow
 set splitright
@@ -158,6 +160,7 @@ nnoremap ,, ,
 
 " Neomake
 autocmd! BufWritePost * Neomake
+let g:neomake_open_list = 2
 
 augroup GroupNeomake
   autocmd!
@@ -199,7 +202,7 @@ let g:ophigh_color = 196
 let g:ophigh_color_gui = "#FF0000"
 
 " Ag.vim
-set runtimepath^=~/.vimfiles/vimbundle/ag
+set runtimepath^=~/.config/nvim/plugged/ag
 
 " CtrlP
 let g:ctrlp_map = '<c-\>'
@@ -559,8 +562,6 @@ nnoremap { {zz
 " add semicolon at end of line
 nnoremap <c-c> m`A;<esc>``
 inoremap <c-c> <esc>m`A;<esc>``
-" <enter> inserts empty line below the cursor
-nnoremap <cr> o
 " <c-d> to repeat last command
 nmap <c-d> .
 " insert empty line between brackets on <enter>
