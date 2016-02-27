@@ -90,8 +90,12 @@ highlight NonText ctermbg=none
 
 " no error bell, no visual bell
 set noeb vb t_vb=
-set encoding=utf-8
+
 set nomodeline
+
+if !has('nvim')
+  set encoding=utf-8
+endif
 
 " may be overridden in .editorconfig
 set tabstop=2
@@ -486,6 +490,9 @@ nnoremap <leader>ee :call DeleteEmptyBuffers()<cr>
 nnoremap <leader>ve :edit $MYNVIMRC<cr>
 nnoremap <leader>vs :source $MYNVIMRC<cr>
 nnoremap <leader>vu :source $HOME/.config/nvim/unmap.vim<cr>
+nnoremap <leader>vj :edit $HOME/.config/nvim/UltiSnips/javascript/javascript.snippets<cr>
+nnoremap <leader>vr :edit $HOME/.config/nvim/UltiSnips/javascript/javascript-react.snippets<cr>
+nnoremap <leader>vp :edit $HOME/.config/nvim/UltiSnips/php.snippets<cr>
 " ctrl-s to save
 noremap <c-s> :update<cr><esc>
 vnoremap <c-s> <esc>:update<cr><esc>
