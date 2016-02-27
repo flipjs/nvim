@@ -1,0 +1,4 @@
+postinstall:
+
+  tern.js
+    - run npm install
