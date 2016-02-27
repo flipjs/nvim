@@ -1,4 +1,4 @@
 postinstall:
 
-  tern.js
-    - run npm install
+  ycm
+    - ./install.py --clang-completer --tern-completer

@@ -5,8 +5,7 @@
 " Date: 27 February 2016
 " *********************************************************************
 
-syntax on
-filetype plugin indent on
+filetype off
 
 " ------------ Vim-Plug Configuration - must be on top ------------ "
 
@@ -14,9 +13,10 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-unimpaired'
 Plug 'benekastah/neomake'
-Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
-Plug 'ternjs/tern_for_vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'SirVer/ultisnips'
 Plug 'crusoexia/vim-monokai'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -26,7 +26,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'Raimondi/delimitMate'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'pangloss/vim-javascript'
@@ -66,6 +65,9 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'skwp/greplace.vim'
 Plug 'vim-ruby/vim-ruby'
 call plug#end()
+
+syntax on
+filetype plugin indent on
 
 
 " ---------------------- Custom Configuration ----------------------- "
@@ -128,14 +130,6 @@ set clipboard=unnamed
 set nobackup
 set nowritebackup
 set noswapfile
-
-" set complete=.,b,u,]
-set wildmode=longest,list,full
-set completeopt=menu,preview
-augroup GroupCompleteDone
-  autocmd!
-  autocmd CompleteDone * pclose
-augroup END
 
 " change cursorline and matchparen colors (cterm only)
 highlight CursorLine ctermbg=233
@@ -220,6 +214,32 @@ let g:ctrlp_by_filename = 1
 " Autoformat
 let g:formatdef_standard_js = '"standard-format --stdin"'
 let g:formatters_javascript = ['standard_js']
+
+" YouCompleteMe
+set complete=.,b,u,]
+set wildmode=longest,list,full
+set completeopt=menu
+augroup GroupCompleteDone
+  autocmd!
+  autocmd CompleteDone * pclose
+augroup END
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabContextDefaultCompletionType = '<c-n>'
+let g:ycm_semantic_triggers =  {
+  \   'c' : ['->', '.'],
+  \   'php' : ['->', '::'],
+  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+  \   'ruby' : ['.', '::'],
+  \   'erlang' : [':'],
+  \ }
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " Tmux-navigator
 let g:tmux_navigator_no_mappings = 1
@@ -544,9 +564,9 @@ nnoremap <cr> o
 " <c-d> to repeat last command
 nmap <c-d> .
 " insert empty line between brackets on <enter>
-inoremap {<cr> {<cr>}<c-o>O
-inoremap [<cr> [<cr>]<c-o>O
-inoremap (<cr> (<cr>)<c-o>O
+" inoremap {<cr> {<cr>}<c-o>O
+" inoremap [<cr> [<cr>]<c-o>O
+" inoremap (<cr> (<cr>)<c-o>O
 
 " kk mapping for hard to reach keyboard keys
 inoremap kkp ()<esc>i
