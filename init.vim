@@ -606,6 +606,14 @@ inoremap kkj <esc>kJxi
 " select last entered word
 inoremap kkv <esc>viw
 
+
+" ----------------------------- Macros ------------------------------ "
+
+" surround word with a single space inside a bracket
+" this macro depends on easyclip and autopairs plugins
+let @s="miwi p"
+
+
 " ----------------------- Bugfix / Workaround ----------------------- "
 
 " CtrlP not finding files in some projects/directories
