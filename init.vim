@@ -23,7 +23,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'rking/ag.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'jelera/vim-javascript-syntax'
@@ -65,6 +64,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'skwp/greplace.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'maciakl/vim-neatstatus'
+Plug 'tomtom/tcomment_vim'
 call plug#end()
 
 syntax on
@@ -563,6 +563,7 @@ nnoremap <leader>sr :Gsearch<cr>
 " switch filetype
 nnoremap <leader>ftt :set ft?<cr>
 nnoremap <leader>ftj :set ft=javascript<cr>
+nnoremap <leader>ftx :set ft=jsx<cr>
 nnoremap <leader>fts :set ft=typescript<cr>
 nnoremap <leader>fth :set ft=html<cr>
 nnoremap <leader>ftc :set ft=css<cr>
