@@ -104,7 +104,7 @@ set softtabstop=2
 set expandtab """ tab is space
 
 set number
-set relativenumber
+" set relativenumber
 set cursorline
 set hidden
 set showmatch
