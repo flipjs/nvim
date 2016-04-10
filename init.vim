@@ -53,7 +53,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
 Plug 'othree/yajs.vim'
 Plug 'ap/vim-buftabline'
-Plug 'spiiph/vim-space'
 Plug 'digitaltoad/vim-jade'
 Plug 'posva/vim-vue'
 Plug 'vim-scripts/TwitVim'
@@ -156,6 +155,8 @@ highlight vertsplit guifg=black guibg=black
 
 " mapleader is comma
 let mapleader = ","
+" set mapleader to spacebar too
+nmap <space> ,
 " get comma functionality back using ,,
 nnoremap ,, ,
 
