@@ -123,7 +123,7 @@ set formatoptions=qrn1
 set nolist
 set listchars=tab:▸\ ,eol:¬
 " Syntax coloring lines that are too long just slows down the world
-set synmaxcol=79
+set synmaxcol=120
 set nohlsearch
 
 set splitbelow
@@ -144,6 +144,18 @@ augroup GroupMatchParen
   autocmd!
   autocmd InsertEnter * highlight MatchParen ctermbg=233 ctermfg=15
   autocmd InsertLeave * highlight MatchParen ctermbg=201 ctermfg=white
+augroup END
+
+" visual warning when text gets past 80 limit
+augroup collumnLimit
+  autocmd!
+  autocmd BufEnter,WinEnter,FileType javascript
+        \ highlight CollumnLimit ctermbg=red guibg=red
+  let collumnLimit = 80 " change limit here
+  let pattern =
+        \ '\%<' . (collumnLimit+1) . 'v.\%>' . collumnLimit . 'v'
+  autocmd BufEnter,WinEnter,FileType javascript
+        \ let w:m1=matchadd('CollumnLimit', pattern, -1)
 augroup END
 
 " get rid of ugly split borders
@@ -530,10 +542,6 @@ nnoremap <leader>di :v/<c-r><c-w>/d<cr>gg
 nnoremap <leader>dy :v/<c-r>"/d<cr>gg
 " select all text
 nnoremap <leader>aa ggVG
-" visual warning when text past 79 column
-match ErrorMsg '\%>79v.\+'
-nnoremap <leader>le :match ErrorMsg '\%>79v.\+'<cr>
-nnoremap <leader>ln :match none<cr>
 " show error window
 nnoremap <leader>lo :lopen<cr>
 " close error window
