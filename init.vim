@@ -64,6 +64,7 @@ Plug 'skwp/greplace.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'maciakl/vim-neatstatus'
 Plug 'tomtom/tcomment_vim'
+Plug 'heavenshell/vim-jsdoc'
 call plug#end()
 
 syntax on
@@ -570,6 +571,9 @@ nnoremap <leader>fts :set ft=typescript<cr>
 nnoremap <leader>fth :set ft=html<cr>
 nnoremap <leader>ftc :set ft=css<cr>
 nnoremap <leader>ftv :set ft=vue<cr>
+" jsdoc
+nnoremap <leader>jsd :JsDoc<cr>
+nnoremap <leader>jst :TernDoc<cr>
 " center screen when doing n, N, { and }
 nnoremap n nzz
 nnoremap N Nzz
