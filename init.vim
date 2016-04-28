@@ -65,6 +65,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'maciakl/vim-neatstatus'
 Plug 'tomtom/tcomment_vim'
 Plug 'heavenshell/vim-jsdoc'
+Plug 'wakatime/vim-wakatime'
 call plug#end()
 
 syntax on
