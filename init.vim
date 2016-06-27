@@ -511,6 +511,7 @@ inoremap <c-s> <esc>:update<cr><esc>
 nnoremap <leader>dd :bd<cr>
 " save current buffer
 nnoremap <leader>ww :w<cr>
+nnoremap <leader>ws :w<cr>
 " close saved buffer(s)
 nnoremap <leader>qq :q<cr>
 " apply macros with Q
