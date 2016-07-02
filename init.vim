@@ -66,6 +66,7 @@ Plug 'maciakl/vim-neatstatus'
 Plug 'tomtom/tcomment_vim'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'wakatime/vim-wakatime'
+Plug 'elmcast/elm-vim'
 call plug#end()
 
 syntax on
@@ -188,6 +189,14 @@ augroup GroupNeomake
       \ ['eslint'] : ['standard']
 augroup END
 
+" Elm - not working??? FIXME
+let g:elm_format_autosave = 1
+let g:elm_setup_keybindings = 0
+let g:elm_classic_highlighting = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:elm_syntastic_show_warnings = 1
+
 " Greplace
 set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
@@ -253,7 +262,7 @@ let g:SuperTabContextDefaultCompletionType = '<c-n>'
 let g:ycm_semantic_triggers =  {
   \   'c' : ['->', '.'],
   \   'php' : ['->', '::'],
-  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go,elm' : ['.'],
   \   'ruby' : ['.', '::'],
   \   'erlang' : [':'],
   \ }
