@@ -1,4 +1,0 @@
-postinstall:
-
-  ycm
-    - ./install.py --clang-completer --tern-completer
