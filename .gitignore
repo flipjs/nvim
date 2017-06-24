@@ -1,8 +1,4 @@
 .DS_STORE
 *.log
 *.swp
-
-node_modules
-
 undohistory
-plugged
