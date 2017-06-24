@@ -15,6 +15,9 @@
 - Install ctags - `brew install ctags-exuberant`
 - Install jsctags - `npm install -g git+https://github.com/ramitos/jsctags.git`
 - Run :CheckHealth and fix if any
+- You will need powerline fonts for your terminal (I use iTerm2)
+  - Go to [https://github.com/powerline/fonts] for installation instructions
+  - For iTerm2, go to Profile, Text tab, and set BOTH font and non-ascii text to use powerline font
 
 ## Useful Links
 - [Neovim, Deoplete, JSPC, UltiSnips and Tern: A config for kickass autocompletion](https://www.gregjs.com/vim/2016/neovim-deoplete-jspc-ultisnips-and-tern-a-config-for-kickass-autocompletion/)
