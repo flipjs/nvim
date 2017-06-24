@@ -1,109 +1,103 @@
 " *********************************************************************
-" Description: Neovim Custom Configuration
-" Version: 4.0
+" Description: My Neovim Setup
+" Version: 5.0
 " Author: Felipe Apostol <flipjs.io@gmail.com>
-" Date: 27 February 2016
+" Updated At: 24 June 2017
 " *********************************************************************
 
 filetype off
 
-" ------------ Vim-Plug Configuration - must be on top ------------ "
+"------------- Vim-Plug Configuration - must be on top ------------- "
 
-call plug#begin('~/.config/nvim/plugged')
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-unimpaired'
-Plug 'benekastah/neomake'
-Plug 'jiangmiao/auto-pairs'
-Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe'
-Plug 'SirVer/ultisnips'
-Plug 'crusoexia/vim-monokai'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'rking/ag.vim'
-Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'crusoexia/vim-javascript-lib'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'luochen1990/rainbow'
-Plug 'sjl/gundo.vim'
-Plug 'rizzatti/dash.vim'
-Plug 'Chiel92/vim-autoformat'
-Plug 'mattn/emmet-vim'
-Plug 'elixir-lang/vim-elixir'
-Plug 'wavded/vim-stylus'
-Plug 'kchmck/vim-coffee-script'
-Plug 'junegunn/vim-easy-align'
-Plug 'elzr/vim-json'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'ryanss/vim-hackernews'
-Plug 'joshhartigan/vim-reddit'
-Plug 'majutsushi/tagbar'
-Plug 'tommcdo/vim-exchange'
-Plug 'flipjs/vim-operator-highlight'
-Plug 'tpope/vim-abolish'
-Plug 'svermeulen/vim-easyclip'
-Plug 'bronson/vim-visual-star-search'
-Plug 'leafgarland/typescript-vim'
-Plug 'mxw/vim-jsx'
-Plug 'othree/yajs.vim'
-Plug 'ap/vim-buftabline'
-Plug 'digitaltoad/vim-jade'
-Plug 'posva/vim-vue'
-Plug 'vim-scripts/TwitVim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'habamax/vim-skipit'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'skwp/greplace.vim'
-Plug 'vim-ruby/vim-ruby'
-Plug 'maciakl/vim-neatstatus'
-Plug 'tomtom/tcomment_vim'
-Plug 'heavenshell/vim-jsdoc'
-Plug 'wakatime/vim-wakatime'
-Plug 'elmcast/elm-vim'
+call plug#begin('~/.local/share/nvim/plugged')
+  " Comment out vim-sensible here, may not be needed in neovim-0.2.0
+  Plug 'altercation/vim-colors-solarized'
+  Plug 'tpope/vim-sensible'
+  Plug 'tpope/vim-unimpaired'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-abolish'
+  Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'ervandew/supertab'
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+  Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx']  }
+  Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx']  }
+  Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx']  }
+  Plug 'kien/ctrlp.vim'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
+  Plug 'w0rp/ale'
+  Plug 'sbdchd/neoformat'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'jelera/vim-javascript-syntax'
+  Plug 'othree/yajs.vim'
+  Plug 'othree/javascript-libraries-syntax.vim'
+  Plug 'pangloss/vim-javascript'
+  Plug 'crusoexia/vim-javascript-lib'
+  Plug 'mxw/vim-jsx'
+  Plug 'scrooloose/nerdtree'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'rking/ag.vim'
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'luochen1990/rainbow'
+  Plug 'sjl/gundo.vim'
+  Plug 'junegunn/vim-easy-align'
+  Plug 'elzr/vim-json'
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'majutsushi/tagbar'
+  Plug 'tommcdo/vim-exchange'
+  Plug 'svermeulen/vim-easyclip'
+  Plug 'bronson/vim-visual-star-search'
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'habamax/vim-skipit'
+  Plug 'skwp/greplace.vim'
+  Plug 'tomtom/tcomment_vim'
+  Plug 'wakatime/vim-wakatime'
+  Plug 'mattn/emmet-vim'
+  Plug 'wavded/vim-stylus'
+  Plug 'mustache/vim-mustache-handlebars'
+  Plug 'cakebaker/scss-syntax.vim'
+  Plug 'kchmck/vim-coffee-script'
+  Plug 'vim-ruby/vim-ruby'
+  Plug 'elixir-lang/vim-elixir'
+  Plug 'elmcast/elm-vim'
 call plug#end()
 
 syntax on
 filetype plugin indent on
 
+" --------------------------- Map Leader ---------------------------- "
+
+" mapleader is space
+let mapleader = " "
 
 " ---------------------- Custom Configuration ----------------------- "
 
-" Ensure vim-sensible is installed, for set defaults
+" Ensure vim-sensible is installed for set defaults
 
-" macvim only (or any gui vim?)
-set guifont=Source\ Code\ Pro\ for\ PowerLine:h16
-set linespace=4
+if !has('gui_running')
+  set t_Co=256
+endif
 
-" vim color theme
-set t_Co=256
-colorscheme monokai
-
-" override colorscheme monokai background color
-highlight Normal guibg=black guifg=white
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
+syntax enable
+set background=dark
+colorscheme solarized
 
 " no error bell, no visual bell
 set noeb vb t_vb=
-
+set encoding=utf-8
 set nomodeline
-
-if !has('nvim')
-  set encoding=utf-8
-endif
 
 " may be overridden in .editorconfig
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set expandtab """ tab is space
+" tabbing is space
+set expandtab
 
 set number
 " set relativenumber
@@ -123,11 +117,11 @@ set breakindent
 set showbreak=»\
 " set textwidth=79
 set formatoptions=qrn1
-set nolist
-set listchars=tab:▸\ ,eol:¬
+" set nolist
+" set listchars=tab:▸\ ,eol:¬
+set list lcs=trail:·,tab:▸·
 " Syntax coloring lines that are too long just slows down the world
 set synmaxcol=120
-set nohlsearch
 
 set splitbelow
 set splitright
@@ -139,85 +133,85 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" change cursorline and matchparen colors (cterm only)
-highlight CursorLine ctermbg=233
-highlight MatchParen cterm=none ctermbg=201 ctermfg=white
-" change matchparen colors to match cursorline on insert mode
-augroup GroupMatchParen
-  autocmd!
-  autocmd InsertEnter * highlight MatchParen ctermbg=233 ctermfg=15
-  autocmd InsertLeave * highlight MatchParen ctermbg=201 ctermfg=white
-augroup END
-
-" visual warning when text gets past 80 limit
-augroup collumnLimit
-  autocmd!
-  autocmd BufEnter,WinEnter,FileType javascript
-        \ highlight CollumnLimit ctermbg=red guibg=red
-  let collumnLimit = 80 " change limit here
-  let pattern =
-        \ '\%<' . (collumnLimit+1) . 'v.\%>' . collumnLimit . 'v'
-  autocmd BufEnter,WinEnter,FileType javascript
-        \ let w:m1=matchadd('CollumnLimit', pattern, -1)
-augroup END
-
-" get rid of ugly split borders
-highlight vertsplit ctermfg=black ctermbg=black
-highlight vertsplit guifg=black guibg=black
-
-
-" --------------------------- Map Leader ---------------------------- "
-
-" mapleader is comma
-let mapleader = ","
-" set mapleader to spacebar too
-nmap <space> ,
-" get comma functionality back using ,,
-nnoremap ,, ,
-
-
 " ------------------------- Plugin Settings ------------------------- "
 
-" Neomake
-autocmd! BufWritePost * Neomake
-let g:neomake_open_list = 2
+""" Gundo
+set undodir=~/.config/nvim/undohistory
+set undofile
+set history=1000
+set undolevels=1000
+let g:gundo_width = 30
 
-augroup GroupNeomake
-  autocmd!
-  autocmd FileType javascript let g:neomake_javascript_enabled_makers = findfile('.jshintrc', '.;') != '' ?
-      \ ['jshint', 'jscs'] : findfile('.eslintrc', '.;') != '' ?
-      \ ['eslint'] : ['standard']
-augroup END
+""" Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+  \ 'tern#Complete',
+  \ 'jspc#omni'
+\ ]
+set completeopt=longest,menuone,preview
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['buffer', 'ultisnips', 'ternjs']
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
 
-" Elm - not working??? FIXME
+""" SuperTab
+autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+" TODO:
+" let g:UltiSnipsExpandTrigger="<C-j>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" close the preview window when you're not using it
+let g:SuperTabClosePreviewOnPopupClose = 1
+" or just disable the preview entirely
+" set completeopt-=preview
+
+""" Vim-Airline
+set laststatus=2
+let g:airline_theme='solarized'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+""" Ale
+function! LinterStatus() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? 'OK' : printf(
+    \ '%dW %dE',
+    \ all_non_errors,
+    \ all_errors
+  \ )
+endfunction
+set statusline=%{LinterStatus()}
+
+""" Git-Gutter
+" if Gdiff shows an error, try increasing the time or just disable it
+set updatetime=500
+
+""" Neoformat
+let g:neoformat_try_formatprg = 1
+autocmd FileType javascript set formatprg=prettier\ --stdin
+
+
+""" JSX
+let g:jsx_ext_required = 0
+
+""" Elm
 let g:elm_format_autosave = 1
 let g:elm_setup_keybindings = 0
 let g:elm_classic_highlighting = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:elm_make_show_warnings = 1
 let g:elm_syntastic_show_warnings = 1
+let g:elm_format_fail_silently = 0
 
-" Greplace
+""" Greplace
 set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
-" Mustache-Handlebars
+""" Mustache-Handlebars
 let g:mustache_abbreviations = 1
 
-" Buftabline
-let g:buftabline_show = 1
-let g:buftabline_indicators = 1
-
-" Typescript
-let g:typescript_indent_disable = 1
-let g:typescript_compiler_options = '-sourcemap'
-augroup GroupQuickFix
-  autocmd!
-  autocmd QuickFixCmdPost [^l]* nested cwindow
-  autocmd QuickFixCmdPost    l* nested lwindow
-augroup END
-
-" Easyclip
+""" Easyclip
 let g:EasyClipUseSubstituteDefaults = 1
 let g:EasyClipShareYanks = 1
 " do not autoformat pasted text
@@ -225,14 +219,10 @@ let g:EasyClipAutoFormat = 0
 " disable this feature, see settings at the top (search modern editors)
 let g:EasyClipAlwaysMoveCursorToEndOfPaste = 0
 
-" Operator-highlight (flipjs forked version)
-let g:ophigh_color = 196
-let g:ophigh_color_gui = "#FF0000"
+""" Ag.vim
+set runtimepath^=~/.local/share/nvim/plugged/ag
 
-" Ag.vim
-set runtimepath^=~/.config/nvim/plugged/ag
-
-" CtrlP
+""" CtrlP
 let g:ctrlp_map = '<c-\>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
@@ -242,37 +232,7 @@ let g:ctrlp_match_window_reversed = 0
 " search by filename - can be toggled on/off by pressing <c-d> inside the prompt
 let g:ctrlp_by_filename = 1
 
-" Autoformat
-let g:formatdef_standard_js = '"standard-format --stdin"'
-let g:formatters_javascript = ['standard_js']
-
-" YouCompleteMe
-set complete=.,b,u,]
-set wildmode=longest,list,full
-set completeopt=menu
-augroup GroupCompleteDone
-  autocmd!
-  autocmd CompleteDone * pclose
-augroup END
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = 'context'
-let g:SuperTabContextDefaultCompletionType = '<c-n>'
-let g:ycm_semantic_triggers =  {
-  \   'c' : ['->', '.'],
-  \   'php' : ['->', '::'],
-  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go,elm' : ['.'],
-  \   'ruby' : ['.', '::'],
-  \   'erlang' : [':'],
-  \ }
-
-" Ultisnips
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-" Tmux-navigator
+""" Tmux-navigator
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
@@ -280,44 +240,37 @@ nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 " nnoremap <silent> <c-g> :TmuxNavigatePrevious<cr>
 
-" Rainbow
-let g:rainbow_active = 1
+""" Rainbow
+" TODO: deactivate for now (set to 0), maybe delete it already?
+let g:rainbow_active = 0
 let g:rainbow_conf = {
-    \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-    \   'ctermfgs': [81, 208, 148, 197],
-    \   'operators': '_,_',
-    \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-    \   'separately': {
-    \       '*': {},
-    \       'tex': {
-    \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-    \       },
-    \       'lisp': {
-    \           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-    \       },
-    \       'vim': {
-    \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-    \       },
-    \       'html': {
-    \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-    \       },
-    \       'html.handlebars': {
-    \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-    \       },
-    \       'php': {
-    \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-    \       },
-    \       'css': 0,
-    \   }
-    \}
-
-" Gundo
-set undodir=~/.config/nvim/undohistory
-set undofile
-set history=1000
-set undolevels=1000
-let g:gundo_width = 30
-
+  \  'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+  \  'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+  \  'operators': '_,_',
+  \  'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+  \  'separately': {
+  \    '*': {},
+  \    'tex': {
+  \      'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+  \    },
+  \    'lisp': {
+  \      'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+  \    },
+  \    'vim': {
+  \      'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+  \    },
+  \    'html': {
+  \      'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+  \    },
+  \    'html.handlebars': {
+  \      'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+  \    },
+  \    'php': {
+  \      'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+  \    },
+  \    'css': 0,
+  \  }
+\ }
 
 " ---------------------------- Functions ---------------------------- "
 
@@ -358,12 +311,16 @@ function! DeleteEmptyBuffers()
     endif
 endfunction
 
-
 " -------------------------- Autocommands --------------------------- "
+
+augroup Elm
+  autocmd!
+  autocmd FileType elm nnoremap <buffer> <leader>rr :ElmMake<cr>
+  autocmd FileType elm nnoremap <buffer> <leader>re :ElmErrorDetail<cr>
+augroup END
 
 augroup JavaScript
   autocmd!
-  autocmd BufNewFile,BufRead *.es6 set filetype=javascript
   autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rt :!clear && ava %<cr>
@@ -414,7 +371,6 @@ augroup Handlebars
   autocmd BufNewFile,BufRead *.hbs set filetype=html.handlebars
 augroup END
 
-
 " -------------------------- Abbreviations -------------------------- "
 
 " Note: some abbreviations are defined inside ftplugin directory
@@ -426,7 +382,6 @@ cnoreabbrev Wq wq
 cnoreabbrev WQ wq
 inoreabbrev funciton function
 inoreabbrev functon function
-
 
 " ------------------------- for iTerm only -------------------------- "
 
@@ -440,7 +395,6 @@ if exists('$ITERM_PROFILE')
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
   endif
 end
-
 
 " -------------------- Plugin-dependent Mapping --------------------- "
 
@@ -479,19 +433,15 @@ nnoremap <leader>uu :GundoToggle<cr>
 nnoremap <leader>ue :earlier 1f<cr>
 nnoremap <leader>ul :later 1f<cr>
 
-" Autoformat
-noremap <c-u> :Autoformat<cr>
+" Neoformat
+noremap <c-u> :Neoformat<cr>
 
 " Emmet
 imap <c-e> <c-y>,
 
-" Dash
-nmap <leader>hh <Plug>DashSearch
-
 " Vim-easy-align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
-
 
 " ------------------------ Function Mapping ------------------------- "
 
@@ -500,8 +450,7 @@ nnoremap <leader>hf mz:execute FileHeader()`zjA
 " line heading
 nnoremap <leader>hl :call LineHeader(67, '
 " delete empty buffers
-nnoremap <leader>ee :call DeleteEmptyBuffers()<cr>
-
+nnoremap <leader>de :call DeleteEmptyBuffers()<cr>
 
 " ------------------------- Custom Mapping -------------------------- "
 
@@ -509,9 +458,8 @@ nnoremap <leader>ee :call DeleteEmptyBuffers()<cr>
 nnoremap <leader>ve :edit $MYNVIMRC<cr>
 nnoremap <leader>vs :source $MYNVIMRC<cr>
 nnoremap <leader>vu :source $HOME/.config/nvim/unmap.vim<cr>
-nnoremap <leader>vj :edit $HOME/.config/nvim/UltiSnips/javascript/javascript.snippets<cr>
-nnoremap <leader>vr :edit $HOME/.config/nvim/UltiSnips/javascript/javascript-react.snippets<cr>
-nnoremap <leader>vp :edit $HOME/.config/nvim/UltiSnips/php.snippets<cr>
+nnoremap <leader>vj :edit $HOME/.vim/UltiSnips/javascript/javascript.snippets<cr>
+nnoremap <leader>vp :edit $HOME/.vim/UltiSnips/php.snippets<cr>
 " ctrl-s to save
 noremap <c-s> :update<cr><esc>
 vnoremap <c-s> <esc>:update<cr><esc>
@@ -520,7 +468,8 @@ inoremap <c-s> <esc>:update<cr><esc>
 nnoremap <leader>dd :bd<cr>
 " save current buffer
 nnoremap <leader>ww :w<cr>
-nnoremap <leader>ws :w<cr>
+" save current buffer and syntax-check at the same time
+" nnoremap <leader>ws :w <bar> call SyntaxCheck()<cr>
 " close saved buffer(s)
 nnoremap <leader>qq :q<cr>
 " apply macros with Q
@@ -555,11 +504,16 @@ nnoremap <leader>di :v/<c-r><c-w>/d<cr>gg
 nnoremap <leader>dy :v/<c-r>"/d<cr>gg
 " select all text
 nnoremap <leader>aa ggVG
-" show error window
-nnoremap <leader>lo :lopen<cr>
+" show error window - syntastic
+" nnoremap <leader>lo :Errors<cr>
 " close error window
 nnoremap <leader>lc :lclose<cr>
-nnoremap <leader>lv :echo g:neomake_javascript_enabled_makers<cr>
+" run syntax checker
+" nnoremap <leader>ls :call SyntaxCheck()<cr>
+" toggle gutter display
+" nnoremap <leader>lt :SyntasticToggleMode<cr>
+" show current syntax checker
+" nnoremap <leader>lv :echo b:syntastic_checkers<cr>
 " switch buffers
 nnoremap <silent> <leader>bn :bnext<cr>
 nnoremap <silent> <leader>bp :bprev<cr>
@@ -569,7 +523,7 @@ nnoremap <leader>sv :vsplit<cr>
 nnoremap <leader>sb :split<cr>
 nnoremap <leader>sc <c-w>c
 nnoremap <leader>sq :qa<cr>
-nnoremap <leader>ss :vertical resize 120<cr>
+nnoremap <leader>ss :vertical resize 100<cr>
 nnoremap <leader>se <c-w>=
 nnoremap <leader>sf <c-w>\|
 nnoremap <leader>sd :bp\|bd #<cr>
@@ -578,13 +532,13 @@ nnoremap <leader>sr :Gsearch<cr>
 " switch filetype
 nnoremap <leader>ftt :set ft?<cr>
 nnoremap <leader>ftj :set ft=javascript<cr>
-nnoremap <leader>ftx :set ft=jsx<cr>
+nnoremap <leader>ftx :set ft=javascript.jsx<cr>
 nnoremap <leader>fts :set ft=typescript<cr>
 nnoremap <leader>fth :set ft=html<cr>
 nnoremap <leader>ftc :set ft=css<cr>
 nnoremap <leader>ftv :set ft=vue<cr>
 " jsdoc
-nnoremap <leader>jsd :JsDoc<cr>
+" nnoremap <leader>jsd :JsDoc<cr>
 nnoremap <leader>jst :TernDoc<cr>
 " center screen when doing n, N, { and }
 nnoremap n nzz
@@ -604,29 +558,39 @@ nmap <c-d> .
 " inoremap {<cr> {<cr>}<c-o>O
 " inoremap [<cr> [<cr>]<c-o>O
 " inoremap (<cr> (<cr>)<c-o>O
-
-" ,, mapping for hard to reach keyboard keys
-inoremap ,,p ()<esc>i
-inoremap ,,c {}<esc>i
-inoremap ,,s []<esc>i
-inoremap ,,a <><esc>i
-inoremap ,,q ''<esc>i
-inoremap ,,w ""<esc>i
-inoremap ,,d <cr><esc>O
-inoremap ,,h <esc>i
-inoremap ,,l <esc>la
-inoremap ,,n <esc>A;
-inoremap ,,m <esc>A:
-inoremap ,,, <esc>A,
+" ,, mapping for not too easy to type characters
+" inoremap ,,p ()<esc>i
+" inoremap ,,c {}<esc>i
+" inoremap ,,s []<esc>i
+" inoremap ,,a <><esc>i
+" inoremap ,,q ''<esc>i
+" inoremap ,,w ""<esc>i
+" inoremap ,,d <cr><esc>O
+" inoremap ,,h <esc>i
+" inoremap ,,l <esc>la
+" inoremap ,,n <esc>A;
+" inoremap ,,m <esc>A:
+" inoremap ,,, <esc>A,
 " note: have side effect for word boo,,Eeping, see word abbrev
-inoremap ,,u _
-inoremap ,,o ;
-inoremap ,,e =
-inoremap ,,A <esc>A
+" inoremap ,,u _
+" inoremap ,,o ;
+" inoremap ,,e =
+" inoremap ,,A <esc>A
 " join 2 lines on insert mode when cursor is on second line
-inoremap ,,j <esc>kJxi
+" inoremap ,,j <esc>kJxi
 " select last entered word
-inoremap ,,v <esc>viw
+" inoremap ,,v <esc>viw
+
+" ----------------------- Bugfix / Workaround ----------------------- "
+
+" CtrlP not finding files in some projects/directories
+set shell=/bin/bash
+
+" Rainbow doesn't work well with JavaScript
+" augroup GroupJSFuncBlock
+"   autocmd!
+"   autocmd FileType javascript syntax clear jsFuncBlock
+" augroup END
 
 
 " ----------------------------- Macros ------------------------------ "
@@ -634,20 +598,6 @@ inoremap ,,v <esc>viw
 " surround word with a single space inside a bracket
 " this macro depends on easyclip and autopairs plugins
 let @s="miwi p"
-
-
-" ----------------------- Bugfix / Workaround ----------------------- "
-
-" CtrlP not finding files in some projects/directories
-" TODO: uncomment if its not working
-" set shell=/bin/bash
-
-" Rainbow doesn't work well with JavaScript
-" TODO: uncomment if its not working
-" augroup GroupJSFuncBlock
-"   autocmd!
-"   autocmd FileType javascript syntax clear jsFuncBlock
-" augroup END
 
 
 " ------------------------------ Notes ------------------------------ "
@@ -690,5 +640,10 @@ let @s="miwi p"
 " To select lines like you would normally do, go the copy mode, and press v, select with jkhl keys and press y.
 
 " CTRLP - to rescan files, press F5 while in ctrl-p mode
+
+" When using without your .vimrc (e.g. using other PC), use this quick setup
+" set nocompatible
+" set ts=2 sw=2 sts=2 et
+" set backspace=indent,eol,start
 
 " ------------------------------- END ------------------------------- "
