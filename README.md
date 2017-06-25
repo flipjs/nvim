@@ -12,7 +12,16 @@
   - Ensure you have `.tern-project` in your home directory. Maybe you have a copy in your dotfiles
 - Install prettier - `npm install -g prettier`
 - Install silver searcher - `brew install the_silver_searcher`
-- Install ctags - `brew install ctags-exuberant`
+- Install universal ctags
+  - steps:
+      ```
+      git clone https://github.com/universal-ctags/ctags.git
+      cd ctags
+      ./autogen.sh 
+      ./configure
+      make
+      sudo make install
+      ```
 - Install jsctags - `npm install -g git+https://github.com/ramitos/jsctags.git`
 - Run :CheckHealth and fix if any
 - You will need powerline fonts for your terminal (I use iTerm2)
