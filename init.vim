@@ -162,12 +162,14 @@ let g:tern#arguments = ['--persistent']
 """ SuperTab
 autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 " TODO:
-" let g:UltiSnipsExpandTrigger="<C-j>"
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " close the preview window when you're not using it
-let g:SuperTabClosePreviewOnPopupClose = 1
+" let g:SuperTabClosePreviewOnPopupClose = 1
 " or just disable the preview entirely
-" set completeopt-=preview
+set completeopt-=preview
 
 """ Vim-Airline
 set laststatus=2
@@ -394,45 +396,45 @@ end
 
 " -------------------- Plugin-dependent Mapping --------------------- "
 
-" Skipit
+""" Skipit
 imap <c-f>l <Plug>SkipItForward
 imap <c-f>L <Plug>SkipAllForward
 imap <c-f>h <Plug>SkipItBack
 imap <c-f>H <Plug>SkipAllBack
 nmap <c-f> i<c-f><c-f>
 
-" Visual-star-search
+""" Visual-star-search
 nnoremap <leader>* :call ag#Ag('grep', '--literal ' . shellescape(expand("<cword>")))<cr>
 vnoremap <leader>* :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:call ag#Ag('grep', '--literal ' . shellescape(@/))<cr>
 
-" Easyclip
+""" Easyclip
 imap <c-v> <plug>EasyClipInsertModePaste
 cmap <c-v> <plug>EasyClipCommandModePaste
 " easyclip shadows m, rebind m to gm
 nnoremap gm m
 
-" Nerdtree
+""" Nerdtree
 nnoremap <leader>nt :NERDTreeToggle<cr>
 
-" CtrlP
+""" CtrlP
 nnoremap <leader>ff :CtrlP<cr>
 nnoremap <leader>fb :CtrlPBuffer<cr>
 nnoremap <leader>fr :CtrlPMRU<cr>
 nnoremap <leader>fm :CtrlPMixed<cr>
 nnoremap <leader>fc :CtrlPCurWD<cr>
 
-" Gundo
+""" Gundo
 nnoremap <leader>uu :GundoToggle<cr>
 nnoremap <leader>ue :earlier 1f<cr>
 nnoremap <leader>ul :later 1f<cr>
 
-" Neoformat
+""" Neoformat
 noremap <c-u> :Neoformat<cr>
 
-" Emmet
+""" Emmet
 imap <c-e> <c-y>,
 
-" Vim-easy-align
+""" Vim-easy-align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
@@ -447,12 +449,14 @@ nnoremap <leader>de :call DeleteEmptyBuffers()<cr>
 
 " ------------------------- Custom Mapping -------------------------- "
 
-" edit and source .vimrc
+" edit and source init.vim
 nnoremap <leader>ve :edit $MYNVIMRC<cr>
 nnoremap <leader>vs :source $MYNVIMRC<cr>
 nnoremap <leader>vu :source $HOME/.config/nvim/unmap.vim<cr>
-nnoremap <leader>vj :edit $HOME/.vim/UltiSnips/javascript/javascript.snippets<cr>
-nnoremap <leader>vp :edit $HOME/.vim/UltiSnips/php.snippets<cr>
+nnoremap <leader>vj :edit $HOME/.config/nvim/UltiSnips/javascript/javascript.snippets<cr>
+nnoremap <leader>vr :edit $HOME/.config/nvim/UltiSnips/javascript/javascript-react.snippets<cr>
+nnoremap <leader>vn :edit $HOME/.config/nvim/UltiSnips/javascript/javascript-node.snippets<cr>
+nnoremap <leader>vp :edit $HOME/.config/nvim/UltiSnips/php.snippets<cr>
 " ctrl-s to save
 noremap <c-s> :update<cr><esc>
 vnoremap <c-s> <esc>:update<cr><esc>
