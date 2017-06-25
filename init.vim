@@ -513,7 +513,7 @@ nnoremap <leader>sv :vsplit<cr>
 nnoremap <leader>sb :split<cr>
 nnoremap <leader>sc <c-w>c
 nnoremap <leader>sq :qa<cr>
-nnoremap <leader>ss :vertical resize 100<cr>
+nnoremap <leader>ss :vertical resize 121<cr>
 nnoremap <leader>se <c-w>=
 nnoremap <leader>sf <c-w>\|
 nnoremap <leader>sd :bp\|bd #<cr>
