@@ -23,9 +23,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'ervandew/supertab'
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
-  Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx']  }
-  Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx']  }
-  Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx']  }
+  Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
+  Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+  Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
   Plug 'kien/ctrlp.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
@@ -34,7 +34,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'jelera/vim-javascript-syntax'
-  Plug 'othree/yajs.vim'
+  Plug 'othree/yajs.vim', { 'for': 'javascript' }
   Plug 'othree/javascript-libraries-syntax.vim'
   Plug 'pangloss/vim-javascript'
   Plug 'crusoexia/vim-javascript-lib'
@@ -48,7 +48,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/vim-easy-align'
   Plug 'elzr/vim-json'
   Plug 'christoomey/vim-tmux-navigator'
-  Plug 'majutsushi/tagbar'
   Plug 'tommcdo/vim-exchange'
   Plug 'svermeulen/vim-easyclip'
   Plug 'bronson/vim-visual-star-search'
@@ -65,6 +64,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-ruby/vim-ruby'
   Plug 'elixir-lang/vim-elixir'
   Plug 'elmcast/elm-vim'
+  Plug 'ludovicchabant/vim-gutentags'
+  Plug 'heavenshell/vim-jsdoc'
 call plug#end()
 
 syntax on
@@ -159,7 +160,7 @@ let g:tern#arguments = ['--persistent']
 autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 " TODO:
 " let g:UltiSnipsExpandTrigger="<C-j>"
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " close the preview window when you're not using it
 let g:SuperTabClosePreviewOnPopupClose = 1
 " or just disable the preview entirely
@@ -425,9 +426,6 @@ nnoremap <leader>fr :CtrlPMRU<cr>
 nnoremap <leader>fm :CtrlPMixed<cr>
 nnoremap <leader>fc :CtrlPCurWD<cr>
 
-" Tagbar
-nnoremap <leader>tb :TagbarToggle<cr>
-
 " Gundo
 nnoremap <leader>uu :GundoToggle<cr>
 nnoremap <leader>ue :earlier 1f<cr>
@@ -538,7 +536,7 @@ nnoremap <leader>fth :set ft=html<cr>
 nnoremap <leader>ftc :set ft=css<cr>
 nnoremap <leader>ftv :set ft=vue<cr>
 " jsdoc
-" nnoremap <leader>jsd :JsDoc<cr>
+nnoremap <leader>jsd :JsDoc<cr>
 nnoremap <leader>jst :TernDoc<cr>
 " center screen when doing n, N, { and }
 nnoremap n nzz
