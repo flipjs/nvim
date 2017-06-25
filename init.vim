@@ -66,6 +66,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'heavenshell/vim-jsdoc'
   Plug 'kien/rainbow_parentheses.vim'
+  Plug 'othree/html5.vim'
+  Plug 'hail2u/vim-css3-syntax'
+  Plug 'HerringtonDarkholme/yats.vim'
 call plug#end()
 
 syntax on
