@@ -194,7 +194,7 @@ set updatetime=500
 
 """ Neoformat
 let g:neoformat_try_formatprg = 1
-autocmd FileType javascript set formatprg=prettier\ --stdin
+autocmd FileType javascript set formatprg=prettier\ --single-quote\ --stdin
 
 
 """ JSX
