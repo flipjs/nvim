@@ -173,6 +173,9 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 """ Ale
+let g:ale_linters = {
+  \ 'javascript': ['eslint'],
+\ }
 function! LinterStatus() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
