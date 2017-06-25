@@ -43,7 +43,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'rking/ag.vim'
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'luochen1990/rainbow'
   Plug 'sjl/gundo.vim'
   Plug 'junegunn/vim-easy-align'
   Plug 'elzr/vim-json'
@@ -66,6 +65,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'elmcast/elm-vim'
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'heavenshell/vim-jsdoc'
+  Plug 'kien/rainbow_parentheses.vim'
 call plug#end()
 
 syntax on
@@ -244,37 +244,26 @@ nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 " nnoremap <silent> <c-g> :TmuxNavigatePrevious<cr>
 
-""" Rainbow
-" TODO: deactivate for now (set to 0), maybe delete it already?
-let g:rainbow_active = 0
-let g:rainbow_conf = {
-  \  'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-  \  'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
-  \  'operators': '_,_',
-  \  'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-  \  'separately': {
-  \    '*': {},
-  \    'tex': {
-  \      'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-  \    },
-  \    'lisp': {
-  \      'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-  \    },
-  \    'vim': {
-  \      'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-  \    },
-  \    'html': {
-  \      'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-  \    },
-  \    'html.handlebars': {
-  \      'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-  \    },
-  \    'php': {
-  \      'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-  \    },
-  \    'css': 0,
-  \  }
-\ }
+""" Rainbow Parentheses
+let g:rbpt_colorpairs = [
+  \ ['brown',       'RoyalBlue3'],
+  \ ['darkgreen',   'firebrick3'],
+  \ ['Darkblue',    'SeaGreen3'],
+  \ ['darkcyan',    'RoyalBlue3'],
+  \ ['darkred',     'SeaGreen3'],
+  \ ['darkmagenta', 'DarkOrchid3'],
+  \ ['brown',       'firebrick3'],
+  \ ['darkmagenta', 'DarkOrchid3'],
+  \ ['Darkblue',    'firebrick3'],
+  \ ['darkgreen',   'RoyalBlue3'],
+  \ ['darkcyan',    'SeaGreen3'],
+  \ ['darkred',     'DarkOrchid3'],
+  \ ['red',         'firebrick3'],
+\ ]
+au FileType javascript,javascript.jsx,scss RainbowParenthesesLoadRound
+au FileType javascript,javascript.jsx,scss RainbowParenthesesLoadBraces
+au FileType javascript,javascript.jsx,scss RainbowParenthesesLoadSquare
+au FileType javascript,javascript.jsx,scss RainbowParenthesesActivate
 
 " ---------------------------- Functions ---------------------------- "
 
