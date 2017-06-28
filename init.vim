@@ -12,6 +12,7 @@ filetype off
 call plug#begin('~/.local/share/nvim/plugged')
   " Comment out vim-sensible here, may not be needed in neovim-0.2.0
   Plug 'altercation/vim-colors-solarized'
+  Plug 'lifepillar/vim-solarized8'
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-surround'
@@ -87,9 +88,14 @@ if !has('gui_running')
   set t_Co=256
 endif
 
+if has ('termguicolors') && !has('gui_running')
+  set termguicolors
+endif
+
 syntax enable
 set background=dark
-colorscheme solarized
+" colorscheme solarized
+colorscheme solarized8_dark
 
 " no error bell, no visual bell
 set noeb vb t_vb=
