@@ -88,14 +88,16 @@ if !has('gui_running')
   set t_Co=256
 endif
 
-if has ('termguicolors') && !has('gui_running')
-  set termguicolors
-endif
+" disable for now as this has issue with solarized8_dark/tmux
+" if has ('termguicolors') && !has('gui_running')
+"   set termguicolors
+" endif
 
 syntax enable
 set background=dark
-" colorscheme solarized
-colorscheme solarized8_dark
+colorscheme solarized
+" enable solarized8_dark when termguicolors is working on tmux
+" colorscheme solarized8_dark
 
 " no error bell, no visual bell
 set noeb vb t_vb=
