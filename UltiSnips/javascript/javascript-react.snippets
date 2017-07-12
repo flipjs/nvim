@@ -1,42 +1,42 @@
 priority 20
 
 snippet impr "import React"
-import React from 'react'
+import React from 'react';
 ${VISUAL}$0
 endsnippet
 
 snippet imprp "import React, { PropTypes }"
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 ${VISUAL}$0
 endsnippet
 
 snippet imprc "import React, { Component }"
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 ${VISUAL}$0
 endsnippet
 
 snippet imprcp "import React, { Component, PropTypes }"
-import React, { Component, PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react';
 ${VISUAL}$0
 endsnippet
 
 snippet imprd "import ReactDOM"
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
 ${VISUAL}$0
 endsnippet
 
 snippet impconn "import { connect } from React-Redux"
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 ${VISUAL}$0
 endsnippet
 
 snippet implink "import { Link } from React-Router"
-import { Link } from 'react-router'
+import { Link } from 'react-router';
 ${VISUAL}$0
 endsnippet
 
 snippet rr "ReactDOM Render"
-ReactDOM.render(<${1:MyComponent} />, document.getElementById('${2:elementId}'))
+ReactDOM.render(<${1:MyComponent} />, document.getElementById('${2:elementId}'));
 endsnippet
 
 snippet rc "React Component Class"
@@ -44,20 +44,20 @@ export class ${1:MyComponent} extends Component {
 	render () {
 		return (
 			${VISUAL}$0
-		)
+		);
 	}
 }
 endsnippet
 
 snippet cwm "React componentWillMount"
-componentWillMount () {
+componentWillMount() {
 	// invoked once, before initial 'render'
 	${VISUAL}$0
 }
 endsnippet
 
 snippet cdm "React componentDidMount"
-componentDidMount () {
+componentDidMount() {
 	// invoked once (client-only), after initial 'render'
 	// good for AJAX, setTimeout, setInterval
 	${VISUAL}$0
@@ -65,14 +65,14 @@ componentDidMount () {
 endsnippet
 
 snippet cwr "React componentWillReceiveProps"
-componentWillReceiveProps (${1:nextProps}) {
+componentWillReceiveProps(${1:nextProps}) {
 	// invoked when component is receiving props, not for initial 'render'
 	${VISUAL}$0
 }
 endsnippet
 
 snippet cwu "React componentWillUpdate"
-componentWillUpdate (${1:nextProps}, ${2:nextState}) {
+componentWillUpdate(${1:nextProps}, ${2:nextState}) {
 	// invoked immediately before rendering with new props or state, not for initial 'render'
 	// see componentWillReceiveProps if you need to call setState
 	${VISUAL}$0
@@ -80,21 +80,21 @@ componentWillUpdate (${1:nextProps}, ${2:nextState}) {
 endsnippet
 
 snippet cdu "React componentDidUpdate"
-componentDidUpdate (${1:prevProps}, ${2:prevState}) {
+componentDidUpdate(${1:prevProps}, ${2:prevState}) {
 	// invoked immediately after DOM updates, not for initial 'render'
 	${VISUAL}$0
 }
 endsnippet
 
 snippet scu "React shouldComponentUpdate"
-shouldComponentUpdate (${1:nextProps}, ${2:nextState}) {
+shouldComponentUpdate(${1:nextProps}, ${2:nextState}) {
 	// invoked before rendering with new props, not for initial 'render'
 	${VISUAL}$0
 }
 endsnippet
 
 snippet cwum "React componentWillUnmount"
-componentWillUnmount () {
+componentWillUnmount() {
 	// invoked immediately before a component is unmounted from the DOM
 	${VISUAL}$0
 }
@@ -103,16 +103,15 @@ endsnippet
 snippet ptype "React propTypes"
 ${1:MyComponent}.propTypes = {
 	${VISUAL}$0
-}
+};
 endsnippet
 
 snippet ctype "React contextTypes"
 ${1:MyComponent}.contextTypes = {
 	${VISUAL}$0
-}
+};
 endsnippet
 
 snippet props "React prop"
 ${1:prop}: PropTypes.${2:type}.isRequired,
 endsnippet
-
