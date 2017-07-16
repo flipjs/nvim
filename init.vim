@@ -70,6 +70,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'othree/html5.vim'
   Plug 'hail2u/vim-css3-syntax'
   Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'lfilho/cosco.vim'
 call plug#end()
 
 syntax on
@@ -404,6 +405,10 @@ end
 
 " -------------------- Plugin-dependent Mapping --------------------- "
 
+""" Cosco
+autocmd FileType javascript,javascript.jsx,css nmap <silent> <c-a> <Plug>(cosco-commaOrSemiColon)
+autocmd FileType javascript,javascript.jsx,css imap <silent> <c-a> <c-o><Plug>(cosco-commaOrSemiColon)
+
 """ Skipit
 imap <c-f>l <Plug>SkipItForward
 imap <c-f>L <Plug>SkipAllForward
@@ -554,9 +559,11 @@ nnoremap { {zz
 nnoremap <leader>cc ^i{/* <esc>A */}<esc>
 " remove reactjs-style comment tag
 nnoremap <leader>cd ^4x$3Xx
-" add semicolon at end of line
-nnoremap <c-c> m`A;<esc>``
-inoremap <c-c> <esc>m`A;<esc>``
+" add semicolon at end of line - retire in favor of cosco.vim
+" nnoremap <c-a> m`A;<esc>``
+" inoremap <c-a> <esc>m`A;<esc>``
+" ctrl-c to behave like ctrl-[ or ESC in insert mode
+imap <c-c> <c-[>
 " <c-d> to repeat last command
 nmap <c-d> .
 " insert empty line between brackets on <enter>
