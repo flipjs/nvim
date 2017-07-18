@@ -223,8 +223,12 @@ let g:elm_syntastic_show_warnings = 1
 let g:elm_format_fail_silently = 0
 
 """ Greplace
-set grepprg=ag
-let g:grep_cmd_opts = '--line-numbers --noheading'
+set grepprg=git\ grep
+let g:grep_cmd_opts = '--line-number'
+" Ag here doesn't respect .agignore
+" Commented out and use config above (git\ grep)
+" set grepprg=ag
+" let g:grep_cmd_opts = '--line-numbers --noheading'
 
 """ Mustache-Handlebars
 let g:mustache_abbreviations = 1
