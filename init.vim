@@ -5,6 +5,9 @@
 " Updated At: 24 June 2017
 " *********************************************************************
 
+" NOTE ON MAPPING: Key mappings that can't be used:
+" <c-a> = being used by Tmux
+
 filetype off
 
 "------------- Vim-Plug Configuration - must be on top ------------- "
@@ -410,8 +413,8 @@ end
 " -------------------- Plugin-dependent Mapping --------------------- "
 
 """ Cosco
-autocmd FileType javascript,javascript.jsx,css nmap <silent> <c-a> <Plug>(cosco-commaOrSemiColon)
-autocmd FileType javascript,javascript.jsx,css imap <silent> <c-a> <c-o><Plug>(cosco-commaOrSemiColon)
+autocmd FileType javascript,javascript.jsx,css nmap <silent> <c-q> <Plug>(cosco-commaOrSemiColon)
+autocmd FileType javascript,javascript.jsx,css imap <silent> <c-q> <c-o><Plug>(cosco-commaOrSemiColon)
 
 """ Skipit
 imap <c-f>l <Plug>SkipItForward
@@ -564,8 +567,8 @@ nnoremap <leader>cc ^i{/* <esc>A */}<esc>
 " remove reactjs-style comment tag
 nnoremap <leader>cd ^4x$3Xx
 " add semicolon at end of line - retire in favor of cosco.vim
-" nnoremap <c-a> m`A;<esc>``
-" inoremap <c-a> <esc>m`A;<esc>``
+" nnoremap <c-q> m`A;<esc>``
+" inoremap <c-q> <esc>m`A;<esc>``
 " ctrl-c to behave like ctrl-[ or ESC in insert mode
 imap <c-c> <c-[>
 " <c-d> to repeat last command
