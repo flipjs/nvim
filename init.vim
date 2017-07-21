@@ -436,10 +436,11 @@ nnoremap <leader>* :call ag#Ag('grep', '--literal ' . shellescape(expand("<cword
 vnoremap <leader>* :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:call ag#Ag('grep', '--literal ' . shellescape(@/))<cr>
 
 """ Easyclip
-imap <c-v> <plug>EasyClipInsertModePaste
-cmap <c-v> <plug>EasyClipCommandModePaste
 " easyclip shadows m, rebind m to gm
 nnoremap gm m
+" <cmd-v> seems to be ok in neovim, disable <c-v> mapping below
+" imap <c-v> <plug>EasyClipInsertModePaste
+" cmap <c-v> <plug>EasyClipCommandModePaste
 
 """ Nerdtree
 nnoremap <leader>nt :NERDTreeToggle<cr>
