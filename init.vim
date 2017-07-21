@@ -108,9 +108,8 @@ endif
 
 syntax enable
 set background=dark
-colorscheme solarized
-" enable solarized8_dark when termguicolors is working on tmux
-" colorscheme solarized8_dark
+colorscheme solarized8_dark_high
+" colorscheme solarized
 
 " no error bell, no visual bell
 set noeb vb t_vb=
