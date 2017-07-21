@@ -38,7 +38,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'jelera/vim-javascript-syntax'
-  Plug 'othree/yajs.vim', { 'for': 'javascript' }
   Plug 'othree/javascript-libraries-syntax.vim'
   Plug 'pangloss/vim-javascript'
   Plug 'crusoexia/vim-javascript-lib'
