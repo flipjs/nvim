@@ -446,11 +446,11 @@ nnoremap gm m
 nnoremap <leader>nt :NERDTreeToggle<cr>
 
 """ CtrlP
-nnoremap <leader>ff :CtrlP<cr>
-nnoremap <leader>fb :CtrlPBuffer<cr>
-nnoremap <leader>fr :CtrlPMRU<cr>
+nnoremap <leader>ff :Files<cr>
+nnoremap <leader>fb :Buffers<cr>
+nnoremap <leader>fr :History<cr>
 nnoremap <leader>fm :CtrlPMixed<cr>
-nnoremap <leader>fc :CtrlPCurWD<cr>
+nnoremap <leader>fc :Commits<cr>
 
 """ Gundo
 nnoremap <leader>uu :GundoToggle<cr>
@@ -543,7 +543,7 @@ nnoremap <leader>lc :lclose<cr>
 " switch buffers
 nnoremap <silent> <leader>bn :bnext<cr>
 nnoremap <silent> <leader>bp :bprev<cr>
-nnoremap <silent> <leader>bb :b #<cr>
+nnoremap <silent> <leader>bb <c-^>
 " splits shortcuts
 nnoremap <leader>sv :vsplit<cr>
 nnoremap <leader>sb :split<cr>
