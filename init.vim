@@ -423,6 +423,10 @@ end
 
 " -------------------- Plugin-dependent Mapping --------------------- "
 
+""" FZF
+" linewise completion for the win!
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
 """ Cosco
 autocmd FileType javascript,javascript.jsx,css nmap <silent> <c-q> <Plug>(cosco-commaOrSemiColon)
 autocmd FileType javascript,javascript.jsx,css imap <silent> <c-q> <c-o><Plug>(cosco-commaOrSemiColon)
