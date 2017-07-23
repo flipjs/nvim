@@ -597,6 +597,10 @@ nnoremap <leader>cd ^4x$3Xx
 imap <c-c> <c-[>
 " <c-d> to repeat last command
 nmap <c-d> .
+" semicolon as colon
+nmap ; :
+" search history
+nmap q; q:
 " insert empty line between brackets on <enter>
 " inoremap {<cr> {<cr>}<c-o>O
 " inoremap [<cr> [<cr>]<c-o>O
