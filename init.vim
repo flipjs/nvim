@@ -161,6 +161,14 @@ set noswapfile
 
 """ FZF
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+" better command history with q:
+command! CmdHist call fzf#vim#command_history({'right': '40'})
+nnoremap q: :CmdHist<CR>
+" better search history with q/
+command! QHist call fzf#vim#search_history({'right': '40'})
+nnoremap q/ :QHist<CR>
+" use fuzzy completion relative filepaths across directory
+imap <expr> <c-x><c-f> fzf#vim#complete#path('git ls-files $(git rev-parse --show-toplevel)')
 
 """ Gundo
 set undodir=~/.config/nvim/undohistory
