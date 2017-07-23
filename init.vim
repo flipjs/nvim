@@ -606,9 +606,9 @@ imap <c-c> <c-[>
 " <c-d> to repeat last command
 nmap <c-d> .
 " semicolon as colon
-nmap ; :
+" nmap ; :
 " search history
-nmap q; q:
+" nmap q; q:
 " insert empty line between brackets on <enter>
 " inoremap {<cr> {<cr>}<c-o>O
 " inoremap [<cr> [<cr>]<c-o>O
