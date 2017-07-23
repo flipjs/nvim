@@ -491,10 +491,11 @@ nmap ga <Plug>(EasyAlign)
 
 " ------------------------ Function Mapping ------------------------- "
 
-" file heading
-nnoremap <leader>hf mz:execute FileHeader()`zjA
-" line heading
-nnoremap <leader>hl :call LineHeader(67, '
+" file header
+command! FileHeader call FileHeader()
+" line header
+command! -nargs=1 LineHeader call LineHeader(67, <f-args>)
+
 " delete empty buffers
 nnoremap <leader>de :call DeleteEmptyBuffers()<cr>
 
