@@ -1,7 +1,7 @@
 " *********************************************************************
 " Description: My Neovim Setup
 " Version: 5.0
-" Author: Felipe Apostol <flipjs.io@gmail.com>
+" Author: Philip Gomez <flipjs.io@gmail.com>
 " Updated At: 24 June 2017
 " *********************************************************************
 
@@ -87,6 +87,7 @@ let mapleader = " "
 
 " Ensure vim-sensible is installed for set defaults
 
+" set vim to use 256 colors
 set t_Co=256
 
 " From https://github.com/rakr/vim-one
@@ -110,6 +111,12 @@ syntax enable
 set background=dark
 colorscheme solarized8_dark_high
 " colorscheme solarized
+
+" overwrite current theme's git diff colors
+hi DiffAdd guifg=NONE ctermfg=NONE guibg=#464632 ctermbg=238 gui=NONE cterm=NONE
+hi DiffChange guifg=NONE ctermfg=NONE guibg=#335261 ctermbg=239 gui=NONE cterm=NONE
+hi DiffDelete guifg=#f43753 ctermfg=203 guibg=#79313c ctermbg=237 gui=NONE cterm=NONE
+hi DiffText guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=reverse cterm=reverse
 
 " no error bell, no visual bell
 set noeb vb t_vb=
