@@ -5,6 +5,14 @@
 " Updated At: 24 June 2017
 " *********************************************************************
 
+" NEW STUFF TO TRY:
+" <c-x><c-l>
+" <c-x><c-f>
+" q/
+" q:
+" -17,-11t.
+" +18,+22t.
+
 " NOTE ON MAPPING: Key mappings that can't be used:
 " <c-a> = being used by Tmux
 
@@ -166,14 +174,17 @@ set noswapfile
 
 " ------------------------- Plugin Settings ------------------------- "
 
+""" NERDTree
+let NERDTreeShowHidden=1
+
 """ FZF
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 " better command history with q:
 command! CmdHist call fzf#vim#command_history({'right': '40'})
-nnoremap q: :CmdHist<CR>
+nnoremap <leader>hc :CmdHist<CR>
 " better search history with q/
 command! QHist call fzf#vim#search_history({'right': '40'})
-nnoremap q/ :QHist<CR>
+nnoremap <leader>hs :QHist<CR>
 " use fuzzy completion relative filepaths across directory
 imap <expr> <c-x><c-f> fzf#vim#complete#path('git ls-files $(git rev-parse --show-toplevel)')
 
@@ -574,7 +585,7 @@ nnoremap <leader>sc <c-w>c
 nnoremap <leader>sq :qa<cr>
 nnoremap <leader>ss :vertical resize 121<cr>
 nnoremap <leader>se <c-w>=
-nnoremap <leader>sf <c-w>\|
+nnoremap <leader>sf <c-w>\|<c-w>_
 nnoremap <leader>sd :bp\|bd #<cr>
 " site-wide search and replace
 nnoremap <leader>sr :Gsearch<cr>
