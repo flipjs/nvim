@@ -512,6 +512,8 @@ nnoremap <leader>de :call DeleteEmptyBuffers()<cr>
 
 " ------------------------- Custom Mapping -------------------------- "
 
+" open current file's directory in Finder
+command! Finder silent exe '!open ' . expand("%:p:h")
 " edit and source init.vim
 nnoremap <leader>ve :edit $MYNVIMRC<cr>
 nnoremap <leader>vs :source $MYNVIMRC<cr>
@@ -713,3 +715,4 @@ let @s="miwi p"
 " set backspace=indent,eol,start
 
 " ------------------------------- END ------------------------------- "
+
