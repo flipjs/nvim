@@ -318,10 +318,10 @@ let g:rbpt_colorpairs = [
   \ ['darkred',     'DarkOrchid3'],
   \ ['red',         'firebrick3'],
 \ ]
-au FileType javascript,javascript.jsx,scss RainbowParenthesesLoadRound
-au FileType javascript,javascript.jsx,scss RainbowParenthesesLoadBraces
-au FileType javascript,javascript.jsx,scss RainbowParenthesesLoadSquare
-au FileType javascript,javascript.jsx,scss RainbowParenthesesActivate
+au FileType javascript,javascript.jsx,scss,clojure RainbowParenthesesLoadRound
+au FileType javascript,javascript.jsx,scss,clojure RainbowParenthesesLoadBraces
+au FileType javascript,javascript.jsx,scss,clojure RainbowParenthesesLoadSquare
+au FileType javascript,javascript.jsx,scss,clojure RainbowParenthesesActivate
 
 " ---------------------------- Functions ---------------------------- "
 
