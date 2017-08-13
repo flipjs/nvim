@@ -491,7 +491,7 @@ nnoremap <leader>ue :earlier 1f<cr>
 nnoremap <leader>ul :later 1f<cr>
 
 """ Neoformat
-noremap <c-u> :Neoformat<cr>
+nnoremap <c-u> :Neoformat<cr>
 
 """ Emmet
 imap <c-e> <c-y>,
@@ -523,7 +523,7 @@ nnoremap <leader>vr :edit $HOME/.config/nvim/UltiSnips/javascript/javascript-rea
 nnoremap <leader>vn :edit $HOME/.config/nvim/UltiSnips/javascript/javascript-node.snippets<cr>
 nnoremap <leader>vp :edit $HOME/.config/nvim/UltiSnips/php.snippets<cr>
 " ctrl-s to save
-noremap <c-s> :update<cr><esc>
+nnoremap <c-s> :update<cr><esc>
 vnoremap <c-s> <esc>:update<cr><esc>
 inoremap <c-s> <esc>:update<cr><esc>
 " close current buffer
