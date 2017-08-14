@@ -81,6 +81,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'kana/vim-niceblock'
   Plug 'kana/vim-textobj-user'
+  Plug 'kana/vim-textobj-function'
+  Plug 'thinca/vim-textobj-function-javascript'
 call plug#end()
 
 syntax on
