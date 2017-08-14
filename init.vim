@@ -62,7 +62,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'svermeulen/vim-easyclip'
   Plug 'bronson/vim-visual-star-search'
   Plug 'terryma/vim-multiple-cursors'
-  Plug 'habamax/vim-skipit'
   Plug 'skwp/greplace.vim'
   Plug 'tomtom/tcomment_vim'
   Plug 'wakatime/vim-wakatime'
@@ -460,11 +459,11 @@ autocmd FileType javascript,javascript.jsx,css nmap <silent> <c-q> <Plug>(cosco-
 autocmd FileType javascript,javascript.jsx,css imap <silent> <c-q> <c-o><Plug>(cosco-commaOrSemiColon)
 
 """ Skipit
-imap <c-f>l <Plug>SkipItForward
-imap <c-f>L <Plug>SkipAllForward
-imap <c-f>h <Plug>SkipItBack
-imap <c-f>H <Plug>SkipAllBack
-nmap <c-f> i<c-f><c-f>
+" imap <c-f>l <Plug>SkipItForward
+" imap <c-f>L <Plug>SkipAllForward
+" imap <c-f>h <Plug>SkipItBack
+" imap <c-f>H <Plug>SkipAllBack
+" nmap <c-f> i<c-f><c-f>
 
 """ Visual-star-search
 nnoremap <leader>* :call ag#Ag('grep', '--literal ' . shellescape(expand("<cword>")))<cr>
