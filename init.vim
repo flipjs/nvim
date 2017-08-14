@@ -81,6 +81,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'hail2u/vim-css3-syntax'
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'lfilho/cosco.vim'
+  Plug 'kana/vim-niceblock'
+  Plug 'kana/vim-textobj-user'
 call plug#end()
 
 syntax on
