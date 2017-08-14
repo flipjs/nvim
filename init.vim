@@ -79,7 +79,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'othree/html5.vim'
   Plug 'hail2u/vim-css3-syntax'
   Plug 'HerringtonDarkholme/yats.vim'
-  Plug 'lfilho/cosco.vim'
   Plug 'kana/vim-niceblock'
   Plug 'kana/vim-textobj-user'
 call plug#end()
@@ -363,6 +362,10 @@ function! DeleteEmptyBuffers()
     endif
 endfunction
 
+function! ToggleEndChar(charToMatch)
+    s/\v(.)$/\=submatch(1)==a:charToMatch ? '' : submatch(1).a:charToMatch
+endfunction
+
 " -------------------------- Autocommands --------------------------- "
 
 augroup Elm
@@ -454,11 +457,7 @@ end
 " linewise completion for the win!
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
-""" Cosco
-autocmd FileType javascript,javascript.jsx,css nmap <silent> <c-q> <Plug>(cosco-commaOrSemiColon)
-autocmd FileType javascript,javascript.jsx,css imap <silent> <c-q> <c-o><Plug>(cosco-commaOrSemiColon)
-
-""" Skipit
+""" Skipit - remove plugin for now
 " imap <c-f>l <Plug>SkipItForward
 " imap <c-f>L <Plug>SkipAllForward
 " imap <c-f>h <Plug>SkipItBack
@@ -612,9 +611,9 @@ nnoremap { {zz
 nnoremap <leader>cc ^i{/* <esc>A */}<esc>
 " remove reactjs-style comment tag
 nnoremap <leader>cd ^4x$3Xx
-" add semicolon at end of line - retire in favor of cosco.vim
-" nnoremap <c-q> m`A;<esc>``
-" inoremap <c-q> <esc>m`A;<esc>``
+" toggle semicolon at end of line
+nnoremap <c-k> m`:call ToggleEndChar(';')<CR>``
+inoremap <c-k> <esc>lm`:call ToggleEndChar(';')<CR>``
 " ctrl-c to behave like ctrl-[ or ESC in insert mode
 imap <c-c> <c-[>
 " <c-d> to repeat last command
