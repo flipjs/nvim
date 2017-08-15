@@ -79,6 +79,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'othree/html5.vim'
   Plug 'hail2u/vim-css3-syntax'
   Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'skywind3000/asyncrun.vim'
   Plug 'kana/vim-niceblock'
   Plug 'kana/vim-textobj-user'
   Plug 'kana/vim-textobj-function'
