@@ -615,8 +615,8 @@ nnoremap <leader>cc ^i{/* <esc>A */}<esc>
 " remove reactjs-style comment tag
 nnoremap <leader>cd ^4x$3Xx
 " toggle semicolon at end of line
-nnoremap <c-k> m`:call ToggleEndChar(';')<CR>``
-inoremap <c-k> <esc>lm`:call ToggleEndChar(';')<CR>``
+nnoremap <c-m> m`:call ToggleEndChar(';')<CR>``
+inoremap <c-m> <esc>lm`:call ToggleEndChar(';')<CR>``
 " ctrl-c to behave like ctrl-[ or ESC in insert mode
 imap <c-c> <c-[>
 " <c-d> to repeat last command
