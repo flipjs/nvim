@@ -117,6 +117,11 @@ if (empty($TMUX))
   endif
 endif
 
+" Enable substitution previews with inccommand
+if has("nvim")
+    set inccommand=nosplit
+endif
+
 syntax enable
 set background=dark
 colorscheme solarized8_dark_high
