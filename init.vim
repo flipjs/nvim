@@ -119,7 +119,20 @@ endif
 
 " Enable substitution previews with inccommand
 if has("nvim")
-    set inccommand=nosplit
+  set inccommand=nosplit
+endif
+
+" Neovim terminal configuration
+if has("nvim")
+  " make escape work in the Neovim terminal.
+  tnoremap <Esc> <C-\><C-n>
+  " make navigation into and out of Neovim terminal splits nicer.
+  tnoremap <C-h> <C-\><C-N><C-w>h
+  tnoremap <C-j> <C-\><C-N><C-w>j
+  tnoremap <C-k> <C-\><C-N><C-w>k
+  tnoremap <C-l> <C-\><C-N><C-w>l
+  " prefer Neovim terminal insert mode to normal mode.
+  autocmd BufEnter term://* startinsert
 endif
 
 syntax enable
@@ -522,6 +535,8 @@ nnoremap <leader>vp :edit $HOME/.config/nvim/UltiSnips/php.snippets<cr>
 nnoremap <c-s> :update<cr><esc>
 vnoremap <c-s> <esc>:update<cr><esc>
 inoremap <c-s> <esc>:update<cr><esc>
+" ctrl-q to safely quit session
+noremap <c-q><c-q> :confirm qall<CR>
 " close current buffer
 nnoremap <leader>dd :bd<cr>
 " save current buffer
