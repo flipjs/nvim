@@ -365,10 +365,6 @@ function! DeleteEmptyBuffers()
     endif
 endfunction
 
-function! ToggleEndChar(charToMatch)
-    s/\v(.)$/\=submatch(1)==a:charToMatch ? '' : submatch(1).a:charToMatch
-endfunction
-
 " -------------------------- Autocommands --------------------------- "
 
 augroup Elm
@@ -459,13 +455,6 @@ end
 """ FZF
 " linewise completion for the win!
 imap <c-x><c-l> <plug>(fzf-complete-line)
-
-""" Skipit - remove plugin for now
-" imap <c-f>l <Plug>SkipItForward
-" imap <c-f>L <Plug>SkipAllForward
-" imap <c-f>h <Plug>SkipItBack
-" imap <c-f>H <Plug>SkipAllBack
-" nmap <c-f> i<c-f><c-f>
 
 """ Visual-star-search
 nnoremap <leader>* :call ag#Ag('grep', '--literal ' . shellescape(expand("<cword>")))<cr>
@@ -614,43 +603,10 @@ nnoremap { {zz
 nnoremap <leader>cc ^i{/* <esc>A */}<esc>
 " remove reactjs-style comment tag
 nnoremap <leader>cd ^4x$3Xx
-" toggle semicolon at end of line
-nnoremap <c-m> m`:call ToggleEndChar(';')<CR>``
-inoremap <c-m> <esc>lm`:call ToggleEndChar(';')<CR>``
 " ctrl-c to behave like ctrl-[ or ESC in insert mode
 imap <c-c> <c-[>
 " <c-d> to repeat last command
-nmap <c-d> .
-" semicolon as colon
-" nmap ; :
-" search history
-" nmap q; q:
-" insert empty line between brackets on <enter>
-" inoremap {<cr> {<cr>}<c-o>O
-" inoremap [<cr> [<cr>]<c-o>O
-" inoremap (<cr> (<cr>)<c-o>O
-" ,, mapping for not too easy to type characters
-" inoremap ,,p ()<esc>i
-" inoremap ,,c {}<esc>i
-" inoremap ,,s []<esc>i
-" inoremap ,,a <><esc>i
-" inoremap ,,q ''<esc>i
-" inoremap ,,w ""<esc>i
-" inoremap ,,d <cr><esc>O
-" inoremap ,,h <esc>i
-" inoremap ,,l <esc>la
-" inoremap ,,n <esc>A;
-" inoremap ,,m <esc>A:
-" inoremap ,,, <esc>A,
-" note: have side effect for word boo,,Eeping, see word abbrev
-" inoremap ,,u _
-" inoremap ,,o ;
-" inoremap ,,e =
-" inoremap ,,A <esc>A
-" join 2 lines on insert mode when cursor is on second line
-" inoremap ,,j <esc>kJxi
-" select last entered word
-" inoremap ,,v <esc>viw
+nnoremap <c-d> .
 
 " ----------------------- Bugfix / Workaround ----------------------- "
 
