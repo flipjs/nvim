@@ -1,8 +1,7 @@
 " *********************************************************************
-" Description: My Neovim Setup
-" Version: 5.0
-" Author: Philip Gomez <flipjs.io@gmail.com>
-" Updated At: 24 June 2017
+" Description: My Neovim Configuration
+" Version: 5th Gen
+" Author: Felipe Apostol <flipjs.io@gmail.com>
 " *********************************************************************
 
 " NEW STUFF TO TRY:
