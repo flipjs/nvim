@@ -622,15 +622,16 @@ nnoremap { {zz
 nnoremap <leader>cc ^i{/* <esc>A */}<esc>
 " remove reactjs-style comment tag
 nnoremap <leader>cd ^4x$3Xx
-" ctrl-c to behave like ctrl-[ or ESC in insert mode
-imap <c-c> <c-[>
+" ctrl-c to insert semicolon at eol
+nnoremap <c-c> m`A;<esc>``
+inoremap <c-c> <esc>m`A;<esc>``
 " <c-d> to repeat last command
 nnoremap <c-d> .
 
 " ----------------------- Bugfix / Workaround ----------------------- "
 
 " CtrlP not finding files in some projects/directories
-set shell=/bin/bash
+" set shell=/bin/bash
 
 " Rainbow doesn't work well with JavaScript
 " augroup GroupJSFuncBlock
