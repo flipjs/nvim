@@ -83,6 +83,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'kana/vim-textobj-user'
   Plug 'kana/vim-textobj-function'
   Plug 'thinca/vim-textobj-function-javascript'
+  Plug 'junegunn/vim-slash'
 call plug#end()
 
 syntax on
@@ -269,7 +270,6 @@ set updatetime=500
 """ Neoformat
 let g:neoformat_try_formatprg = 1
 autocmd FileType javascript set formatprg=prettier\ --single-quote\ --stdin
-
 
 """ JSX
 let g:jsx_ext_required = 0
@@ -614,8 +614,7 @@ nnoremap <leader>ftv :set ft=vue<cr>
 nnoremap <leader>jsd :JsDoc<cr>
 nnoremap <leader>jst :TernDoc<cr>
 " center screen when doing n, N, { and }
-nnoremap n nzz
-nnoremap N Nzz
+noremap <plug>(slash-after) zz
 nnoremap } }zz
 nnoremap { {zz
 " enclose line in reactjs-style comment tag
@@ -628,24 +627,11 @@ inoremap <c-c> <esc>m`A;<esc>``
 " <c-d> to repeat last command
 nnoremap <c-d> .
 
-" ----------------------- Bugfix / Workaround ----------------------- "
-
-" CtrlP not finding files in some projects/directories
-" set shell=/bin/bash
-
-" Rainbow doesn't work well with JavaScript
-" augroup GroupJSFuncBlock
-"   autocmd!
-"   autocmd FileType javascript syntax clear jsFuncBlock
-" augroup END
-
-
 " ----------------------------- Macros ------------------------------ "
 
 " surround word with a single space inside a bracket
 " this macro depends on easyclip and autopairs plugins
 let @s="miwi p"
-
 
 " ------------------------------ Notes ------------------------------ "
 
