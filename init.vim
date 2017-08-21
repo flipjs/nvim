@@ -84,6 +84,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'kana/vim-textobj-function'
   Plug 'thinca/vim-textobj-function-javascript'
   Plug 'junegunn/vim-slash'
+  Plug 'junegunn/goyo.vim'
+  Plug 'junegunn/limelight.vim'
 call plug#end()
 
 syntax on
@@ -160,7 +162,7 @@ set softtabstop=2
 set expandtab
 
 set number
-set relativenumber
+" set relativenumber
 set cursorline
 set hidden
 set showmatch
@@ -194,6 +196,10 @@ set nowritebackup
 set noswapfile
 
 " ------------------------- Plugin Settings ------------------------- "
+
+""" Goyo & Limelight
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 """ NERDTree
 let NERDTreeShowHidden=1
