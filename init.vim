@@ -88,6 +88,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/limelight.vim'
 call plug#end()
 
+" update vim-plug
+command! PU PlugUpdate | PlugUpgrade
+
 syntax on
 filetype plugin indent on
 
@@ -198,8 +201,8 @@ set noswapfile
 " ------------------------- Plugin Settings ------------------------- "
 
 """ Goyo & Limelight
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+" autocmd! User GoyoEnter Limelight
+" autocmd! User GoyoLeave Limelight!
 
 """ NERDTree
 let NERDTreeShowHidden=1
@@ -475,6 +478,9 @@ end
 
 " -------------------- Plugin-dependent Mapping --------------------- "
 
+""" Limelight
+command! LL Limelight!!
+
 """ FZF
 " linewise completion for the win!
 imap <c-x><c-l> <plug>(fzf-complete-line)
@@ -686,4 +692,3 @@ let @s="miwi p"
 " set backspace=indent,eol,start
 
 " ------------------------------- END ------------------------------- "
-
