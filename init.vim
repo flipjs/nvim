@@ -257,6 +257,11 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 """ Ale
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = 'X'
+let g:ale_sign_warning = '!'
+" highlight ALEErrorSign guifg=#fb4934 guibg=#3c3836
+" highlight ALEWarningSign guifg=#fe8019 guibg=#3c3836
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
 \ }
