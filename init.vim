@@ -86,6 +86,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/vim-slash'
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
+  Plug 'rizzatti/dash.vim'
 call plug#end()
 
 " update vim-plug
