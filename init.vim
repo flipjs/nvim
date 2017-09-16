@@ -607,7 +607,7 @@ nnoremap <leader>lc :lclose<cr>
 " nnoremap <leader>lv :echo b:syntastic_checkers<cr>
 " switch buffers
 nnoremap <silent> <leader>bn :bnext<cr>
-nnoremap <silent> <leader>bp :bprev<cr>
+nnoremap <silent> <leader>bv :bprev<cr>
 nnoremap <silent> <leader>bb <c-^>
 " splits shortcuts
 nnoremap <leader>sv :vsplit<cr>
