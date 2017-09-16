@@ -539,6 +539,8 @@ nnoremap <leader>de :call DeleteEmptyBuffers()<cr>
 
 " ------------------------- Custom Mapping -------------------------- "
 
+" allow saving of files that need root permission
+cmap w!! w !sudo tee > /dev/null %
 " open current file's directory in Finder
 command! Finder silent exe '!open ' . expand("%:p:h")
 " edit and source init.vim
