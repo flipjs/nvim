@@ -408,6 +408,7 @@ augroup END
 augroup JavaScript
   autocmd!
   autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
+  " for babel to properly work with es6 or es6 import syntax, ensure .babelrc is defined
   autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rt :!clear && ava %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
