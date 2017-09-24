@@ -35,6 +35,7 @@ Install the following helpers GLOBALLY (google search on how-to):
 
 NPM Packages: (npm install -g)
 
+* git+https://github.com/ramitos/jsctags.git
 * bower
 * gulp
 * grunt-cli
@@ -46,6 +47,7 @@ NPM Packages: (npm install -g)
 * standard
 * standard-format
 * eslint
+* eslint-watch
 * babel-cli
 * node-gyp
 * http-server
@@ -59,7 +61,10 @@ NPM Packages: (npm install -g)
 * elm-oracle
 * prettier
 * tern
+* yarn
+* create-react-app
+* nodemon
 
 COPY PASTE THIS:
-npm install -g bower gulp grunt-cli webpack webpack-dev-server js-beautify jshint jscs standard standard-format eslint babel-cli node-gyp http-server typescript jq-cli-wrapper json-server commitizen jsdoc elm elm-test elm-oracle prettier tern
+npm install -g bower gulp grunt-cli webpack webpack-dev-server js-beautify jshint jscs standard standard-format eslint eslint-watch babel-cli node-gyp http-server typescript jq-cli-wrapper json-server commitizen jsdoc elm elm-test elm-oracle prettier tern yarn create-react-app nodemon
 
