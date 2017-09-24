@@ -12,14 +12,50 @@ it('${1}', (${2}) => {
 });
 endsnippet
 
-snippet before "beforeEach block"
+snippet before "before block"
+before(() => {
+	${VISUAL}${0}
+});
+endsnippet
+
+snippet beforeeach "beforeEach block"
 beforeEach(() => {
 	${VISUAL}${0}
 });
 endsnippet
 
-snippet after "afterEach block"
+snippet after "after block"
+after(() => {
+	${VISUAL}${0}
+});
+endsnippet
+
+snippet aftereach "afterEach block"
 afterEach(() => {
+	${VISUAL}${0}
+});
+endsnippet
+
+snippet beforefunc "before block using function cb"
+before(function () {
+	${VISUAL}${0}
+});
+endsnippet
+
+snippet beforeeachfunc "beforeEach block using function cb"
+beforeEach(function () {
+	${VISUAL}${0}
+});
+endsnippet
+
+snippet afterfunc "after block using function cb"
+after(function () {
+	${VISUAL}${0}
+});
+endsnippet
+
+snippet aftereachfunc "afterEach block using function cb"
+afterEach(function () {
 	${VISUAL}${0}
 });
 endsnippet
