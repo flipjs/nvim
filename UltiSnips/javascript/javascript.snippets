@@ -48,6 +48,10 @@ snippet c "const"
 const ${1:variable} = ${2:expr}
 endsnippet
 
+snippet cd "console.dir"
+console.dir($0, {colors: true});
+endsnippet
+
 snippet cl "console.log"
 console.log($0);
 endsnippet
@@ -64,7 +68,7 @@ snippet ci "console.info"
 console.info($0);
 endsnippet
 
-snippet cd "console.debug"
+snippet cdeb "console.debug"
 console.debug($0);
 endsnippet
 

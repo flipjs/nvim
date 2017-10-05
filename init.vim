@@ -87,6 +87,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
   Plug 'rizzatti/dash.vim'
+  Plug 'keith/swift.vim'
+  Plug 'wellle/targets.vim'
 call plug#end()
 
 " update vim-plug
@@ -335,7 +337,7 @@ nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-" nnoremap <silent> <c-g> :TmuxNavigatePrevious<cr>
+nnoremap <silent> <c-g> :TmuxNavigatePrevious<cr>
 
 """ Rainbow Parentheses
 let g:rbpt_colorpairs = [
@@ -403,6 +405,11 @@ augroup Elm
   autocmd!
   autocmd FileType elm nnoremap <buffer> <leader>rr :ElmMake<cr>
   autocmd FileType elm nnoremap <buffer> <leader>re :ElmErrorDetail<cr>
+augroup END
+
+augroup Swift
+  autocmd!
+  autocmd FileType swift nnoremap <buffer> <leader>rr :!clear && swift %<cr>
 augroup END
 
 augroup JavaScript
