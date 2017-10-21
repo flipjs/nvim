@@ -52,6 +52,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'jiangmiao/auto-pairs'
   Plug 'rking/ag.vim'
+  Plug 'mileszs/ack.vim'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'sjl/gundo.vim'
   Plug 'junegunn/vim-easy-align'
@@ -318,6 +319,9 @@ let g:EasyClipAutoFormat = 0
 " disable this feature, see settings at the top (search modern editors)
 let g:EasyClipAlwaysMoveCursorToEndOfPaste = 0
 
+""" Ack.vim
+let g:ackprg = "ag --vimgrep"
+
 """ Ag.vim
 set runtimepath^=~/.local/share/nvim/plugged/ag
 
@@ -362,14 +366,33 @@ au FileType javascript,javascript.jsx,scss,clojure RainbowParenthesesActivate
 
 " ---------------------------- Functions ---------------------------- "
 
+function! ProseMode()
+  call goyo#execute(0, [])
+  setlocal spell noci nosi noai nolist noshowmode noshowcmd
+  setlocal complete+=s
+  setlocal bg=light
+  if !has('gui_running')
+    let g:solarized_termcolors=256
+  endif
+  colors solarized
+endfunction
+
+function! CloseAllBuffersButCurrent()
+    let curr = bufnr("%")
+    let last = bufnr("$")
+
+    if curr > 1    | silent! execute "1,".(curr-1)."bd"     | endif
+    if curr < last | silent! execute (curr+1).",".last."bd" | endif
+endfunction
+
 function! FileHeader()
-let s:line=line(".")
-call setline(s:line,  "/***********************************************************************")
-call append(s:line,   " * Description - ")
-call append(s:line+1, " * Author - Felipe Apostol")
-call append(s:line+2, " * Date - ".strftime("%d %b %Y"))
-call append(s:line+3, " ***********************************************************************/")
-unlet s:line
+    let s:line=line(".")
+    call setline(s:line,  "/***********************************************************************")
+    call append(s:line,   " * Description - ")
+    call append(s:line+1, " * Author - Felipe Apostol")
+    call append(s:line+2, " * Date - ".strftime("%d %b %Y"))
+    call append(s:line+3, " ***********************************************************************/")
+    unlet s:line
 endfunction
 
 function! LineHeader(width, word)
@@ -517,8 +540,9 @@ nnoremap <leader>nt :NERDTreeToggle<cr>
 nnoremap <leader>ff :Files<cr>
 nnoremap <leader>fb :Buffers<cr>
 nnoremap <leader>fr :History<cr>
-nnoremap <leader>fm :CtrlPMixed<cr>
+nnoremap <leader>ft :Tags<cr>
 nnoremap <leader>fc :Commits<cr>
+nnoremap <leader>fm :CtrlPMixed<cr>
 
 """ Gundo
 nnoremap <leader>uu :GundoToggle<cr>
@@ -539,14 +563,34 @@ nmap ga <Plug>(EasyAlign)
 
 " file header
 command! FileHeader call FileHeader()
+
 " line header
 command! -nargs=1 LineHeader call LineHeader(67, <f-args>)
+
+" delete all buffers but current
+command! Only call CloseAllBuffersButCurrent()
 
 " delete empty buffers
 nnoremap <leader>de :call DeleteEmptyBuffers()<cr>
 
+" non-distraction edit text mode
+command! ProseMode call ProseMode()
+
+" -------------------------- Alt Mapping ---------------------------- "
+
+nmap <a-q> :q<cr>
+nmap <a-x> :cclose<cr>
+nmap <a-m> :Ag! "\b<cword>\b"<cr>
+" nmap <esc>k :Ag! "\b<cword>\b"<cr>
+
 " ------------------------- Custom Mapping -------------------------- "
 
+" tmux send-keys - run previous terminal command
+nnoremap <leader>t1 :!tmux send-keys -t 1 C-p C-j<cr><cr>
+nnoremap <leader>t2 :!tmux send-keys -t 2 C-p C-j<cr><cr>
+nnoremap <leader>t3 :!tmux send-keys -t 3 C-p C-j<cr><cr>
+nnoremap <leader>t4 :!tmux send-keys -t 4 C-p C-j<cr><cr>
+nnoremap <leader>t5 :!tmux send-keys -t 5 C-p C-j<cr><cr>
 " allow saving of files that need root permission
 cmap w!! w !sudo tee > /dev/null %
 " open current file's directory in Finder
@@ -623,7 +667,7 @@ nnoremap <silent> <leader>bb <c-^>
 nnoremap <leader>sv :vsplit<cr>
 nnoremap <leader>sb :split<cr>
 nnoremap <leader>sc <c-w>c
-nnoremap <leader>sq :qa<cr>
+nnoremap <leader>sq <c-w>q
 nnoremap <leader>ss :vertical resize 121<cr>
 nnoremap <leader>se <c-w>=
 nnoremap <leader>sf <c-w>\|<c-w>_
