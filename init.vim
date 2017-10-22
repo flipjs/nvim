@@ -90,6 +90,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rizzatti/dash.vim'
   Plug 'keith/swift.vim'
   Plug 'wellle/targets.vim'
+  Plug 'alvan/vim-closetag'
 call plug#end()
 
 " update vim-plug
@@ -101,7 +102,7 @@ filetype plugin indent on
 " --------------------------- Map Leader ---------------------------- "
 
 " mapleader is space
-let mapleader = " "
+let mapleader = "\<space>"
 
 " ---------------------- Custom Configuration ----------------------- "
 
@@ -207,6 +208,13 @@ set noswapfile
 """ Goyo & Limelight
 " autocmd! User GoyoEnter Limelight
 " autocmd! User GoyoLeave Limelight!
+
+""" Vim-CloseTag
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
+let g:closetag_emptyTags_caseSensitive = 1
+let g:closetag_shortcut = '>'
+let g:closetag_close_shortcut = '<leader>>'
 
 """ NERDTree
 let NERDTreeShowHidden=1
