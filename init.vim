@@ -90,6 +90,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rizzatti/dash.vim'
   Plug 'keith/swift.vim'
   Plug 'wellle/targets.vim'
+  Plug 'justinmk/vim-sneak'
 call plug#end()
 
 " update vim-plug
@@ -515,6 +516,15 @@ end
 
 " -------------------- Plugin-dependent Mapping --------------------- "
 
+""" Vim-Sneak
+map s <Plug>Sneak_s
+map S <Plug>Sneak_S
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
+hi! link Sneak Normal
+
 """ Limelight
 command! LL Limelight!!
 
@@ -697,7 +707,7 @@ nnoremap <leader>cd ^4x$3Xx
 nnoremap <c-c> m`A;<esc>``
 inoremap <c-c> <esc>m`A;<esc>``
 " <c-d> to repeat last command
-nnoremap <c-d> .
+nmap <c-d> .
 
 " ----------------------------- Macros ------------------------------ "
 
