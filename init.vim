@@ -91,6 +91,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'keith/swift.vim'
   Plug 'wellle/targets.vim'
   Plug 'justinmk/vim-sneak'
+  Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'reasonml-editor/vim-reason-plus'
 call plug#end()
 
 " update vim-plug
@@ -205,6 +207,17 @@ set noswapfile
 
 " ------------------------- Plugin Settings ------------------------- "
 
+""" LanguageClient
+" required for operations modifying multiple buffers like rename.
+set hidden
+" server commands
+let g:LanguageClient_serverCommands = {
+    \ 'reason': ['ocaml-language-server', '--stdio'],
+    \ 'ocaml': ['ocaml-language-server', '--stdio'],
+    \ }
+" automatically start language servers.
+let g:LanguageClient_autoStart = 1
+
 """ Goyo & Limelight
 " autocmd! User GoyoEnter Limelight
 " autocmd! User GoyoLeave Limelight!
@@ -298,7 +311,7 @@ set updatetime=500
 
 """ Neoformat
 let g:neoformat_try_formatprg = 1
-autocmd FileType javascript set formatprg=prettier\ --single-quote\ --stdin
+autocmd FileType javascript set formatprg=prettier\ --single-quote\ --trailing-comma=es5\ --print-width=120\ --stdin
 
 """ JSX
 let g:jsx_ext_required = 0
@@ -438,6 +451,13 @@ endfunction
 " augroup Limelight
 "   autocmd BufEnter * Limelight
 " augroup END
+
+augroup ReasonML
+  autocmd!
+  autocmd Filetype reason nnoremap <buffer> gd :call LanguageClient_textDocument_definition()<cr>
+  autocmd Filetype reason nnoremap <buffer> <c-u> :call LanguageClient_textDocument_formatting()<cr>
+  autocmd Filetype reason nnoremap <buffer> <cr> :call LanguageClient_textDocument_hover()<cr>
+augroup END
 
 augroup Elm
   autocmd!

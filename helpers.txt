@@ -33,6 +33,13 @@ Install the following helpers GLOBALLY (google search on how-to):
     git clone https://github.com/powerline/fonts.git
     run ./install.sh
 
+* LANGUAGE SUPPORT
+  - ReasonML
+    npm install -g ocaml-language-server
+    npm install -g https://github.com/reasonml/reason-cli/archive/3.0.1-bin-darwin.tar.gz
+  - Elm
+    npm install -g elm-format
+
 NPM Packages: (npm install -g)
 
 * git+https://github.com/ramitos/jsctags.git
@@ -64,7 +71,10 @@ NPM Packages: (npm install -g)
 * yarn
 * create-react-app
 * nodemon
+* ocaml-language-server
+* https://github.com/reasonml/reason-cli/archive/3.0.1-bin-darwin.tar.gz
+* elm-format
 
 COPY PASTE THIS:
-npm install -g bower gulp grunt-cli webpack webpack-dev-server js-beautify jshint jscs standard standard-format eslint eslint-watch babel-cli node-gyp http-server typescript jq-cli-wrapper json-server commitizen jsdoc elm elm-test elm-oracle prettier tern yarn create-react-app nodemon
+npm install -g bower gulp grunt-cli webpack webpack-dev-server js-beautify jshint jscs standard standard-format eslint eslint-watch babel-cli node-gyp http-server typescript jq-cli-wrapper json-server commitizen jsdoc elm elm-test elm-oracle prettier tern yarn create-react-app nodemon ocaml-language-server https://github.com/reasonml/reason-cli/archive/3.0.1-bin-darwin.tar.gz elm-format git+https://github.com/ramitos/jsctags.git
 
