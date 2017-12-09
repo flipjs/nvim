@@ -143,7 +143,7 @@ if has("nvim")
   tnoremap <C-k> <C-\><C-N><C-w>k
   tnoremap <C-l> <C-\><C-N><C-w>l
   " prefer Neovim terminal insert mode to normal mode.
-  autocmd BufEnter term://* startinsert
+  " autocmd BufEnter term://* startinsert
 endif
 
 syntax enable
