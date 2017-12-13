@@ -6,4 +6,3 @@ inoremap <buffer> ,,T <-<space>
 inoremap <buffer> ,,p \|><space>
 inoremap <buffer> ,,< <%=<space>
 inoremap <buffer> ,,> %>
-
