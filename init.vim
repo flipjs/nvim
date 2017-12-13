@@ -22,7 +22,6 @@ filetype off
 call plug#begin('~/.local/share/nvim/plugged')
   " Comment out vim-sensible here, may not be needed in neovim-0.2.0
   Plug 'altercation/vim-colors-solarized'
-  Plug 'lifepillar/vim-solarized8'
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-surround'
@@ -150,8 +149,7 @@ endif
 
 syntax enable
 set background=dark
-colorscheme solarized8_dark_high
-" colorscheme solarized
+colorscheme solarized
 
 " overwrite current theme's git diff colors
 hi DiffAdd guifg=NONE ctermfg=NONE guibg=#464632 ctermbg=238 gui=NONE cterm=NONE
