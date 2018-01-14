@@ -92,6 +92,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'justinmk/vim-sneak'
   Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
   Plug 'reasonml-editor/vim-reason-plus'
+  Plug 'tomlion/vim-solidity'
 call plug#end()
 
 " update vim-plug

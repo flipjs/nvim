@@ -1,12 +1,12 @@
 Install the following helpers GLOBALLY (google search on how-to):
 
-
 * ACK
-    OSX:
+    OSX
       brew install ack
-    Linux:
+    Linux
       apt-get update
       apt-get install ack-grep
+
 * AG
     OSX
       brew install the_silver_searcher
@@ -14,17 +14,13 @@ Install the following helpers GLOBALLY (google search on how-to):
       apt-get update
       apt-get install silversearcher-ag
 
+* RIPGREP
+    OSX
+      brew install ripgrep
+
 * CTAGS
-- Install universal ctags
-  - steps:
-      ```
-      git clone https://github.com/universal-ctags/ctags.git
-      cd ctags
-      ./autogen.sh
-      ./configure
-      make
-      sudo make install
-      ```
+    OSX
+      brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 * JSCTAGS
     npm install -g git+https://github.com/ramitos/jsctags.git
@@ -39,6 +35,21 @@ Install the following helpers GLOBALLY (google search on how-to):
     npm install -g https://github.com/reasonml/reason-cli/archive/3.0.1-bin-darwin.tar.gz
   - Elm
     npm install -g elm-format
+  - Solidity
+    npm install -g solium
+
+* NEOVIM
+    brew install python3
+    pip2 install --user neovim
+    pip3 install --user neovim
+    npm install -g neovim
+    gem install neovim (might need sudo)
+
+* TMUX
+    Install these dependencies:
+      1. brew install reattach-to-user-namespace
+      2. gem install tmuxinator
+      3. vim: christoomey/vim-tmux-navigator
 
 NPM Packages: (npm install -g)
 
@@ -74,7 +85,8 @@ NPM Packages: (npm install -g)
 * ocaml-language-server
 * https://github.com/reasonml/reason-cli/archive/3.0.1-bin-darwin.tar.gz
 * elm-format
+* solium
 
 COPY PASTE THIS:
-npm install -g bower gulp grunt-cli webpack webpack-dev-server js-beautify jshint jscs standard standard-format eslint eslint-watch babel-cli node-gyp http-server typescript jq-cli-wrapper json-server commitizen jsdoc elm elm-test elm-oracle prettier tern yarn create-react-app nodemon ocaml-language-server https://github.com/reasonml/reason-cli/archive/3.0.1-bin-darwin.tar.gz elm-format git+https://github.com/ramitos/jsctags.git
+npm install -g bower gulp grunt-cli webpack webpack-dev-server js-beautify jshint jscs standard standard-format eslint eslint-watch babel-cli node-gyp http-server typescript jq-cli-wrapper json-server commitizen jsdoc elm elm-test elm-oracle prettier tern yarn create-react-app nodemon ocaml-language-server https://github.com/reasonml/reason-cli/archive/3.0.1-bin-darwin.tar.gz elm-format git+https://github.com/ramitos/jsctags.git solium
 
