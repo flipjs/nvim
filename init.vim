@@ -93,8 +93,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
   Plug 'reasonml-editor/vim-reason-plus'
   Plug 'tomlion/vim-solidity'
-  Plug 'joshhartigan/vim-reddit'
   Plug 'ryanss/vim-hackernews'
+  Plug 'DougBeney/vim-reddit'
 call plug#end()
 
 " update vim-plug
