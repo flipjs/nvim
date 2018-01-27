@@ -18,6 +18,10 @@ Install the following helpers GLOBALLY (google search on how-to):
     OSX
       brew install ripgrep
 
+* MDV
+    OSX
+      brew install mdv
+
 * CTAGS
     OSX
       brew install --HEAD universal-ctags/universal-ctags/universal-ctags
