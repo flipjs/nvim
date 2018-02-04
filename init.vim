@@ -87,7 +87,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rizzatti/dash.vim'
   Plug 'keith/swift.vim'
   Plug 'wellle/targets.vim'
-  Plug 'justinmk/vim-sneak'
+  Plug 'rhysd/clever-f.vim'
   Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
   Plug 'reasonml-editor/vim-reason-plus'
   Plug 'tomlion/vim-solidity'
@@ -193,6 +193,10 @@ set nowritebackup
 set noswapfile
 
 " ------------------------- Plugin Settings ------------------------- "
+
+""" Clever-f
+let g:clever_f_smart_case = 1
+let g:clever_f_fix_key_direction = 1
 
 """ LanguageClient
 " required for operations modifying multiple buffers like rename.
@@ -524,15 +528,6 @@ if exists('$ITERM_PROFILE')
 end
 
 " -------------------- Plugin-dependent Mapping --------------------- "
-
-""" Vim-Sneak
-map s <Plug>Sneak_s
-map S <Plug>Sneak_S
-map f <Plug>Sneak_f
-map F <Plug>Sneak_F
-map t <Plug>Sneak_t
-map T <Plug>Sneak_T
-hi! link Sneak Normal
 
 """ Limelight
 command! LL Limelight!!
