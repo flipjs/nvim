@@ -20,8 +20,8 @@ filetype off
 "------------- Vim-Plug Configuration - must be on top ------------- "
 
 call plug#begin('~/.local/share/nvim/plugged')
+  Plug 'cocopon/iceberg.vim'
   " Comment out vim-sensible here, may not be needed in neovim-0.2.0
-  Plug 'altercation/vim-colors-solarized'
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-surround'
@@ -110,26 +110,14 @@ let mapleader = "\<space>"
 
 " ---------------------- Custom Configuration ----------------------- "
 
-" Ensure vim-sensible is installed for set defaults
-
 " set vim to use 256 colors
 set t_Co=256
 
-" From https://github.com/rakr/vim-one
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
-if (empty($TMUX))
-  if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+if (has("nvim"))
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-  if (has("termguicolors"))
-    set termguicolors
-  endif
+endif
+if (has("termguicolors"))
+  set termguicolors
 endif
 
 " Enable substitution previews with inccommand
@@ -152,7 +140,7 @@ endif
 
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme iceberg
 
 " overwrite current theme's git diff colors
 hi DiffAdd guifg=NONE ctermfg=NONE guibg=#464632 ctermbg=238 gui=NONE cterm=NONE
@@ -281,7 +269,6 @@ set completeopt-=preview
 
 """ Vim-Airline
 set laststatus=2
-let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -396,10 +383,6 @@ function! ProseMode()
   setlocal spell noci nosi noai nolist noshowmode noshowcmd
   setlocal complete+=s
   setlocal bg=light
-  if !has('gui_running')
-    let g:solarized_termcolors=256
-  endif
-  colors solarized
 endfunction
 
 function! CloseAllBuffersButCurrent()

@@ -55,6 +55,10 @@ Install the following helpers GLOBALLY (google search on how-to):
       2. gem install tmuxinator
       3. vim: christoomey/vim-tmux-navigator
 
+* ITERM
+    Install Iceberg color theme
+      - see dotfiles for file: iceberg.itermcolors
+
 NPM Packages: (npm install -g)
 
 * git+https://github.com/ramitos/jsctags.git
