@@ -21,8 +21,6 @@ filetype off
 
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'cocopon/iceberg.vim'
-  " Comment out vim-sensible here, may not be needed in neovim-0.2.0
-  Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
