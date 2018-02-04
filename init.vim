@@ -435,6 +435,11 @@ augroup Swift
   autocmd FileType swift nnoremap <buffer> <leader>rr :!clear && swift %<cr>
 augroup END
 
+augroup Sass
+  autocmd!
+  autocmd FileType scss nnoremap <buffer> <leader>rr :!clear && sass % -t expanded<cr>
+augroup END
+
 augroup JavaScript
   autocmd!
   autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
