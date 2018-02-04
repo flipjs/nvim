@@ -72,7 +72,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'elmcast/elm-vim'
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'heavenshell/vim-jsdoc'
-  Plug 'kien/rainbow_parentheses.vim'
+  Plug 'junegunn/rainbow_parentheses.vim'
   Plug 'othree/html5.vim'
   Plug 'hail2u/vim-css3-syntax'
   Plug 'HerringtonDarkholme/yats.vim'
@@ -353,26 +353,9 @@ nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-g> :TmuxNavigatePrevious<cr>
 
-""" Rainbow Parentheses
-let g:rbpt_colorpairs = [
-  \ ['brown',       'RoyalBlue3'],
-  \ ['darkgreen',   'firebrick3'],
-  \ ['Darkblue',    'SeaGreen3'],
-  \ ['darkcyan',    'RoyalBlue3'],
-  \ ['darkred',     'SeaGreen3'],
-  \ ['darkmagenta', 'DarkOrchid3'],
-  \ ['brown',       'firebrick3'],
-  \ ['darkmagenta', 'DarkOrchid3'],
-  \ ['Darkblue',    'firebrick3'],
-  \ ['darkgreen',   'RoyalBlue3'],
-  \ ['darkcyan',    'SeaGreen3'],
-  \ ['darkred',     'DarkOrchid3'],
-  \ ['red',         'firebrick3'],
-\ ]
-au FileType javascript,javascript.jsx,scss,clojure RainbowParenthesesLoadRound
-au FileType javascript,javascript.jsx,scss,clojure RainbowParenthesesLoadBraces
-au FileType javascript,javascript.jsx,scss,clojure RainbowParenthesesLoadSquare
-au FileType javascript,javascript.jsx,scss,clojure RainbowParenthesesActivate
+""" Rainbow-parentheses
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 
 " ---------------------------- Functions ---------------------------- "
 
@@ -503,6 +486,11 @@ augroup END
 augroup Handlebars
   autocmd!
   autocmd BufNewFile,BufRead *.hbs set filetype=html.handlebars
+augroup END
+
+augroup RainbowParentheses
+  autocmd!
+  autocmd FileType javascript,javascript.jsx,scss RainbowParentheses
 augroup END
 
 " -------------------------- Abbreviations -------------------------- "
