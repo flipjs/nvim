@@ -363,13 +363,6 @@ let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 
 " ---------------------------- Functions ---------------------------- "
 
-function! ProseMode()
-  call goyo#execute(0, [])
-  setlocal spell noci nosi noai nolist noshowmode noshowcmd
-  setlocal complete+=s
-  setlocal bg=light
-endfunction
-
 function! CloseAllBuffersButCurrent()
     let curr = bufnr("%")
     let last = bufnr("$")
@@ -586,9 +579,6 @@ command! Only call CloseAllBuffersButCurrent()
 
 " delete empty buffers
 nnoremap <leader>de :call DeleteEmptyBuffers()<cr>
-
-" non-distraction edit text mode
-command! ProseMode call ProseMode()
 
 " -------------------------- Alt Mapping ---------------------------- "
 
