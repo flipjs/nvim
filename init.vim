@@ -192,6 +192,11 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" intelligently find files with gf/c-] commands
+set path=.,src
+set suffixesadd=.js,.jsx
+set includeexpr=LoadMainNodeModule(v:fname)
+
 " ------------------------- Plugin Settings ------------------------- "
 
 """ Clever-f
@@ -362,6 +367,17 @@ let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 
 " ---------------------------- Functions ---------------------------- "
+
+function! LoadMainNodeModule(fname)
+    let nodeModules = "./node_modules/"
+    let packageJsonPath = nodeModules . a:fname . "/package.json"
+
+    if filereadable(packageJsonPath)
+        return nodeModules . a:fname . "/" . json_decode(join(readfile(packageJsonPath))).main
+    else
+        return nodeModules . a:fname
+    endif
+endfunction
 
 function! CloseAllBuffersButCurrent()
     let curr = bufnr("%")
