@@ -435,6 +435,7 @@ augroup ReasonML
   autocmd Filetype reason nnoremap <buffer> gd :call LanguageClient_textDocument_definition()<cr>
   autocmd Filetype reason nnoremap <buffer> <c-u> :call LanguageClient_textDocument_formatting()<cr>
   autocmd Filetype reason nnoremap <buffer> <cr> :call LanguageClient_textDocument_hover()<cr>
+  autocmd FileType reason nnoremap <buffer> <leader>rr :!clear && node %:r.bs.js<cr>
 augroup END
 
 augroup Elm
