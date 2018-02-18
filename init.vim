@@ -93,6 +93,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tomlion/vim-solidity'
   Plug 'ryanss/vim-hackernews'
   Plug 'DougBeney/vim-reddit'
+  Plug 'benmills/vimux'
 call plug#end()
 
 " update vim-plug
@@ -366,6 +367,13 @@ nnoremap <silent> <c-g> :TmuxNavigatePrevious<cr>
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 
+" ------------------------- Custom Commands ------------------------- "
+
+" Vimux
+command! VP call VimuxPromptCommand()
+command! VL call VimuxRunLastCommand()
+command! VI call VimuxInspectRunner()
+
 " ---------------------------- Functions ---------------------------- "
 
 function! LoadMainNodeModule(fname)
@@ -436,6 +444,7 @@ augroup ReasonML
   autocmd Filetype reason nnoremap <buffer> <c-u> :call LanguageClient_textDocument_formatting()<cr>
   autocmd Filetype reason nnoremap <buffer> <cr> :call LanguageClient_textDocument_hover()<cr>
   autocmd FileType reason nnoremap <buffer> <leader>rr :!clear && node %:r.bs.js<cr>
+  autocmd FileType reason command! -buffer RR call VimuxRunCommand("clear; node " . expand("%:p:r") . ".bs.js")
 augroup END
 
 augroup Elm
@@ -461,6 +470,10 @@ augroup JavaScript
   autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rt :!clear && ava %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
+  autocmd FileType javascript command! -buffer RR call VimuxRunCommand("clear; node " . expand("%:p"))
+  autocmd FileType javascript command! -buffer NRT call VimuxRunCommand("npm run test")
+  autocmd FileType javascript command! -buffer NRTU call VimuxRunCommand("npm run test::unit")
+  autocmd FileType javascript command! -buffer NRTI call VimuxRunCommand("npm run test::integration")
 augroup END
 
 augroup TypeScript
