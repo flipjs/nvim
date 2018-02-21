@@ -373,6 +373,7 @@ let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 command! VP call VimuxPromptCommand()
 command! VL call VimuxRunLastCommand()
 command! VI call VimuxInspectRunner()
+command! VZ call VimuxZoomRunner()
 
 " ---------------------------- Functions ---------------------------- "
 
@@ -474,6 +475,8 @@ augroup JavaScript
   autocmd FileType javascript command! -buffer NRT call VimuxRunCommand("npm run test")
   autocmd FileType javascript command! -buffer NRTU call VimuxRunCommand("npm run test::unit")
   autocmd FileType javascript command! -buffer NRTI call VimuxRunCommand("npm run test::integration")
+  autocmd FileType javascript command! -buffer NRQA call VimuxRunCommand("npm run qa")
+  autocmd FileType javascript command! -buffer NRQALP call VimuxRunCommand("npm run qa::lint::print")
 augroup END
 
 augroup TypeScript
