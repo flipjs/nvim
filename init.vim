@@ -94,10 +94,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'ryanss/vim-hackernews'
   Plug 'DougBeney/vim-reddit'
   Plug 'benmills/vimux'
+  Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
-
-" update vim-plug
-command! PU PlugUpdate | PlugUpgrade
 
 syntax on
 filetype plugin indent on
@@ -199,6 +197,9 @@ set suffixesadd=.js,.jsx
 set includeexpr=LoadMainNodeModule(v:fname)
 
 " ------------------------- Plugin Settings ------------------------- "
+
+""" Indent-Guides
+let g:indent_guides_enable_on_vim_startup = 1
 
 """ Clever-f
 let g:clever_f_smart_case = 1
@@ -368,6 +369,11 @@ let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 
 " ------------------------- Custom Commands ------------------------- "
+
+" Vim-plug
+command! PU PlugUpdate | PlugUpgrade
+command! PI PlugInstall
+command! PC PlugClean
 
 " Vimux
 command! VP call VimuxPromptCommand()
