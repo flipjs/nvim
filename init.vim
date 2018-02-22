@@ -741,6 +741,9 @@ nnoremap <c-c> m`A;<esc>``
 inoremap <c-c> <esc>m`A;<esc>``
 " <c-d> to repeat last command
 nmap <c-d> .
+" format code
+nnoremap g= gg=G``
+nnoremap gG mmgggqG`m
 
 " ----------------------------- Macros ------------------------------ "
 
