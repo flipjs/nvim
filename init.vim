@@ -744,6 +744,15 @@ nmap <c-d> .
 " format code
 nnoremap g= gg=G``
 nnoremap gG mmgggqG`m
+" insert new line with count
+nnoremap <CR> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
+" make c/d/y action on the current line
+nnoremap cl c$
+nnoremap ch c0
+nnoremap yl y$
+nnoremap yh y0
+nnoremap dl d$
+nnoremap dh d0
 
 " ----------------------------- Macros ------------------------------ "
 
