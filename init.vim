@@ -203,7 +203,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 """ Clever-f
 let g:clever_f_smart_case = 1
-let g:clever_f_fix_key_direction = 1
+" let g:clever_f_fix_key_direction = 1
 
 """ LanguageClient
 " required for operations modifying multiple buffers like rename.
