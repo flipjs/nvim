@@ -380,6 +380,8 @@ command! VP call VimuxPromptCommand()
 command! VL call VimuxRunLastCommand()
 command! VI call VimuxInspectRunner()
 command! VZ call VimuxZoomRunner()
+command! VS call VimuxInterruptRunner()
+command! VC call VimuxCloseRunner()
 
 " ---------------------------- Functions ---------------------------- "
 
@@ -748,11 +750,16 @@ nnoremap gG mmgggqG`m
 nnoremap <CR> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 " make c/d/y action on the current line
 nnoremap cl c$
-nnoremap ch c0
+nnoremap ch c^
 nnoremap yl y$
-nnoremap yh y0
+nnoremap yh y^
 nnoremap dl d$
-nnoremap dh d0
+nnoremap dh d^
+" map mark to backspace
+nnoremap <bs> `
+" make { and } jump to first and last line of paragraph
+nnoremap <expr> { len(getline(line('.')-1)) > 0 ? '{+' : '{-'
+nnoremap <expr> } len(getline(line('.')+1)) > 0 ? '}-' : '}+'
 
 " ----------------------------- Macros ------------------------------ "
 
