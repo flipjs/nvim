@@ -110,6 +110,7 @@ let mapleader = "\<space>"
 " set vim to use 256 colors
 set t_Co=256
 
+" support for 24-bit/true color
 if (has("nvim"))
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
