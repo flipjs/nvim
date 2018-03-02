@@ -4,14 +4,6 @@
 " Author: Felipe Apostol <flipjs.io@gmail.com>
 " *********************************************************************
 
-" NEW STUFF TO TRY:
-" <c-x><c-l>
-" <c-x><c-f>
-" q/
-" q:
-" -17,-11t.
-" +18,+22t.
-
 " NOTE ON MAPPING: Key mappings that can't be used:
 " <c-a> = being used by Tmux
 
@@ -759,52 +751,15 @@ nnoremap <bs> `
 nnoremap <expr> { len(getline(line('.')-1)) > 0 ? '{+' : '{-'
 nnoremap <expr> } len(getline(line('.')+1)) > 0 ? '}-' : '}+'
 
-" ----------------------------- Macros ------------------------------ "
-
-" surround word with a single space inside a bracket
-" this macro depends on easyclip and autopairs plugins
-let @s="miwi p"
-
 " ------------------------------ Notes ------------------------------ "
 
-" vim tips
-" http://zzapper.co.uk/vimtips.html
-
-" :%s/\r//g                   : Delete DOS returns ^M
-" Is your Text File jumbled onto one line? use following
-" :%s/\r/\r/g                 : Turn DOS returns ^M into real returns
-
-" find and replace
-" http://jezenthomas.com/how-i-find-and-replace-in-vim/
-
-" :args `ack -l '\bClass\b' --ignore-dir=compiled`
-" :argdo %s/\<Class\>/MooTools.Class/gc | update
-
-" profiling vim performance
-" :profile start profile.log
-" :profile func *
-" :profile file *
-" " At this point do slow actions
-" :profile pause
-" :noautocmd qall!
-
-" sample code how to use repeatable mapping
-" nnoremap <silent> <Plug>TransposeLines ddp
-" \:call repeat#set("\<Plug>TransposeLines")<cr>
-" nmap cp <Plug>TransposeLines
-
-" To do a rectangle selection of text from (1,1) to (2,2) in tmux:
-" Go to the copy mode: C-a [
-" Move the middle of a line
-" Press C-v
-" Press Space
-" Move the selection with jkhl
-" Once you are happy with your selection press Enter (or y if you have the binding in your conf file).
-" You can paste the latest copy buffer by: C-a ]
-" Notice that pressing space is necessary for rectangle selection.
-" To select lines like you would normally do, go the copy mode, and press v, select with jkhl keys and press y.
-
-" CTRLP - to rescan files, press F5 while in ctrl-p mode
+" New stuff to try
+" <c-x><c-l>
+" <c-x><c-f>
+" q/
+" q:
+" -17,-11t.
+" +18,+22t.
 
 " When using without your .vimrc (e.g. using other PC), use this quick setup
 " set nocompatible
