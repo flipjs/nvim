@@ -95,6 +95,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'DougBeney/vim-reddit'
   Plug 'benmills/vimux'
   Plug 'nathanaelkane/vim-indent-guides'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
 
 syntax on
@@ -139,6 +141,7 @@ endif
 syntax enable
 set background=dark
 colorscheme iceberg
+set guifont=FuraCode\ Nerd\ Font:h16
 
 " overwrite current theme's git diff colors
 hi DiffAdd guifg=NONE ctermfg=NONE guibg=#464632 ctermbg=238 gui=NONE cterm=NONE
@@ -148,7 +151,7 @@ hi DiffText guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=reverse cterm=re
 
 " no error bell, no visual bell
 set noeb vb t_vb=
-set encoding=utf-8
+set encoding=utf8
 set nomodeline
 
 " may be overridden in .editorconfig
