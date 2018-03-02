@@ -126,8 +126,6 @@ if has("nvim")
   tnoremap <C-j> <C-\><C-N><C-w>j
   tnoremap <C-k> <C-\><C-N><C-w>k
   tnoremap <C-l> <C-\><C-N><C-w>l
-  " prefer Neovim terminal insert mode to normal mode.
-  " autocmd BufEnter term://* startinsert
 endif
 
 syntax enable
@@ -163,12 +161,9 @@ set wrap
 set linebreak
 set breakindent
 set showbreak=»\
-" set textwidth=79
 set formatoptions=qrn1
-" set nolist
-" set listchars=tab:▸\ ,eol:¬
 set list lcs=trail:·,tab:▸·
-" Syntax coloring lines that are too long just slows down the world
+" syntax coloring lines that are too long just slows down the world
 set synmaxcol=120
 
 set splitbelow
@@ -193,22 +188,13 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 """ Clever-f
 let g:clever_f_smart_case = 1
-" let g:clever_f_fix_key_direction = 1
 
 """ LanguageClient
-" required for operations modifying multiple buffers like rename.
-set hidden
-" server commands
 let g:LanguageClient_serverCommands = {
     \ 'reason': ['ocaml-language-server', '--stdio'],
     \ 'ocaml': ['ocaml-language-server', '--stdio'],
     \ }
-" automatically start language servers.
 let g:LanguageClient_autoStart = 1
-
-""" Goyo & Limelight
-" autocmd! User GoyoEnter Limelight
-" autocmd! User GoyoLeave Limelight!
 
 """ Limelight
 " number of preceding/following paragraphs to include (default: 0)
@@ -261,10 +247,6 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-" close the preview window when you're not using it
-" let g:SuperTabClosePreviewOnPopupClose = 1
-" or just disable the preview entirely
-set completeopt-=preview
 
 """ Vim-Airline
 set laststatus=2
@@ -275,8 +257,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = 'X'
 let g:ale_sign_warning = '!'
-" highlight ALEErrorSign guifg=#fb4934 guibg=#3c3836
-" highlight ALEWarningSign guifg=#fe8019 guibg=#3c3836
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
 \ }
@@ -293,7 +273,6 @@ endfunction
 set statusline=%{LinterStatus()}
 
 """ Git-Gutter
-" if Gdiff shows an error, try increasing the time or just disable it
 set updatetime=500
 
 """ Neoformat
@@ -314,10 +293,6 @@ let g:elm_format_fail_silently = 0
 """ Greplace
 set grepprg=git\ grep
 let g:grep_cmd_opts = '--line-number'
-" Ag here doesn't respect .agignore
-" Commented out and use config above (git\ grep)
-" set grepprg=ag
-" let g:grep_cmd_opts = '--line-numbers --noheading'
 
 """ Mustache-Handlebars
 let g:mustache_abbreviations = 1
@@ -433,10 +408,6 @@ endfunction
 
 " -------------------------- Autocommands --------------------------- "
 
-" augroup Limelight
-"   autocmd BufEnter * Limelight
-" augroup END
-
 augroup ReasonML
   autocmd!
   autocmd Filetype reason nnoremap <buffer> gd :call LanguageClient_textDocument_definition()<cr>
@@ -480,7 +451,6 @@ augroup END
 augroup TypeScript
   autocmd!
   autocmd FileType typescript nnoremap <buffer> <leader>rr :!clear && tsc %<cr>
-  " insert empty line between brackets on <enter> and explicit <tab>
   autocmd FileType typescript inoremap <buffer> {<cr> {<cr>}<c-o>O<tab>
   autocmd FileType typescript inoremap <buffer> [<cr> [<cr>]<c-o>O<tab>
   autocmd FileType typescript inoremap <buffer> (<cr> (<cr>)<c-o>O<tab>
@@ -567,9 +537,6 @@ vnoremap <leader>* :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:call ag#Ag('gr
 """ Easyclip
 " easyclip shadows m, rebind m to gm
 nnoremap gm m
-" <cmd-v> seems to be ok in neovim, disable <c-v> mapping below
-" imap <c-v> <plug>EasyClipInsertModePaste
-" cmap <c-v> <plug>EasyClipCommandModePaste
 
 """ Nerdtree
 nnoremap <leader>nt :NERDTreeToggle<cr>
@@ -648,8 +615,6 @@ noremap <c-q><c-q> :confirm qall<CR>
 nnoremap <leader>dd :bd<cr>
 " save current buffer
 nnoremap <leader>ww :w<cr>
-" save current buffer and syntax-check at the same time
-" nnoremap <leader>ws :w <bar> call SyntaxCheck()<cr>
 " close saved buffer(s)
 nnoremap <leader>qq :q<cr>
 " apply macros with Q
@@ -684,16 +649,6 @@ nnoremap <leader>di :v/<c-r><c-w>/d<cr>gg
 nnoremap <leader>dy :v/<c-r>"/d<cr>gg
 " select all text
 nnoremap <leader>aa ggVG
-" show error window - syntastic
-" nnoremap <leader>lo :Errors<cr>
-" close error window
-nnoremap <leader>lc :lclose<cr>
-" run syntax checker
-" nnoremap <leader>ls :call SyntaxCheck()<cr>
-" toggle gutter display
-" nnoremap <leader>lt :SyntasticToggleMode<cr>
-" show current syntax checker
-" nnoremap <leader>lv :echo b:syntastic_checkers<cr>
 " switch buffers
 nnoremap <silent> <leader>bn :bnext<cr>
 nnoremap <silent> <leader>bv :bprev<cr>
