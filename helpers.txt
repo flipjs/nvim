@@ -33,6 +33,10 @@ Install the following helpers GLOBALLY (google search on how-to):
     git clone https://github.com/powerline/fonts.git
     run ./install.sh
 
+* NERD FONT
+    https://github.com/ryanoasis/nerd-fonts
+    easy install - copy a font that is patched already
+
 * LANGUAGE SUPPORT
   - ReasonML
     npm install -g ocaml-language-server
