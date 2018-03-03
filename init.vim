@@ -90,6 +90,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'ryanoasis/vim-devicons'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   Plug 'junegunn/vim-peekaboo'
+  Plug 'junegunn/gv.vim'
 call plug#end()
 
 syntax on
