@@ -338,6 +338,15 @@ let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 
 " ------------------------- Custom Commands ------------------------- "
 
+" Vim-gitgutter
+command! GG GitGutter
+command! GGA GitGutterAll
+command! GGT GitGutterToggle
+command! GGS GitGutterStageHunk
+command! GGN GitGutterNextHunk
+command! GGP GitGutterPrevHunk
+command! GGPR GitGutterPreviewHunk
+
 " Vim-indent-guides
 command! VIG IndentGuidesToggle
 
