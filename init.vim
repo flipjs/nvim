@@ -18,6 +18,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-abolish'
   Plug 'tpope/vim-fugitive'
+  Plug 'jreybert/vimagit'
+  Plug 'junegunn/gv.vim'
   Plug 'airblade/vim-gitgutter'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'ervandew/supertab'
@@ -90,7 +92,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'ryanoasis/vim-devicons'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   Plug 'junegunn/vim-peekaboo'
-  Plug 'junegunn/gv.vim'
 call plug#end()
 
 syntax on
