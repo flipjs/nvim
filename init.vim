@@ -337,18 +337,21 @@ let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 
 " ------------------------- Custom Commands ------------------------- "
 
+" Vim-indent-guides
+command! VIG IndentGuidesToggle
+
 " Vim-plug
 command! PU PlugUpdate | PlugUpgrade
 command! PI PlugInstall
 command! PC PlugClean
 
 " Vimux
-command! VP call VimuxPromptCommand()
-command! VL call VimuxRunLastCommand()
-command! VI call VimuxInspectRunner()
-command! VZ call VimuxZoomRunner()
-command! VS call VimuxInterruptRunner()
-command! VC call VimuxCloseRunner()
+command! VP VimuxPromptCommand
+command! VL VimuxRunLastCommand
+command! VI VimuxInspectRunner
+command! VZ VimuxZoomRunner
+command! VS VimuxInterruptRunner
+command! VC VimuxCloseRunner
 
 " ---------------------------- Functions ---------------------------- "
 
