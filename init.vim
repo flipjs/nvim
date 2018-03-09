@@ -91,7 +91,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'ryanoasis/vim-devicons'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-  Plug 'junegunn/vim-peekaboo'
 call plug#end()
 
 syntax on
