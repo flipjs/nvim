@@ -93,6 +93,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'machakann/vim-highlightedyank'
+  Plug 'vim-scripts/ReplaceWithRegister'
 call plug#end()
 
 syntax on
