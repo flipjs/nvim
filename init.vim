@@ -40,7 +40,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'pangloss/vim-javascript'
   Plug 'crusoexia/vim-javascript-lib'
   Plug 'mxw/vim-jsx'
-  Plug 'scrooloose/nerdtree'
   Plug 'jiangmiao/auto-pairs'
   Plug 'rking/ag.vim'
   Plug 'mileszs/ack.vim'
@@ -90,7 +89,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'benmills/vimux'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'ryanoasis/vim-devicons'
+  Plug 'scrooloose/nerdtree'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
@@ -187,6 +188,10 @@ set suffixesadd=.js,.jsx
 set includeexpr=LoadMainNodeModule(v:fname)
 
 " ------------------------- Plugin Settings ------------------------- "
+
+""" Nerdtree-git-plugin
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
 
 """ Indent-Guides
 let g:indent_guides_enable_on_vim_startup = 1
