@@ -194,6 +194,9 @@ set includeexpr=LoadMainNodeModule(v:fname)
 
 " ------------------------- Plugin Settings ------------------------- "
 
+""" HighlightedYank
+let g:highlightedyank_highlight_duration = 500
+
 """ Nerdtree-git-plugin
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
@@ -549,6 +552,10 @@ if exists('$ITERM_PROFILE')
 end
 
 " -------------------- Plugin-dependent Mapping --------------------- "
+
+""" Textobj-quotes
+xmap q iq
+omap q iq
 
 """ Limelight
 command! LL Limelight!!
