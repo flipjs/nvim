@@ -101,6 +101,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'qpkorr/vim-bufkill'
   Plug 'francoiscabrol/ranger.vim'
   Plug 'rbgrouleff/bclose.vim'
+  Plug 'mhinz/vim-grepper'
 call plug#end()
 
 syntax on
@@ -570,6 +571,14 @@ if exists('$ITERM_PROFILE')
 end
 
 " -------------------- Plugin-dependent Mapping --------------------- "
+
+""" Grepper
+nnoremap <leader>gg :Grepper -tool rg<cr>
+nnoremap <leader>GG :Grepper -tool rg -buffers<cr>
+nnoremap <leader>GT :Grepper -tool git<cr>
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
+command! Todo :Grepper -noprompt -tool git -grepprg git grep -nIi '\(TODO\|FIXME\)'
 
 """ Airline
 nmap <leader>1 <Plug>AirlineSelectTab1
