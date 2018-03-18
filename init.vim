@@ -99,6 +99,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'machakann/vim-highlightedyank'
   Plug 'vim-scripts/ReplaceWithRegister'
   Plug 'qpkorr/vim-bufkill'
+  Plug 'francoiscabrol/ranger.vim'
+  Plug 'rbgrouleff/bclose.vim'
 call plug#end()
 
 syntax on
@@ -587,6 +589,10 @@ nnoremap gm m
 
 """ Nerdtree
 nnoremap <leader>nt :NERDTreeToggle<cr>
+
+""" Ranger
+let g:ranger_map_keys = 0
+nnoremap <leader>rg :Ranger<cr>
 
 """ CtrlP
 nnoremap <leader>ff :Files<cr>
