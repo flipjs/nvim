@@ -665,7 +665,7 @@ inoremap <c-s> <esc>:update<cr><esc>
 " ctrl-q to safely quit session
 noremap <c-q><c-q> :confirm qall<CR>
 " close current buffer
-nnoremap <leader>dd :bd<cr>
+nnoremap <leader>dd :BD<cr>
 " save current buffer
 nnoremap <leader>ww :w<cr>
 " close saved buffer(s)
