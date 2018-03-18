@@ -167,6 +167,7 @@ set lazyredraw
 
 set ignorecase
 set smartcase
+set infercase
 set gdefault
 
 set wrap
@@ -187,6 +188,9 @@ set clipboard=unnamed
 set nobackup
 set nowritebackup
 set noswapfile
+
+set wildmenu
+set wildmode=full
 
 " intelligently find files with gf/c-] commands
 set path=.,src
@@ -676,7 +680,7 @@ nnoremap <leader>ww :w<cr>
 nnoremap <leader>qq :q<cr>
 " apply macros with Q
 nnoremap Q @q
-vnoremap Q :norm @q<cr>
+xnoremap Q :'<,'>:normal @q<cr>
 " remap ^ $
 nnoremap H ^
 nnoremap L $
@@ -763,6 +767,9 @@ nnoremap <a-up>    :resize +5<cr>
 nnoremap <a-down>  :resize -5<cr>
 nnoremap <a-left>  :vertical resize -5<CR>
 nnoremap <a-right> :vertical resize +5<CR>
+"make dot work over visual line selections
+xnoremap . :norm.<CR>
+xnoremap <c-d> :norm.<CR>
 
 " ------------------------------ Notes ------------------------------ "
 
