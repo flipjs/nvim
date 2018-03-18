@@ -98,6 +98,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'machakann/vim-highlightedyank'
   Plug 'vim-scripts/ReplaceWithRegister'
+  Plug 'qpkorr/vim-bufkill'
 call plug#end()
 
 syntax on
