@@ -41,8 +41,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'crusoexia/vim-javascript-lib'
   Plug 'mxw/vim-jsx'
   Plug 'jiangmiao/auto-pairs'
-  Plug 'rking/ag.vim'
-  Plug 'mileszs/ack.vim'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'sjl/gundo.vim'
   Plug 'junegunn/vim-easy-align'
@@ -50,7 +48,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'tommcdo/vim-exchange'
   Plug 'svermeulen/vim-easyclip'
-  Plug 'bronson/vim-visual-star-search'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'skwp/greplace.vim'
   Plug 'tomtom/tcomment_vim'
@@ -328,12 +325,6 @@ let g:EasyClipAutoFormat = 0
 " disable this feature, see settings at the top (search modern editors)
 let g:EasyClipAlwaysMoveCursorToEndOfPaste = 0
 
-""" Ack.vim
-let g:ackprg = "ag --vimgrep"
-
-""" Ag.vim
-set runtimepath^=~/.local/share/nvim/plugged/ag
-
 """ CtrlP
 let g:ctrlp_map = '<c-\>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -578,7 +569,7 @@ nnoremap <leader>GG :Grepper -tool rg -buffers<cr>
 nnoremap <leader>GT :Grepper -tool git<cr>
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
-nnoremap <leader>* :Grepper -tool ag -cword -noprompt<cr>
+nnoremap <leader>* :Grepper -tool rg -cword -noprompt<cr>
 command! Todo :Grepper -noprompt -tool git -grepprg git grep -nIi '\(TODO\|FIXME\)'
 
 """ Airline
@@ -602,9 +593,6 @@ command! LL Limelight!!
 """ FZF
 " linewise completion for the win!
 imap <c-x><c-l> <plug>(fzf-complete-line)
-
-""" Visual-star-search
-vnoremap <leader>* :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:call ag#Ag('grep', '--literal ' . shellescape(@/))<cr>
 
 """ Easyclip
 " easyclip shadows m, rebind m to gm
@@ -653,13 +641,6 @@ command! Only call CloseAllBuffersButCurrent()
 
 " delete empty buffers
 nnoremap <leader>de :call DeleteEmptyBuffers()<cr>
-
-" -------------------------- Alt Mapping ---------------------------- "
-
-nmap <a-q> :q<cr>
-nmap <a-x> :cclose<cr>
-nmap <a-m> :Ag! "\b<cword>\b"<cr>
-" nmap <esc>k :Ag! "\b<cword>\b"<cr>
 
 " ------------------------- Custom Mapping -------------------------- "
 
