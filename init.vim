@@ -754,6 +754,11 @@ nnoremap dh d^
 " make { and } jump to first and last line of paragraph
 nnoremap <expr> { len(getline(line('.')-1)) > 0 ? '{+' : '{-'
 nnoremap <expr> } len(getline(line('.')+1)) > 0 ? '}-' : '}+'
+" use arrow keys to resize splits
+nnoremap <Up>    :resize +5<CR>
+nnoremap <Down>  :resize -5<CR>
+nnoremap <Left>  :vertical resize -5<CR>
+nnoremap <Right> :vertical resize +5<CR>
 
 " ------------------------------ Notes ------------------------------ "
 
