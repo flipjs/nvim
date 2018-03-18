@@ -681,9 +681,9 @@ vnoremap Q :norm @q<cr>
 nnoremap H ^
 nnoremap L $
 vnoremap L g_
-" move vertically by visual line
-nnoremap j gj
-nnoremap k gk
+" a better version of mapping j/k to gj/gk
+nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
+nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 " jj is escape
 inoremap jj <esc>
 " make copy & paste behave like in modern editors
