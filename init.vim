@@ -578,6 +578,7 @@ nnoremap <leader>GG :Grepper -tool rg -buffers<cr>
 nnoremap <leader>GT :Grepper -tool git<cr>
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
+nnoremap <leader>* :Grepper -tool ag -cword -noprompt<cr>
 command! Todo :Grepper -noprompt -tool git -grepprg git grep -nIi '\(TODO\|FIXME\)'
 
 """ Airline
@@ -603,7 +604,6 @@ command! LL Limelight!!
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 """ Visual-star-search
-nnoremap <leader>* :call ag#Ag('grep', '--literal ' . shellescape(expand("<cword>")))<cr>
 vnoremap <leader>* :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:call ag#Ag('grep', '--literal ' . shellescape(@/))<cr>
 
 """ Easyclip
