@@ -465,6 +465,12 @@ augroup END
 augroup Sass
   autocmd!
   autocmd FileType scss nnoremap <buffer> <leader>rr :!clear && sass % -t expanded<cr>
+  autocmd FileType scss nnoremap <buffer> K :Dash<cr>
+augroup END
+
+augroup Css
+  autocmd!
+  autocmd FileType css nnoremap <buffer> K :Dash<cr>
 augroup END
 
 augroup JavaScript
@@ -480,6 +486,7 @@ augroup JavaScript
   autocmd FileType javascript command! -buffer NRTI call VimuxRunCommand("npm run test::integration")
   autocmd FileType javascript command! -buffer NRQA call VimuxRunCommand("npm run qa")
   autocmd FileType javascript command! -buffer NRQALP call VimuxRunCommand("npm run qa::lint::print")
+  autocmd FileType javascript nnoremap <buffer> K :Dash<cr>
 augroup END
 
 augroup TypeScript
@@ -488,6 +495,7 @@ augroup TypeScript
   autocmd FileType typescript inoremap <buffer> {<cr> {<cr>}<c-o>O<tab>
   autocmd FileType typescript inoremap <buffer> [<cr> [<cr>]<c-o>O<tab>
   autocmd FileType typescript inoremap <buffer> (<cr> (<cr>)<c-o>O<tab>
+  autocmd FileType typescript nnoremap <buffer> K :Dash<cr>
 augroup END
 
 augroup CoffeeScript
@@ -496,33 +504,39 @@ augroup CoffeeScript
   autocmd FileType coffee nnoremap <buffer> <leader>rl :!clear && coffeelint %<cr>
   autocmd FileType coffee nnoremap <buffer> <leader>rc :CoffeeCompile vert<cr>
   autocmd FileType coffee nnoremap <buffer> <leader>rw :CoffeeWatch vert<cr>
+  autocmd FileType coffee nnoremap <buffer> K :Dash<cr>
 augroup END
 
 augroup PHP
   autocmd!
   autocmd FileType php nnoremap <buffer> <leader>rr :!clear && php %<cr>
+  autocmd FileType php nnoremap <buffer> K :Dash<cr>
 augroup END
 
 augroup Ruby
   autocmd!
   autocmd FileType ruby nnoremap <buffer> <leader>rr :!clear && ruby %<cr>
+  autocmd FileType ruby nnoremap <buffer> K :Dash<cr>
 augroup END
 
 augroup Python
   autocmd!
   autocmd FileType python nnoremap <buffer> <leader>rr :!clear && python3 %<cr>
   autocmd FileType python nnoremap <buffer> <leader>r2 :!clear && python2 %<cr>
+  autocmd FileType python nnoremap <buffer> K :Dash<cr>
 augroup END
 
 augroup Elixir
   autocmd!
   autocmd FileType elixir nnoremap <buffer> <leader>rr :!clear && elixir %<cr>
   autocmd FileType elixir nnoremap <buffer> <leader>re :!clear && mix test<cr>
+  autocmd FileType python nnoremap <buffer> K :Dash<cr>
 augroup END
 
 augroup Handlebars
   autocmd!
   autocmd BufNewFile,BufRead *.hbs set filetype=html.handlebars
+  autocmd FileType html.handlebars nnoremap <buffer> K :Dash<cr>
 augroup END
 
 augroup RainbowParentheses
