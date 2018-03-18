@@ -778,10 +778,10 @@ nnoremap dh d^
 nnoremap <expr> { len(getline(line('.')-1)) > 0 ? '{+' : '{-'
 nnoremap <expr> } len(getline(line('.')+1)) > 0 ? '}-' : '}+'
 " use arrow keys to resize splits
-nnoremap <Up>    :resize +5<CR>
-nnoremap <Down>  :resize -5<CR>
-nnoremap <Left>  :vertical resize -5<CR>
-nnoremap <Right> :vertical resize +5<CR>
+nnoremap <a-up>    :resize +5<cr>
+nnoremap <a-down>  :resize -5<cr>
+nnoremap <a-left>  :vertical resize -5<CR>
+nnoremap <a-right> :vertical resize +5<CR>
 
 " ------------------------------ Notes ------------------------------ "
 
