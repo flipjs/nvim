@@ -785,5 +785,12 @@ xnoremap <c-d> :norm.<CR>
 " set nocompatible
 " set ts=2 sw=2 sts=2 et
 " set backspace=indent,eol,start
+"
+" extra settings below - only if you can remember it
+" syntax on
+" filetype plugin indent on
+" set number
+" set hidden
+" set expandtab
 
 " ------------------------------- END ------------------------------- "
