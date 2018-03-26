@@ -719,6 +719,8 @@ nnoremap <leader>sv :vsplit<cr>
 nnoremap <leader>sb :split<cr>
 nnoremap <leader>sc <c-w>c
 nnoremap <leader>sq <c-w>q
+nnoremap <leader>sw <c-w>r
+nnoremap <leader>so <c-w>o
 nnoremap <leader>ss :vertical resize 121<cr>
 nnoremap <leader>se <c-w>=
 nnoremap <leader>sf <c-w>\|<c-w>_
