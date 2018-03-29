@@ -740,8 +740,6 @@ nnoremap <leader>jsd :JsDoc<cr>
 nnoremap <leader>jst :TernDoc<cr>
 " center screen when doing n, N, { and }
 noremap <plug>(slash-after) zz
-nnoremap } }zz
-nnoremap { {zz
 " enclose line in reactjs-style comment tag
 nnoremap <leader>cc ^i{/* <esc>A */}<esc>
 " remove reactjs-style comment tag
