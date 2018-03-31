@@ -733,7 +733,9 @@ nnoremap <leader>ftv :set ft=vue<cr>
 nnoremap <leader>jsd :JsDoc<cr>
 nnoremap <leader>jst :TernDoc<cr>
 " center screen when doing n, N, { and }
-noremap <plug>(slash-after) zt
+noremap <plug>(slash-after) zz
+nnoremap { {zz
+nnoremap } }zz
 " enclose line in reactjs-style comment tag
 nnoremap <leader>cc ^i{/* <esc>A */}<esc>
 " remove reactjs-style comment tag
@@ -753,9 +755,6 @@ nnoremap yl y$
 nnoremap yh y^
 nnoremap dl d$
 nnoremap dh d^
-" make { and } jump to first and last line of paragraph
-nnoremap <expr> { len(getline(line('.')-1)) > 0 ? '{+' : '{-'
-nnoremap <expr> } len(getline(line('.')+1)) > 0 ? '}-' : '}+'
 " use arrow keys to resize splits
 nnoremap <a-up>    :resize +5<cr>
 nnoremap <a-down>  :resize -5<cr>
