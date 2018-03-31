@@ -7,8 +7,6 @@
 " NOTE ON MAPPING: Key mappings that can't be used:
 " <c-a> = being used by Tmux
 
-filetype off
-
 "------------- Vim-Plug Configuration - must be on top ------------- "
 
 call plug#begin('~/.local/share/nvim/plugged')
@@ -101,9 +99,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'mhinz/vim-grepper'
 call plug#end()
 
-syntax on
-filetype plugin indent on
-
 " --------------------------- Map Leader ---------------------------- "
 
 " mapleader is space
@@ -140,7 +135,6 @@ if has("nvim")
   tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 endif
 
-syntax enable
 set background=dark
 colorscheme iceberg
 set guifont=FuraCode\ Nerd\ Font:h16
