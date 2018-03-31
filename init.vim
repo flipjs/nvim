@@ -194,7 +194,7 @@ set includeexpr=LoadMainNodeModule(v:fname)
 " ------------------------- Plugin Settings ------------------------- "
 
 """ HighlightedYank
-let g:highlightedyank_highlight_duration = 500
+let g:highlightedyank_highlight_duration = 300
 
 """ Nerdtree-git-plugin
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
