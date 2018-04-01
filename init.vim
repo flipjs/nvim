@@ -92,6 +92,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-scripts/ReplaceWithRegister'
   Plug 'qpkorr/vim-bufkill'
   Plug 'francoiscabrol/ranger.vim'
+  " bclose.vim is required by francoiscabrol/ranger.vim for neovim
   Plug 'rbgrouleff/bclose.vim'
   Plug 'mhinz/vim-grepper'
 call plug#end()
