@@ -57,6 +57,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'elmcast/elm-vim'
   Plug 'tomlion/vim-solidity'
   Plug 'keith/swift.vim'
+  Plug 'othree/html5.vim'
+  Plug 'hail2u/vim-css3-syntax'
+  " typescript syntax plugin
+  Plug 'HerringtonDarkholme/yats.vim'
   " vim-reason-plus requires autozimu/LanguageClient-neovim plugin
   Plug 'reasonml-editor/vim-reason-plus'
   " LanguageClient-neovim is at least required by vim-reason-plus
@@ -64,9 +68,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'heavenshell/vim-jsdoc'
   Plug 'junegunn/rainbow_parentheses.vim'
-  Plug 'othree/html5.vim'
-  Plug 'hail2u/vim-css3-syntax'
-  Plug 'HerringtonDarkholme/yats.vim'
   Plug 'skywind3000/asyncrun.vim'
   Plug 'kana/vim-niceblock'
   Plug 'kana/vim-textobj-user'
