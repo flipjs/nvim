@@ -46,7 +46,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'tommcdo/vim-exchange'
   Plug 'svermeulen/vim-easyclip'
-  Plug 'terryma/vim-multiple-cursors'
   Plug 'skwp/greplace.vim'
   Plug 'tomtom/tcomment_vim'
   Plug 'wakatime/vim-wakatime'
