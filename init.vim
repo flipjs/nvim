@@ -81,7 +81,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'reasonml-editor/vim-reason-plus'
   Plug 'tomlion/vim-solidity'
   Plug 'flipjs/vim-hackernews'
-  Plug 'DougBeney/vim-reddit'
   Plug 'benmills/vimux'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'ryanoasis/vim-devicons'
