@@ -41,7 +41,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'sjl/gundo.vim'
-  Plug 'junegunn/vim-easy-align'
   Plug 'elzr/vim-json'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'tommcdo/vim-exchange'
@@ -620,10 +619,6 @@ nnoremap <c-u> :Neoformat<cr>
 
 """ Emmet
 imap <c-e> <c-y>,
-
-""" Vim-easy-align
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
 
 " ------------------------ Function Mapping ------------------------- "
 
