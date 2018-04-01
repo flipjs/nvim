@@ -55,6 +55,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-ruby/vim-ruby'
   Plug 'elixir-lang/vim-elixir'
   Plug 'elmcast/elm-vim'
+  Plug 'tomlion/vim-solidity'
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'heavenshell/vim-jsdoc'
   Plug 'junegunn/rainbow_parentheses.vim'
@@ -79,7 +80,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rhysd/clever-f.vim'
   Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
   Plug 'reasonml-editor/vim-reason-plus'
-  Plug 'tomlion/vim-solidity'
   Plug 'flipjs/vim-hackernews'
   Plug 'benmills/vimux'
   Plug 'nathanaelkane/vim-indent-guides'
