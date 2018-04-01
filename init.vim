@@ -45,7 +45,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'tommcdo/vim-exchange'
   Plug 'svermeulen/vim-easyclip'
-  Plug 'skwp/greplace.vim'
   Plug 'tomtom/tcomment_vim'
   Plug 'wakatime/vim-wakatime'
   Plug 'mattn/emmet-vim'
@@ -305,10 +304,6 @@ let g:elm_classic_highlighting = 1
 let g:elm_make_show_warnings = 1
 let g:elm_syntastic_show_warnings = 1
 let g:elm_format_fail_silently = 0
-
-""" Greplace
-set grepprg=git\ grep
-let g:grep_cmd_opts = '--line-number'
 
 """ Mustache-Handlebars
 let g:mustache_abbreviations = 1
@@ -713,8 +708,6 @@ nnoremap <leader>ss :vertical resize 121<cr>
 nnoremap <leader>se <c-w>=
 nnoremap <leader>sf <c-w>\|<c-w>_
 nnoremap <leader>sd :bp\|bd #<cr>
-" site-wide search and replace
-nnoremap <leader>sr :Gsearch<cr>
 " switch filetype
 nnoremap <leader>ftt :set ft?<cr>
 nnoremap <leader>ftj :set ft=javascript<cr>
