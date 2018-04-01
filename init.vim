@@ -56,6 +56,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'elixir-lang/vim-elixir'
   Plug 'elmcast/elm-vim'
   Plug 'tomlion/vim-solidity'
+  Plug 'keith/swift.vim'
   " vim-reason-plus requires autozimu/LanguageClient-neovim plugin
   Plug 'reasonml-editor/vim-reason-plus'
   " LanguageClient-neovim is at least required by vim-reason-plus
@@ -78,7 +79,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/vim-slash'
   Plug 'junegunn/goyo.vim'
   Plug 'rizzatti/dash.vim'
-  Plug 'keith/swift.vim'
   Plug 'wellle/targets.vim'
   Plug 'rhysd/clever-f.vim'
   Plug 'flipjs/vim-hackernews'
