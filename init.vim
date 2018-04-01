@@ -554,6 +554,9 @@ end
 
 " -------------------- Plugin-dependent Mapping --------------------- "
 
+""" Vim-slash
+noremap <plug>(slash-after) zz
+
 """ Grepper
 nnoremap <leader>gg :Grepper -tool rg<cr>
 nnoremap <leader>GG :Grepper -tool rg -buffers<cr>
@@ -719,8 +722,7 @@ nnoremap <leader>ftv :set ft=vue<cr>
 " jsdoc
 nnoremap <leader>jsd :JsDoc<cr>
 nnoremap <leader>jst :TernDoc<cr>
-" center screen when doing n, N, { and }
-noremap <plug>(slash-after) zz
+" center screen when doing { and }
 nnoremap { {zz
 nnoremap } }zz
 " enclose line in reactjs-style comment tag
