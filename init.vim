@@ -56,6 +56,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'elixir-lang/vim-elixir'
   Plug 'elmcast/elm-vim'
   Plug 'tomlion/vim-solidity'
+  " vim-reason-plus requires autozimu/LanguageClient-neovim plugin
+  Plug 'reasonml-editor/vim-reason-plus'
+  " LanguageClient-neovim is at least required by vim-reason-plus
+  Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'heavenshell/vim-jsdoc'
   Plug 'junegunn/rainbow_parentheses.vim'
@@ -77,8 +81,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'keith/swift.vim'
   Plug 'wellle/targets.vim'
   Plug 'rhysd/clever-f.vim'
-  Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'reasonml-editor/vim-reason-plus'
   Plug 'flipjs/vim-hackernews'
   Plug 'benmills/vimux'
   Plug 'nathanaelkane/vim-indent-guides'
@@ -89,6 +91,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'machakann/vim-highlightedyank'
   Plug 'vim-scripts/ReplaceWithRegister'
   Plug 'qpkorr/vim-bufkill'
+  " francoiscabrol/ranger.vim requires bclose.vim to work under neovim
   Plug 'francoiscabrol/ranger.vim'
   " bclose.vim is required by francoiscabrol/ranger.vim for neovim
   Plug 'rbgrouleff/bclose.vim'
