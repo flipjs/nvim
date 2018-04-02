@@ -42,6 +42,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'pangloss/vim-javascript'
   Plug 'crusoexia/vim-javascript-lib'
   Plug 'mxw/vim-jsx'
+  Plug 'moll/vim-node'
   Plug 'jiangmiao/auto-pairs'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'sjl/gundo.vim'
