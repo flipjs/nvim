@@ -340,6 +340,11 @@ nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-g> :TmuxNavigatePrevious<cr>
 
+nnoremap <silent> <leader><leader>h :TmuxNavigateLeft<cr> :vertical resize 121<cr>
+nnoremap <silent> <leader><leader>j :TmuxNavigateDown<cr> :vertical resize 121<cr> <c-w>_
+nnoremap <silent> <leader><leader>k :TmuxNavigateUp<cr> :vertical resize 121<cr> <c-w>_
+nnoremap <silent> <leader><leader>l :TmuxNavigateRight<cr> :vertical resize 121<cr>
+
 """ Rainbow-parentheses
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
