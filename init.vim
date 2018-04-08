@@ -669,6 +669,8 @@ nnoremap <leader>de :call DeleteEmptyBuffers()<cr>
 
 " ------------------------- Custom Mapping -------------------------- "
 
+cnoremap <expr> %% expand('%:h').'/'
+
 " tmux send-keys - run previous terminal command
 nnoremap <leader>t1 :!tmux send-keys -t 1 C-p C-j<cr><cr>
 nnoremap <leader>t2 :!tmux send-keys -t 2 C-p C-j<cr><cr>
