@@ -789,6 +789,10 @@ nnoremap <a-right> :vertical resize +5<CR>
 "make dot work over visual line selections
 xnoremap . :norm.<CR>
 xnoremap <c-d> :norm.<CR>
+" show current file path
+nnoremap <leader>ep :echo @%<cr>
+" show current branch - TODO: find a better solution
+nnoremap <leader>eb :!git branch<cr>
 
 " ------------------------------ Notes ------------------------------ "
 
