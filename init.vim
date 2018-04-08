@@ -378,6 +378,27 @@ command! VC VimuxCloseRunner
 
 " ---------------------------- Functions ---------------------------- "
 
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+
+let s:toggle_status = 0
+function! ToggleStatus()
+    if s:toggle_status  == 0
+        let s:toggle_status = 1
+        set laststatus=0
+    else
+        let s:toggle_status = 0
+        set laststatus=2
+    endif
+  endfunction
+
 function! LoadMainNodeModule(fname)
     let nodeModules = "./node_modules/"
     let packageJsonPath = nodeModules . a:fname . "/package.json"
@@ -627,6 +648,12 @@ nnoremap <c-u> :Neoformat<cr>
 imap <c-e> <c-y>,
 
 " ------------------------ Function Mapping ------------------------- "
+
+" rename file
+map <leader>rn :call RenameFile()<cr>
+
+" toggle status
+nnoremap <silent> cos :call ToggleStatus()<cr>
 
 " file header
 command! FileHeader call FileHeader()
