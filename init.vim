@@ -5,7 +5,6 @@
 " *********************************************************************
 
 " FIXME: WARNING! Latest gutentags version is not working properly. Revert to 0423321 commit.
-" FIXME: WARNING! Latest easyclip version is not working properly. Revert to 9f29436 commit.
 
 " NOTE ON MAPPING: Key mappings that can't be used:
 " <c-a> = being used by Tmux
@@ -49,7 +48,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'elzr/vim-json'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'tommcdo/vim-exchange'
-  " FIXME: latest easyclip version causes mappings not to load anymore - use 9f29436 commit
   " vim-easyclip requires tpope/repeat plugin
   Plug 'svermeulen/vim-easyclip'
   Plug 'tomtom/tcomment_vim'
