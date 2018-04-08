@@ -145,6 +145,9 @@ endif
 
 set background=dark
 colorscheme iceberg
+" override search higlight from iceberg colorscheme
+hi! Search ctermbg=235 ctermfg=yellow guibg=#1e2132 guifg=yellow gui=underline
+
 set guifont=FuraCode\ Nerd\ Font:h16
 
 " no error bell, no visual bell
