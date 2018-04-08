@@ -28,6 +28,7 @@ Install the following helpers GLOBALLY (google search on how-to):
 * CTAGS
     OSX
       brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+      Note: run `brew install ctags-exuberant` FIRST if its installed
 
 * JSCTAGS
     npm install -g git+https://github.com/ramitos/jsctags.git
@@ -50,11 +51,12 @@ Install the following helpers GLOBALLY (google search on how-to):
     npm install -g solium
 
 * NEOVIM
-    brew install python3
-    pip2 install --user neovim
+    brew install python
+    brew install python@2
+    pip install --user neovim
     pip3 install --user neovim
     npm install -g neovim
-    gem install neovim (might need sudo)
+    gem install neovim
 
 * TMUX
     Install these dependencies:

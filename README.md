@@ -3,7 +3,9 @@
 ## Pre-install
 
 - Install neovim - `brew install neovim/neovim/neovim`
-- Install python3 - `brew install python3`
+- Install python3 - `brew install python`
+- Install python2 - `brew install python@2`
+- Enable python interface - `pip install neovim`
 - Enable python3 interface - `pip3 install neovim`
 - Install vim-plug - Go to [https://github.com/junegunn/vim-plug] for installation instructions
 
