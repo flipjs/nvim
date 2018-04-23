@@ -103,6 +103,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   " bclose.vim is required by francoiscabrol/ranger.vim for neovim
   Plug 'rbgrouleff/bclose.vim'
   Plug 'mhinz/vim-grepper'
+  Plug 'vim-scripts/LogiPat'
 call plug#end()
 
 " --------------------------- Map Leader ---------------------------- "
