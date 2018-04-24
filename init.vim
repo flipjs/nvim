@@ -197,6 +197,8 @@ set noswapfile
 
 set wildmenu
 set wildmode=full
+" ignore node_modules when expanding wildcards
+set wildignore+=node_modules/**
 
 " intelligently find files with gf/c-] commands
 set path=.,src
