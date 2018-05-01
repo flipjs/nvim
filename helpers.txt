@@ -53,8 +53,8 @@ Install the following helpers GLOBALLY (google search on how-to):
 * NEOVIM
     brew install python
     brew install python@2
-    pip install --user neovim
-    pip3 install --user neovim
+    pip install --user neovim (add option --upgrade to upgrade)
+    pip3 install --user neovim (add option --upgrade to upgrade)
     npm install -g neovim
     gem install neovim
 
