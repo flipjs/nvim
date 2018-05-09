@@ -334,7 +334,9 @@ let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_by_filename = 1
 
 """ Tmux-navigator
+let g:tmux_navigator_disable_when_zoomed = 1
 let g:tmux_navigator_no_mappings = 1
+
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
