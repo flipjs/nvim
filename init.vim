@@ -104,6 +104,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rbgrouleff/bclose.vim'
   Plug 'mhinz/vim-grepper'
   Plug 'vim-scripts/LogiPat'
+  Plug 'vim-scripts/marvim'
 call plug#end()
 
 " --------------------------- Map Leader ---------------------------- "

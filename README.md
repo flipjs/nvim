@@ -38,6 +38,10 @@
   - Go to [https://github.com/powerline/fonts] for installation instructions
   - For iTerm2 users, go to Profile, Text tab, and set BOTH font and non-ascii text to use powerline font
 
+## Plugin-dependent Chores
+    - Marvim (for saved macros)
+        - Create a symlink to your home directory called ".marvim" and point it to `$HOME/.config/nvim/plugins_data/marvim`
+
 ## Troubleshooting
 
 Google is your friend
