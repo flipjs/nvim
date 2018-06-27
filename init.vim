@@ -208,6 +208,10 @@ set includeexpr=LoadMainNodeModule(v:fname)
 
 " ------------------------- Plugin Settings ------------------------- "
 
+""" GitGutter
+" default is HEAD already - its just here so it can be changed freely when needed
+let g:gitgutter_diff_base = 'HEAD'
+
 """ HighlightedYank
 let g:highlightedyank_highlight_duration = 300
 
