@@ -67,7 +67,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   " typescript tooling
   Plug 'HerringtonDarkholme/yats.vim'
   " note: run `install.sh` manually, restart nvim then run :UpdateRemotePlugins
-  Plug 'mhartington/nvim-typescript'
+  " FIXME: nvim-typescript cause extreme lag on react tsx. disabled for now
+  " Plug 'mhartington/nvim-typescript'
   " vim-reason-plus requires autozimu/LanguageClient-neovim plugin
   Plug 'reasonml-editor/vim-reason-plus'
   " LanguageClient-neovim is at least required by vim-reason-plus
