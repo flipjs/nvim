@@ -64,8 +64,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'keith/swift.vim'
   Plug 'othree/html5.vim'
   Plug 'hail2u/vim-css3-syntax'
-  " typescript syntax plugin
+  " typescript tooling
   Plug 'HerringtonDarkholme/yats.vim'
+  " note: run `install.sh` manually, restart nvim then run :UpdateRemotePlugins
+  Plug 'mhartington/nvim-typescript'
   " vim-reason-plus requires autozimu/LanguageClient-neovim plugin
   Plug 'reasonml-editor/vim-reason-plus'
   " LanguageClient-neovim is at least required by vim-reason-plus
