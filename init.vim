@@ -257,6 +257,7 @@ let g:gundo_width = 30
 
 """ Deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 0
 let g:deoplete#omni#functions = {}
 let g:deoplete#omni#functions.javascript = [
   \ 'tern#Complete',
