@@ -386,6 +386,11 @@ command! VZ VimuxZoomRunner
 command! VS VimuxInterruptRunner
 command! VC VimuxCloseRunner
 
+" Ale
+command! AF ALEFirst
+command! AN ALENext
+command! AP ALEPrevious
+
 " ---------------------------- Functions ---------------------------- "
 
 function! RenameFile()
