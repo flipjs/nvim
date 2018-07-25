@@ -65,10 +65,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'othree/html5.vim'
   Plug 'hail2u/vim-css3-syntax'
   " typescript tooling
-  Plug 'HerringtonDarkholme/yats.vim'
-  " note: run `install.sh` manually, restart nvim then run :UpdateRemotePlugins
-  " FIXME: nvim-typescript cause extreme lag on react tsx. disabled for now
-  " Plug 'mhartington/nvim-typescript'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'Quramy/tsuquyomi'
+  " tsuquyomi requires vimproc
+  Plug 'Shougo/vimproc.vim', {'do' : 'make'}
   " vim-reason-plus requires autozimu/LanguageClient-neovim plugin
   Plug 'reasonml-editor/vim-reason-plus'
   " LanguageClient-neovim is at least required by vim-reason-plus
@@ -210,6 +210,9 @@ set suffixesadd=.js,.jsx
 set includeexpr=LoadMainNodeModule(v:fname)
 
 " ------------------------- Plugin Settings ------------------------- "
+
+""" Typescript-vim
+let g:typescript_indent_disable = 1
 
 """ GitGutter
 " default is HEAD already - its just here so it can be changed freely when needed
@@ -513,6 +516,7 @@ augroup JavaScript
   autocmd FileType javascript nnoremap <buffer> <leader>rt :!clear && ava %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
   autocmd FileType javascript command! -buffer RR call VimuxRunCommand("clear; node " . expand("%:p"))
+  autocmd FileType javascript command! -buffer NRB call VimuxRunCommand("npm run build")
   autocmd FileType javascript command! -buffer NRT call VimuxRunCommand("npm run test")
   autocmd FileType javascript command! -buffer NRTU call VimuxRunCommand("npm run test::unit")
   autocmd FileType javascript command! -buffer NRTI call VimuxRunCommand("npm run test::integration")

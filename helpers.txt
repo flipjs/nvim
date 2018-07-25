@@ -68,10 +68,6 @@ Install the following helpers GLOBALLY (google search on how-to):
     Install Iceberg color theme
       - see dotfiles for file: iceberg.itermcolors
 
-* VIM PLUGINS
-    Nvim-typescript
-      - run `install.sh` manually, restart vim (maybe open .ts file) and then :UpdateRemotePlugins
-
 * EXTRAS
     cat output in color
       - brew install ccat
