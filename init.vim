@@ -570,7 +570,7 @@ augroup END
 
 augroup RainbowParentheses
   autocmd!
-  autocmd FileType javascript,javascript.jsx,scss RainbowParentheses
+  autocmd FileType javascript,javascript.jsx,typescript,scss RainbowParentheses
 augroup END
 
 " -------------------------- Abbreviations -------------------------- "
