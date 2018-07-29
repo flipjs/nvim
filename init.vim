@@ -4,8 +4,6 @@
 " Author: Felipe Apostol <flipjs.io@gmail.com>
 " *********************************************************************
 
-" FIXME: WARNING! Latest gutentags version is not working properly. Revert to 0423321 commit.
-
 " NOTE ON MAPPING: Key mappings that can't be used:
 " <c-a> = being used by Tmux
 
@@ -73,7 +71,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'reasonml-editor/vim-reason-plus'
   " LanguageClient-neovim is at least required by vim-reason-plus
   Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-  " FIXME: latest gutentags version causing error with gitgutter - use 0423321 commit
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'heavenshell/vim-jsdoc'
   Plug 'junegunn/rainbow_parentheses.vim'
@@ -275,7 +272,6 @@ let g:tern#arguments = ['--persistent']
 
 """ SuperTab
 autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-" TODO:
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
