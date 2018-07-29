@@ -527,11 +527,6 @@ augroup END
 
 augroup TypeScript
   autocmd!
-  autocmd FileType typescript nnoremap <buffer> <leader>rr :!clear && tsc %<cr>
-  " leafgarland/typescript-vim handles this fix already
-  " autocmd FileType typescript inoremap <buffer> {<cr> {<cr>}<c-o>O<tab>
-  " autocmd FileType typescript inoremap <buffer> [<cr> [<cr>]<c-o>O<tab>
-  " autocmd FileType typescript inoremap <buffer> (<cr> (<cr>)<c-o>O<tab>
   autocmd FileType typescript nnoremap <buffer> K :Dash<cr>
   autocmd FileType typescript nmap <buffer> T : <C-u>echo tsuquyomi#hint()<cr>
 augroup END
