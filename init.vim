@@ -523,6 +523,7 @@ augroup END
 
 augroup TypeScript
   autocmd!
+  autocmd FileType typescript nnoremap <buffer> <leader>rr :!clear && ts-node %<cr>
   autocmd FileType typescript nnoremap <buffer> K :Dash<cr>
   autocmd FileType typescript nmap <buffer> T : <C-u>echo tsuquyomi#hint()<cr>
 augroup END
