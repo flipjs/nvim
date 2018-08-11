@@ -222,6 +222,11 @@ let g:highlightedyank_highlight_duration = 300
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 
+""" NERDTree
+let NERDTreeShowHidden=1
+" change default mapping 'm' to 'M'
+let g:NERDTreeMapMenu = 'M'
+
 """ Indent-Guides
 let g:indent_guides_enable_on_vim_startup = 0
 
@@ -234,9 +239,6 @@ let g:LanguageClient_serverCommands = {
     \ 'ocaml': ['ocaml-language-server', '--stdio'],
     \ }
 let g:LanguageClient_autoStart = 1
-
-""" NERDTree
-let NERDTreeShowHidden=1
 
 """ FZF
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
