@@ -223,7 +223,7 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 
 """ Indent-Guides
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 0
 
 """ Clever-f
 let g:clever_f_smart_case = 1
@@ -373,6 +373,7 @@ command! GGPR GitGutterPreviewHunk
 
 " Vim-indent-guides
 command! VIG IndentGuidesToggle
+command! IND IndentGuidesToggle
 
 " Vim-plug
 command! PU PlugUpdate | PlugUpgrade
