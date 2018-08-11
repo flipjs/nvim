@@ -9,13 +9,13 @@ endsnippet
 snippet xfn "export const arrow function"
 export const ${1:function_name} = (${2}) => {
 	${VISUAL}${0}
-};
+}
 endsnippet
 
 snippet cfn "const arrow function"
 const ${1:function_name} = (${2}) => {
 	${VISUAL}${0}
-};
+}
 endsnippet
 
 snippet afn "anonymous arrow function"
@@ -30,7 +30,7 @@ endsnippet
 
 snippet iife "Immediately-Invoked Function Expression (iife)"
 (function iife($1) {
-	'use strict';
+	'use strict'
 
 	${VISUAL}$0
 })($2)
@@ -38,10 +38,10 @@ endsnippet
 
 snippet vife "void IIFE"
 void (function iife($1) {
-	'use strict';
+	'use strict'
 
 	${VISUAL}$0
-})($2);
+})($2)
 endsnippet
 
 snippet c "const"
@@ -49,48 +49,48 @@ const ${1:variable} = ${2:expr}
 endsnippet
 
 snippet cd "console.dir"
-console.dir($0, {colors: true});
+console.dir($0, {colors: true})
 endsnippet
 
 snippet cl "console.log"
-console.log($0);
+console.log($0)
 endsnippet
 
 snippet clc "console.log color"
-console.log('%c $0 ', 'background: #222; color: #bada55');
+console.log('%c $0 ', 'background: #222; color: #bada55')
 endsnippet
 
 
 snippet cw "console.warn"
-console.warn($0);
+console.warn($0)
 endsnippet
 
 snippet ce "console.error"
-console.error($0);
+console.error($0)
 endsnippet
 
 snippet ci "console.info"
-console.info($0);
+console.info($0)
 endsnippet
 
 snippet cdeb "console.debug"
-console.debug($0);
+console.debug($0)
 endsnippet
 
 snippet ct "console.time"
-console.time($0);
+console.time($0)
 endsnippet
 
 snippet cte "console.timeEnd"
-console.timeEnd($0);
+console.timeEnd($0)
 endsnippet
 
 snippet cg "console.group"
-console.group($0);
+console.group($0)
 endsnippet
 
 snippet cge "console.groupEnd"
-console.groupEnd($0);
+console.groupEnd($0)
 endsnippet
 
 snippet prm "param and block"
@@ -106,7 +106,7 @@ snippet blk "block scoping"
 endsnippet
 
 snippet usestr "'use strict'"
-'use strict';
+'use strict'
 $0
 endsnippet
 
@@ -134,12 +134,12 @@ ${VISUAL}$0
 endsnippet
 
 snippet impm "import { member } from module"
-import { ${1:member} } from '${2:module}';
+import { ${1:member} } from '${2:module}'
 ${VISUAL}$0
 endsnippet
 
 snippet impma "import { member as alias } from module"
-import { ${1:member} as ${2:alias} } from '${3:module}';
+import { ${1:member} as ${2:alias} } from '${3:module}'
 ${VISUAL}$0
 endsnippet
 
@@ -151,14 +151,14 @@ ${VISUAL}$0
 endsnippet
 
 snippet exp "export"
-export ${VISUAL}$0;
+export ${VISUAL}$0
 endsnippet
 
 snippet exd "export default"
-export default ${VISUAL}$0;
+export default ${VISUAL}$0
 endsnippet
 
 snippet exc "export const"
-export const ${VISUAL}$0;
+export const ${VISUAL}$0
 endsnippet
 
