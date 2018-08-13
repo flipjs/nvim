@@ -823,6 +823,11 @@ nnoremap <leader>eb :!git branch<cr>
 " q:
 " -17,-11t.
 " +18,+22t.
+"
+" Creating a repeatable mapping
+" nnoremap <silent> <Plug>TransposeCharacters xp
+"   \:call repeat#set("\<Plug>TransposeCharacters")<CR>
+" nmap cp <Plug>TransposeCharacters
 
 " When using without your .vimrc (e.g. using other PC), use this quick setup
 " set nocompatible
