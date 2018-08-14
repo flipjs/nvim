@@ -514,6 +514,7 @@ augroup JavaScript
   autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rt :!clear && ava %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
+  autocmd FileType javascript command! -buffer FIX :!eslint --fix %<cr>
   autocmd FileType javascript command! -buffer RR call VimuxRunCommand("clear; node " . expand("%:p"))
   autocmd FileType javascript command! -buffer NRB call VimuxRunCommand("npm run build")
   autocmd FileType javascript command! -buffer NRT call VimuxRunCommand("npm run test")
