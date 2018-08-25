@@ -290,6 +290,11 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = 'X'
 let g:ale_sign_warning = '!'
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \ 'javascript': ['eslint'],
+  \ 'haskell': ['brittany'],
+\}
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
 \ }
@@ -392,6 +397,7 @@ command! VS VimuxInterruptRunner
 command! VC VimuxCloseRunner
 
 " Ale
+command! ALE call ale#cursor#ShowCursorDetail()
 command! AF ALEFirst
 command! AN ALENext
 command! AP ALEPrevious
@@ -477,6 +483,11 @@ endfunction
 
 " -------------------------- Autocommands --------------------------- "
 
+augroup Haskell
+  autocmd!
+  autocmd FileType haskell command! -buffer FIX ALEFix
+augroup END
+
 augroup ReasonML
   autocmd!
   autocmd Filetype reason nnoremap <buffer> gd :call LanguageClient_textDocument_definition()<cr>
@@ -515,8 +526,7 @@ augroup JavaScript
   autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rt :!clear && ava %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
-  autocmd FileType javascript command! -buffer FIX :!./node_modules/.bin/eslint --fix %<cr>
-  autocmd FileType javascript command! -buffer FIXG :!eslint --fix %<cr>
+  autocmd FileType javascript command! -buffer FIX ALEFix
   autocmd FileType javascript command! -buffer RR call VimuxRunCommand("clear; node " . expand("%:p"))
   autocmd FileType javascript command! -buffer NRB call VimuxRunCommand("npm run build")
   autocmd FileType javascript command! -buffer NRT call VimuxRunCommand("npm run test")
