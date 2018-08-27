@@ -75,6 +75,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'heavenshell/vim-jsdoc'
   Plug 'junegunn/rainbow_parentheses.vim'
+  Plug 'junegunn/vim-easy-align'
   Plug 'skywind3000/asyncrun.vim'
   Plug 'kana/vim-niceblock'
   Plug 'kana/vim-textobj-user'
@@ -208,6 +209,13 @@ set suffixesadd=.js,.jsx
 set includeexpr=LoadMainNodeModule(v:fname)
 
 " ------------------------- Plugin Settings ------------------------- "
+
+""" Easy-align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 """ Quramy/tsuquyomi
 " - see augroup TypeScript
@@ -587,7 +595,7 @@ augroup END
 
 augroup RainbowParentheses
   autocmd!
-  autocmd FileType javascript,javascript.jsx,typescript,scss RainbowParentheses
+  autocmd FileType javascript,javascript.jsx,typescript,haskell,scss RainbowParentheses
 augroup END
 
 " -------------------------- Abbreviations -------------------------- "
