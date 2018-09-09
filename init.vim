@@ -494,6 +494,7 @@ endfunction
 augroup Haskell
   autocmd!
   autocmd FileType haskell command! -buffer FIX ALEFix
+  autocmd FileType haskell nnoremap <buffer> K :Dash<cr>
 augroup END
 
 augroup ReasonML
