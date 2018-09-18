@@ -836,6 +836,16 @@ nnoremap <leader>ep :echo @%<cr>
 " show current branch - TODO: find a better solution
 nnoremap <leader>eb :!git branch<cr>
 
+" elegant way to do these mappings?
+nnoremap yir yi]
+nnoremap cir ci]
+nnoremap dir di]
+nnoremap vir vi]
+nnoremap yar ya]
+nnoremap car ca]
+nnoremap dar da]
+nnoremap var va]
+
 " ------------------------------ Notes ------------------------------ "
 
 " New stuff to try
