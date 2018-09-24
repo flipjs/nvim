@@ -62,6 +62,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'keith/swift.vim'
   Plug 'othree/html5.vim'
   Plug 'hail2u/vim-css3-syntax'
+  Plug 'rodjek/vim-puppet'
   Plug 'neovimhaskell/haskell-vim'
   " typescript tooling
   Plug 'leafgarland/typescript-vim'
