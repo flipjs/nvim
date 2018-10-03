@@ -60,6 +60,9 @@ snippet clc "console.log color"
 console.log('%c $0 ', 'background: #222; color: #bada55')
 endsnippet
 
+snippet cld "console.log debug"
+console.log("\x1b[41m\x1b[33m%s\x1b[0m", '==================== DEBUGGING ====================')
+endsnippet
 
 snippet cw "console.warn"
 console.warn($0)
