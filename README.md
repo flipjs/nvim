@@ -8,6 +8,9 @@
 - Enable python interface - `pip install neovim`
 - Enable python3 interface - `pip3 install neovim`
 - Install vim-plug - Go to [https://github.com/junegunn/vim-plug] for installation instructions
+- Install iceberg nvim and iterm2 color themes
+- Install fira code nerd font patched
+https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode/Retina/complete
 
 ## Install
 
@@ -22,6 +25,8 @@
   - You might want to have `.tern-project` in your home directory
 - Install prettier - `npm install -g prettier`
 - Install silver searcher - `brew install the_silver_searcher`
+- ctags req - brew install automake
+- ctags req - brew install pkg-config
 - Install universal ctags
   - steps:
       ```
