@@ -675,6 +675,8 @@ nnoremap <leader>rg :Ranger<cr>
 
 """ CtrlP
 nnoremap <leader>ff :Files<cr>
+nnoremap <leader>fg :GFiles<cr>
+nnoremap <leader>fs :GFiles?<cr>
 nnoremap <leader>fb :Buffers<cr>
 nnoremap <leader>fr :History<cr>
 nnoremap <leader>ft :Tags<cr>
