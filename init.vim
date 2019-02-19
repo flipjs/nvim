@@ -383,6 +383,9 @@ let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 
 " ------------------------- Custom Commands ------------------------- "
 
+" Suspend vim
+command! SS sus
+
 " Vim-gitgutter
 command! GG GitGutter
 command! GGA GitGutterAll
