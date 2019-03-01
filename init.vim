@@ -92,6 +92,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'beloglazov/vim-textobj-quotes'
   Plug 'junegunn/vim-slash'
   Plug 'junegunn/goyo.vim'
+  Plug 'junegunn/limelight.vim'
   Plug 'rizzatti/dash.vim'
   Plug 'wellle/targets.vim'
   Plug 'rhysd/clever-f.vim'
@@ -385,6 +386,10 @@ let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 
 " Suspend vim
 command! SS sus
+
+" Limelight
+command! LL Limelight
+command! LLL Limelight!
 
 " Vim-gitgutter
 command! GG GitGutter
