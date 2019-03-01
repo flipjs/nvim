@@ -726,6 +726,10 @@ nnoremap <leader>de :call DeleteEmptyBuffers()<cr>
 
 cnoremap <expr> %% expand('%:h').'/'
 
+" use very magic on search and/or replace
+nnoremap / /\v
+cnoremap %s/ %s/\v
+
 " tmux send-keys - run previous terminal command
 nnoremap <leader>t1 :!tmux send-keys -t 1 C-p C-j<cr><cr>
 nnoremap <leader>t2 :!tmux send-keys -t 2 C-p C-j<cr><cr>
