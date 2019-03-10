@@ -642,6 +642,9 @@ end
 """ Vim-slash
 noremap <plug>(slash-after) zz
 
+""" Vim-fugitive
+nnoremap <leader>gb :Gblame<cr>
+
 """ Grepper
 nnoremap <leader>gg :Grepper -tool rg<cr>
 nnoremap <leader>GG :Grepper -tool rg -buffers<cr>
