@@ -7,10 +7,6 @@
 " NOTE ON MAPPING: Key mappings that can't be used:
 " <c-a> = being used by Tmux
 
-" TODO: Fix vim-grepper!
-  " - quickfix: git checkout f61a745c1e19c80427a251f556f28fc31e962f6d
-
-
 "------------- Vim-Plug Configuration - must be on top ------------- "
 
 call plug#begin('~/.local/share/nvim/plugged')
