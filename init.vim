@@ -642,12 +642,12 @@ noremap <plug>(slash-after) zz
 nnoremap <leader>gb :Gblame<cr>
 
 """ Grepper
-nnoremap <leader>gg :Grepper -tool rg<cr>
-nnoremap <leader>GG :Grepper -tool rg -buffers<cr>
-nnoremap <leader>GT :Grepper -tool git<cr>
+nnoremap <leader>gg :Grepper -tool rg -jump<cr>
+nnoremap <leader>GG :Grepper -tool rg -buffers -jump<cr>
+nnoremap <leader>GT :Grepper -tool git -jump<cr>
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
-nnoremap <leader>* :Grepper -tool rg -cword -noprompt<cr>
+nnoremap <leader>* :Grepper -tool rg -cword -noprompt -jump<cr>
 command! Todo :Grepper -noprompt -tool git -grepprg git grep -nIi '\(TODO\|FIXME\)'
 
 """ Airline
