@@ -397,6 +397,11 @@ command! GGN GitGutterNextHunk
 command! GGP GitGutterPrevHunk
 command! GGPR GitGutterPreviewHunk
 
+" Vim-fugitive
+command! GST Gstatus
+command! GC Gcommit
+command! GP Gpush
+
 " Vim-indent-guides
 command! VIG IndentGuidesToggle
 command! IND IndentGuidesToggle
