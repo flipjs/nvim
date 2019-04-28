@@ -109,6 +109,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'mhinz/vim-grepper'
   Plug 'vim-scripts/LogiPat'
   Plug 'vim-scripts/marvim'
+  Plug 'airblade/vim-rooter'
 call plug#end()
 
 " --------------------------- Map Leader ---------------------------- "
