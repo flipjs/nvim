@@ -107,6 +107,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   " bclose.vim is required by francoiscabrol/ranger.vim for neovim
   Plug 'rbgrouleff/bclose.vim'
   Plug 'mhinz/vim-grepper'
+  Plug 'jremmen/vim-ripgrep'
   Plug 'vim-scripts/LogiPat'
   Plug 'vim-scripts/marvim'
   Plug 'airblade/vim-rooter'
@@ -651,12 +652,12 @@ noremap <plug>(slash-after) zz
 nnoremap <leader>gb :Gblame<cr>
 
 """ Grepper
-nnoremap <leader>gg :Grepper -tool rg -jump<cr>
-nnoremap <leader>GG :Grepper -tool rg -buffers -jump<cr>
-nnoremap <leader>GT :Grepper -tool git -jump<cr>
+nnoremap <leader>gg :Grepper -tool rg<cr>
+nnoremap <leader>GG :Grepper -tool rg -buffers<cr>
+nnoremap <leader>GT :Grepper -tool git<cr>
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
-nnoremap <leader>* :Grepper -tool rg -cword -noprompt -jump<cr>
+nnoremap <leader>* :Grepper -tool rg -cword -noprompt<cr>
 command! Todo :Grepper -noprompt -tool git -grepprg git grep -nIi '\(TODO\|FIXME\)'
 
 """ Airline
