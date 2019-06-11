@@ -431,6 +431,15 @@ command! AP ALEPrevious
 
 " ---------------------------- Functions ---------------------------- "
 
+function! QuickfixFilenames()
+  " Building a hash ensures we get each buffer only once
+  let buffer_numbers = {}
+  for quickfix_item in getqflist()
+    let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+  endfor
+  return join(values(buffer_numbers))
+endfunction
+
 function! RenameFile()
     let old_name = expand('%')
     let new_name = input('New file name: ', expand('%'), 'file')
@@ -712,6 +721,9 @@ nnoremap <c-u> :Neoformat<cr>
 imap <c-e> <c-y>,
 
 " ------------------------ Function Mapping ------------------------- "
+
+" aid for search and replace in quickfix
+command! -nargs=0 -bar Qargs execute 'args ' . QuickfixFilenames()
 
 " rename file
 map <leader>rn :call RenameFile()<cr>
