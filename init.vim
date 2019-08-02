@@ -30,7 +30,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'kien/ctrlp.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-  Plug 'w0rp/ale'
+  " Plug 'w0rp/ale'
+  Plug 'dense-analysis/ale'
   Plug 'sbdchd/neoformat'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -214,6 +215,10 @@ set includeexpr=LoadMainNodeModule(v:fname)
 
 " ------------------------- Plugin Settings ------------------------- "
 
+""" Gutentags
+let g:gutentags_exclude_filetypes = ['gitcommit', 'gitrebase']
+let g:gutentags_ctags_exclude = ['node_modules', 'public', 'tmp']
+
 """ Vim-rooter
 let g:rooter_patterns = ['package.json']
 
@@ -303,8 +308,12 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 """ Ale
 let g:ale_sign_column_always = 1
-let g:ale_sign_error = 'X'
-let g:ale_sign_warning = '!'
+" let g:ale_sign_error = '>>'
+" let g:ale_sign_warning = '--'
+" let g:ale_sign_error = 'X'
+" let g:ale_sign_warning = '!'
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ 'javascript': ['eslint'],
