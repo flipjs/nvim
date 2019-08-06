@@ -1,0 +1,12 @@
+August 5, 2019
+--------------
+
+Errors:
+- no notification handler registered for deoplete
+- no notification handler registered for language client
+
+Google results/suggestions:
+- :Updateremoteplugins
+
+Result:
+- Been doing :Updateremoteplugins manually forever but error keeps showing up
