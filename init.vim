@@ -339,7 +339,15 @@ set updatetime=500
 
 """ Neoformat
 let g:neoformat_try_formatprg = 1
-autocmd FileType javascript set formatprg=prettier\ --single-quote\ --trailing-comma=es5\ --print-width=120\ --stdin
+
+augroup NeoformatAutoFormat
+    autocmd!
+    autocmd FileType javascript,javascript.jsx setlocal formatprg=prettier\
+      \--stdin\
+      \--print-width\ 80\
+      \--single-quote\
+      \--trailing-comma\ es5
+augroup END
 
 """ JSX
 let g:jsx_ext_required = 0
