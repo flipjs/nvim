@@ -19,6 +19,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'jreybert/vimagit'
   Plug 'junegunn/gv.vim'
+  Plug 'mhinz/vim-signify'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'ervandew/supertab'
   Plug 'SirVer/ultisnips'
@@ -231,6 +232,9 @@ nmap ga <Plug>(EasyAlign)
 """ Quramy/tsuquyomi
 " - see augroup TypeScript
 
+""" Vim-signify
+set updatetime=1
+let g:signify_realtime = 1
 
 """ HighlightedYank
 let g:highlightedyank_highlight_duration = 300
