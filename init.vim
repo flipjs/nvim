@@ -19,7 +19,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'jreybert/vimagit'
   Plug 'junegunn/gv.vim'
-  Plug 'airblade/vim-gitgutter'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'ervandew/supertab'
   Plug 'SirVer/ultisnips'
@@ -232,9 +231,6 @@ nmap ga <Plug>(EasyAlign)
 """ Quramy/tsuquyomi
 " - see augroup TypeScript
 
-""" GitGutter
-" default is HEAD already - its just here so it can be changed freely when needed
-let g:gitgutter_diff_base = 'HEAD'
 
 """ HighlightedYank
 let g:highlightedyank_highlight_duration = 300
@@ -408,15 +404,6 @@ command! SS sus
 " Limelight
 command! LL Limelight
 command! LLL Limelight!
-
-" Vim-gitgutter
-command! GG GitGutter
-command! GGA GitGutterAll
-command! GGT GitGutterToggle
-command! GGS GitGutterStageHunk
-command! GGN GitGutterNextHunk
-command! GGP GitGutterPrevHunk
-command! GGPR GitGutterPreviewHunk
 
 " Vim-fugitive
 command! GST Gstatus
