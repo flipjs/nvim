@@ -202,6 +202,7 @@ set clipboard=unnamed
 set nobackup
 set nowritebackup
 set noswapfile
+set updatetime=500
 
 set wildmenu
 set wildmode=full
@@ -233,7 +234,6 @@ nmap ga <Plug>(EasyAlign)
 " - see augroup TypeScript
 
 """ Vim-signify
-set updatetime=1
 let g:signify_realtime = 1
 
 """ HighlightedYank
