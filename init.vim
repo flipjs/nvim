@@ -334,9 +334,6 @@ function! LinterStatus() abort
 endfunction
 set statusline=%{LinterStatus()}
 
-""" Git-Gutter
-set updatetime=500
-
 """ Neoformat
 let g:neoformat_try_formatprg = 1
 
