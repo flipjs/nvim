@@ -220,7 +220,7 @@ let g:gutentags_exclude_filetypes = ['gitcommit', 'gitrebase']
 let g:gutentags_ctags_exclude = ['node_modules', 'public', 'tmp']
 
 """ Vim-rooter
-let g:rooter_patterns = ['package.json']
+let g:rooter_patterns = ['.git/']
 
 """ Easy-align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
