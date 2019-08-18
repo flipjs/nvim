@@ -42,7 +42,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'moll/vim-node'
   Plug 'jiangmiao/auto-pairs'
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'sjl/gundo.vim'
+  Plug 'simnalamburt/vim-mundo'
   Plug 'elzr/vim-json'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'tommcdo/vim-exchange'
@@ -271,12 +271,11 @@ nnoremap <leader>hs :QHist<CR>
 " use fuzzy completion relative filepaths across directory
 imap <expr> <c-x><c-f> fzf#vim#complete#path('git ls-files $(git rev-parse --show-toplevel)')
 
-""" Gundo
+""" Mundo
 set undodir=~/.config/nvim/undohistory
 set undofile
 set history=1000
 set undolevels=1000
-let g:gundo_width = 30
 
 """ Deoplete
 let g:deoplete#enable_at_startup = 1
@@ -708,8 +707,8 @@ nnoremap <leader>ft :Tags<cr>
 nnoremap <leader>fc :Commits<cr>
 nnoremap <leader>fm :CtrlPMixed<cr>
 
-""" Gundo
-nnoremap <leader>uu :GundoToggle<cr>
+""" Mundo
+nnoremap <leader>uu :MundoToggle<cr>
 nnoremap <leader>ue :earlier 1f<cr>
 nnoremap <leader>ul :later 1f<cr>
 
