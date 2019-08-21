@@ -17,6 +17,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-abolish'
   Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
   Plug 'jreybert/vimagit'
   Plug 'junegunn/gv.vim'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -214,6 +215,10 @@ set includeexpr=LoadMainNodeModule(v:fname)
 
 " ------------------------- Plugin Settings ------------------------- "
 
+""" GitGutter
+" default is HEAD already - its just here so it can be changed freely when needed
+let g:gitgutter_diff_base = 'HEAD'
+
 """ Gutentags
 let g:gutentags_exclude_filetypes = ['gitcommit', 'gitrebase']
 let g:gutentags_ctags_exclude = ['node_modules', 'public', 'tmp']
@@ -387,6 +392,15 @@ let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 
 " ------------------------- Custom Commands ------------------------- "
+
+" Vim-gitgutter
+command! GG GitGutter
+command! GGA GitGutterAll
+command! GGT GitGutterToggle
+command! GGS GitGutterStageHunk
+command! GGN GitGutterNextHunk
+command! GGP GitGutterPrevHunk
+command! GGPR GitGutterPreviewHunk
 
 " Suspend vim
 command! SS sus
