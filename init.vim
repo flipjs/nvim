@@ -201,7 +201,7 @@ set clipboard=unnamed
 set nobackup
 set nowritebackup
 set noswapfile
-set updatetime=500
+set updatetime=250
 
 set wildmenu
 set wildmode=full
