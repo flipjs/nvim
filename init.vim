@@ -245,6 +245,8 @@ let g:DevIconsEnableFoldersOpenClose = 1
 
 """ NERDTree
 let NERDTreeShowHidden=1
+" close NERDTree after a file is opened
+let g:NERDTreeQuitOnOpen=1
 " change default mapping 'm' to 'M'
 let g:NERDTreeMapMenu = 'M'
 
