@@ -58,6 +58,10 @@ Install the following helpers GLOBALLY (google search on how-to):
     npm install -g neovim
     gem install neovim
 
+* PYNVIM
+    pip uninstall neovim pynvim
+    pip install pynvim
+
 * TMUX
     Install these dependencies:
       1. brew install reattach-to-user-namespace
