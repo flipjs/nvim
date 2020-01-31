@@ -215,6 +215,10 @@ set includeexpr=LoadMainNodeModule(v:fname)
 
 " ------------------------- Plugin Settings ------------------------- "
 
+""" Fugitive
+" auto-clean fugitive buffers
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
 """ GitGutter
 " default is HEAD already - its just here so it can be changed freely when needed
 let g:gitgutter_diff_base = 'HEAD'
