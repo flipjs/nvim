@@ -453,6 +453,19 @@ command! AP ALEPrevious
 
 " ---------------------------- Functions ---------------------------- "
 
+function! ToggleNeoFormatOnSave()
+  if !exists('#NeoFormatOnSave#BufEnter')
+    augroup NeoFormatOnSave
+      autocmd!
+      autocmd BufWritePre * undojoin | Neoformat
+    augroup END
+  else
+    augroup NeoFormatOnSave
+      autocmd!
+    augroup END
+  endif
+endfunction
+
 function! QuickfixFilenames()
   " Building a hash ensures we get each buffer only once
   let buffer_numbers = {}
@@ -738,6 +751,7 @@ nnoremap <leader>ul :later 1f<cr>
 
 """ Neoformat
 nnoremap <c-u> :Neoformat<cr>
+nnoremap <f4> :call ToggleNeoFormatOnSave()<cr>
 
 """ Emmet
 imap <c-e> <c-y>,
