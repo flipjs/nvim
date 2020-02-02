@@ -214,6 +214,10 @@ set path=.,src
 set suffixesadd=.js,.jsx
 set includeexpr=LoadMainNodeModule(v:fname)
 
+if !exists("g:syntax_on")
+    syntax enable
+endif
+
 " ------------------------- Plugin Settings ------------------------- "
 
 """ Fugitive
