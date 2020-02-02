@@ -188,7 +188,8 @@ set showbreak=»\
 set formatoptions=qrn1
 set list lcs=trail:·,tab:▸·
 " syntax coloring lines that are too long just slows down the world
-set synmaxcol=120
+" TODO: Uncomment line below when performance degrades
+" set synmaxcol=120
 " add top and bottom padding (3 lines) when scrolling
 set scrolloff=3
 
