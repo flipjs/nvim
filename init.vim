@@ -72,7 +72,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   " vim-reason-plus requires autozimu/LanguageClient-neovim plugin
   Plug 'reasonml-editor/vim-reason-plus'
   " LanguageClient-neovim is at least required by vim-reason-plus
-  Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'autozimu/LanguageClient-neovim', {
+      \ 'branch': 'next',
+      \ 'do': 'bash install.sh',
+      \ }
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'heavenshell/vim-jsdoc'
   Plug 'junegunn/rainbow_parentheses.vim'
