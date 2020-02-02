@@ -38,7 +38,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'othree/javascript-libraries-syntax.vim'
   Plug 'pangloss/vim-javascript'
   Plug 'crusoexia/vim-javascript-lib'
-  Plug 'mxw/vim-jsx'
+  Plug 'maxmellon/vim-jsx-pretty'
   Plug 'moll/vim-node'
   Plug 'jiangmiao/auto-pairs'
   Plug 'editorconfig/editorconfig-vim'
@@ -352,8 +352,8 @@ augroup NeoformatAutoFormat
       \--trailing-comma\ es5
 augroup END
 
-""" JSX
-let g:jsx_ext_required = 0
+""" Vim-jsx-pretty
+let g:vim_jsx_pretty_colorful_config = 1
 
 """ Elm
 let g:elm_format_autosave = 1
