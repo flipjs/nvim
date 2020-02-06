@@ -122,3 +122,5 @@ You will need to do the following from time to time:
 - pip3 install --upgrade pynvim
 - npm update neovim -g
 - sudo gem update neovim
+
+To go to plugins folder, run 'plugged' from the command line
