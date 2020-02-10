@@ -58,6 +58,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-ruby/vim-ruby'
   Plug 'elixir-lang/vim-elixir'
   Plug 'elmcast/elm-vim'
+  Plug 'jxnblk/vim-mdx-js'
   Plug 'tomlion/vim-solidity'
   Plug 'keith/swift.vim'
   Plug 'othree/html5.vim'
