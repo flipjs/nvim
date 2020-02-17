@@ -116,6 +116,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-scripts/marvim'
   Plug 'airblade/vim-rooter'
   Plug 'vimwiki/vimwiki'
+  Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 call plug#end()
 
 " --------------------------- Map Leader ---------------------------- "
@@ -229,6 +230,9 @@ if !exists("g:syntax_on")
 endif
 
 " ------------------------- Plugin Settings ------------------------- "
+
+""" Instant Markdown
+let g:instant_markdown_autostart = 0
 
 """ Vim Wiki
 let g:vimwiki_list = [{'path': '$HOME/Dropbox/WIKI'}] " set path to a directory inside Dropbox
@@ -418,6 +422,9 @@ let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 
 " ------------------------- Custom Commands ------------------------- "
+
+""" Instant Markdown
+command! MDP InstantMarkdownPreview
 
 " Vim-gitgutter
 command! GG GitGutter
