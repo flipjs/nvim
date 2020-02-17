@@ -235,7 +235,7 @@ endif
 let g:instant_markdown_autostart = 0
 
 """ Vim Wiki
-let g:vimwiki_list = [{'path': '$HOME/Dropbox/WIKI'}] " set path to a directory inside Dropbox
+let g:vimwiki_list = [{'path': '$HOME/Library/Mobile Documents/27N4MQEA55~pro~writer/Documents'}] " IA Writer iOS location
 let g:vimwiki_ext = '.md' " set extension to .md
 let g:vimwiki_global_ext = 0 " make sure vimwiki doesn't own all .md files
 
