@@ -115,6 +115,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-scripts/LogiPat'
   Plug 'vim-scripts/marvim'
   Plug 'airblade/vim-rooter'
+  Plug 'vimwiki/vimwiki'
 call plug#end()
 
 " --------------------------- Map Leader ---------------------------- "
@@ -218,11 +219,21 @@ set path=.,src
 set suffixesadd=.js,.jsx
 set includeexpr=LoadMainNodeModule(v:fname)
 
+" Vim Wiki requires below - but no need to set in neovim
+" set nocompatible " ignored in nvim
+" filetype plugin indent on " enabled by default in nvim
+" syntax on " see syntax enable
+
 if !exists("g:syntax_on")
     syntax enable
 endif
 
 " ------------------------- Plugin Settings ------------------------- "
+
+""" Vim Wiki
+let g:vimwiki_list = [{'path': '$HOME/Dropbox/WIKI'}] " set path to a directory inside Dropbox
+let g:vimwiki_ext = '.md' " set extension to .md
+let g:vimwiki_global_ext = 0 " make sure vimwiki doesn't own all .md files
 
 """ Fugitive
 " auto-clean fugitive buffers
@@ -814,8 +825,6 @@ inoremap <c-s> <esc>:update<cr><esc>
 noremap <c-q><c-q> :confirm qall<CR>
 " close current buffer
 nnoremap <leader>dd :BD<cr>
-" save current buffer
-nnoremap <leader>ww :w<cr>
 " close saved buffer(s)
 nnoremap <leader>qq :q<cr>
 " apply macros with Q
