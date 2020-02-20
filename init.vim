@@ -429,6 +429,10 @@ let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 
 " ------------------------- Custom Commands ------------------------- "
 
+""" Insert Dates
+command! YYMMDD put=strftime('%Y-%m-%d')
+command! DATE put=strftime('%b %d, %Y')
+
 """ Instant Markdown
 command! MDP InstantMarkdownPreview
 
