@@ -107,13 +107,13 @@ NPM Packages: (npm install -g)
 * create-react-app
 * nodemon
 * ocaml-language-server
-* https://github.com/reasonml/reason-cli/archive/3.0.1-bin-darwin.tar.gz
+* reason-cli@latest-macos
 * elm-format
 * solium
 * instant-markdown-d
 
 COPY PASTE THIS:
-npm install -g neovim bower gulp grunt-cli webpack webpack-dev-server jscs eslint eslint-watch eslint-plugin-react eslint-plugin-babel eslint-plugin-prettier @babel/core @babel/cli @babel/node node-gyp http-server typescript tslint ts-node jq-cli-wrapper json-server commitizen jsdoc elm elm-test elm-oracle prettier tern yarn create-react-app nodemon ocaml-language-server https://github.com/reasonml/reason-cli/archive/3.0.1-bin-darwin.tar.gz elm-format git+https://github.com/ramitos/jsctags.git solium instant-markdown-d
+npm install -g neovim bower gulp grunt-cli webpack webpack-dev-server jscs eslint eslint-watch eslint-plugin-react eslint-plugin-babel eslint-plugin-prettier @babel/core @babel/cli @babel/node node-gyp http-server typescript tslint ts-node jq-cli-wrapper json-server commitizen jsdoc elm elm-test elm-oracle prettier tern yarn create-react-app nodemon ocaml-language-server reason-cli@latest-macos elm-format git+https://github.com/ramitos/jsctags.git solium instant-markdown-d
 
 Tip: Run :CheckHealth and see what needs fixing
 You will need to do the following from time to time:
