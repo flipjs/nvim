@@ -430,6 +430,9 @@ let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 
 " ------------------------- Custom Commands ------------------------- "
 
+""" Terminal Notifier
+command! NTF !pkill -f entr; fd . './' -E node_modules | entr -d terminal-notifier -message "Files updated" &
+
 """ Insert Dates
 command! YYMMDD put=strftime('%Y-%m-%d')
 command! DATE put=strftime('%b %d, %Y')
@@ -690,6 +693,11 @@ augroup END
 augroup RainbowParentheses
   autocmd!
   autocmd FileType javascript,javascript.jsx,typescript,haskell,scss RainbowParentheses
+augroup END
+
+augroup KillEntrOnVimExit
+  autocmd!
+  autocmd VimLeave * :!pkill -f entr
 augroup END
 
 " Triger `autoread` when files changes on disk
