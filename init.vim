@@ -695,10 +695,11 @@ augroup RainbowParentheses
   autocmd FileType javascript,javascript.jsx,typescript,haskell,scss RainbowParentheses
 augroup END
 
-augroup KillEntrOnVimExit
-  autocmd!
-  autocmd VimLeave * :!pkill -f entr
-augroup END
+" This seems to cause issues in my work's MBP laptop - commenting out for now
+" augroup KillEntrOnVimExit
+"   autocmd!
+"   autocmd VimLeave * :!pkill -f entr
+" augroup END
 
 " Triger `autoread` when files changes on disk
 " https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
