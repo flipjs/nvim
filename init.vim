@@ -743,7 +743,7 @@ end
 noremap <plug>(slash-after) zz
 
 """ Vim-fugitive
-nnoremap <leader>gb :Gblame<cr>
+nmap <expr> <leader>gb &filetype ==# 'fugitiveblame' ? "gq" : ":Gblame\r"
 
 """ Grepper
 nnoremap <leader>gg :Grepper -tool rg<cr>
