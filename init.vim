@@ -25,7 +25,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
   Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
-  Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
   Plug 'kien/ctrlp.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -316,15 +316,16 @@ set undolevels=1000
 
 """ Deoplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 0
-let g:deoplete#omni#functions = {}
-let g:deoplete#omni#functions.javascript = [
-  \ 'tern#Complete',
-  \ 'jspc#omni'
-\ ]
+call deoplete#custom#var('omni', 'input_patterns', {
+  \ 'javascript': '[^. *\t]\.\w*',
+\ })
+call deoplete#custom#var('omni', 'functions', {
+  \ 'javascript': ['javascriptcomplete#CompleteJS']
+\})
+call deoplete#custom#source('omni', 'functions', {
+  \ 'javascript': ['tern#Complete', 'jspc#omni']
+\})
 set completeopt=longest,menuone,preview
-let g:deoplete#sources = {}
-let g:deoplete#sources['javascript.jsx'] = ['buffer', 'ultisnips', 'ternjs']
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 
