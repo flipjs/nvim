@@ -54,6 +54,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'wavded/vim-stylus'
   Plug 'mustache/vim-mustache-handlebars'
   Plug 'cakebaker/scss-syntax.vim'
+  Plug 'hail2u/vim-css3-syntax'
+  Plug 'ap/vim-css-color'
   Plug 'kchmck/vim-coffee-script'
   Plug 'vim-ruby/vim-ruby'
   Plug 'elixir-lang/vim-elixir'
@@ -62,7 +64,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tomlion/vim-solidity'
   Plug 'keith/swift.vim'
   Plug 'othree/html5.vim'
-  Plug 'hail2u/vim-css3-syntax'
   Plug 'rodjek/vim-puppet'
   Plug 'neovimhaskell/haskell-vim'
   " typescript tooling
