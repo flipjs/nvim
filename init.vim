@@ -66,6 +66,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'othree/html5.vim'
   Plug 'rodjek/vim-puppet'
   Plug 'neovimhaskell/haskell-vim'
+  Plug 'rust-lang/rust.vim'
   " typescript tooling
   Plug 'leafgarland/typescript-vim'
   Plug 'Quramy/tsuquyomi'
@@ -694,7 +695,7 @@ augroup END
 
 augroup RainbowParentheses
   autocmd!
-  autocmd FileType javascript,javascript.jsx,typescript,haskell,scss RainbowParentheses
+  autocmd FileType javascript,javascript.jsx,typescript,rust,haskell,scss RainbowParentheses
 augroup END
 
 " This seems to cause issues in my work's MBP laptop - commenting out for now
