@@ -375,15 +375,6 @@ set statusline=%{LinterStatus()}
 """ Neoformat
 let g:neoformat_try_formatprg = 1
 
-augroup NeoformatAutoFormat
-    autocmd!
-    autocmd FileType javascript,javascript.jsx setlocal formatprg=prettier\
-      \--stdin\
-      \--print-width\ 80\
-      \--single-quote\
-      \--trailing-comma\ es5
-augroup END
-
 """ Vim-jsx-pretty
 let g:vim_jsx_pretty_colorful_config = 1
 
