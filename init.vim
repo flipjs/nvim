@@ -94,7 +94,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'kana/vim-textobj-indent'
   Plug 'kana/vim-textobj-entire'
   Plug 'kana/vim-textobj-line'
-  Plug 'beloglazov/vim-textobj-quotes'
+  Plug 'reedes/vim-textobj-quote'
   Plug 'junegunn/vim-slash'
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
@@ -122,6 +122,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'airblade/vim-rooter'
   Plug 'vimwiki/vimwiki'
   Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+  " Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
 " --------------------------- Map Leader ---------------------------- "
@@ -761,10 +762,6 @@ nmap <leader>6 <Plug>AirlineSelectTab6
 nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
-
-""" Textobj-quotes
-xmap q iq
-omap q iq
 
 """ FZF
 " linewise completion for the win!
