@@ -81,6 +81,8 @@ NPM Packages: (npm install -g)
 * webpack
 * webpack-dev-server
 * jscs
+* tslint
+* jsonlint
 * eslint
 * eslint-watch
 * eslint-plugin-react
@@ -92,7 +94,6 @@ NPM Packages: (npm install -g)
 * node-gyp
 * http-server
 * typescript
-* tslint
 * ts-node
 * jq-cli-wrapper
 * json-server
@@ -114,7 +115,7 @@ NPM Packages: (npm install -g)
 * parcel-bundler
 
 COPY PASTE THIS:
-npm install -g neovim bower gulp grunt-cli webpack webpack-dev-server jscs eslint eslint-watch eslint-plugin-react eslint-plugin-babel eslint-plugin-prettier @babel/core @babel/cli @babel/node node-gyp http-server typescript tslint ts-node jq-cli-wrapper json-server commitizen jsdoc elm elm-test elm-oracle prettier tern yarn create-react-app nodemon ocaml-language-server reason-cli@latest-macos elm-format git+https://github.com/ramitos/jsctags.git solium instant-markdown-d parcel-bundler
+npm install -g neovim bower gulp grunt-cli webpack webpack-dev-server jscs tslint jsonlint eslint eslint-watch eslint-plugin-react eslint-plugin-babel eslint-plugin-prettier @babel/core @babel/cli @babel/node node-gyp http-server typescript ts-node jq-cli-wrapper json-server commitizen jsdoc elm elm-test elm-oracle prettier tern yarn create-react-app nodemon ocaml-language-server reason-cli@latest-macos elm-format git+https://github.com/ramitos/jsctags.git solium instant-markdown-d parcel-bundler
 
 Tip: Run :CheckHealth and see what needs fixing
 You will need to do the following from time to time:
