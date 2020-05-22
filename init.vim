@@ -4,6 +4,11 @@
 " Author: Felipe Apostol <flipjs.io@gmail.com>
 " *********************************************************************
 
+" FIXME: ludovicchabant/vim-gutentags
+" * errors out editing files in apple icloud directories
+" * errors out when inside icloud directory
+" * temporary solution: git checkout 31c0ead
+
 " NOTE ON MAPPING: Key mappings that can't be used:
 " <c-a> = being used by Tmux
 
