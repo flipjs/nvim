@@ -237,11 +237,11 @@ endif
 
 " ------------------------- Plugin Settings ------------------------- "
 
-""" Instant Markdown
+""" suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0
 
-""" Vim Wiki
-" use Apple iCloud location for IA Writer app
+""" vimwiki/vimwiki
+" set path to apple icloud location so ios app (iaWriter) can access it
 let g:vimwiki_list = [{
       \ 'path': '$HOME/Library/Mobile Documents/27N4MQEA55~pro~writer/Documents',
       \ 'syntax': 'markdown'
@@ -251,59 +251,59 @@ let g:vimwiki_ext = '.md'
 " make sure vimwiki doesn't own all .md files
 let g:vimwiki_global_ext = 0
 
-""" Fugitive
+""" tpope/vim-fugitive
 " auto-clean fugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-""" GitGutter
+""" airblade/vim-gitgutter
 " default is HEAD already - its just here so it can be changed freely when needed
 let g:gitgutter_diff_base = 'HEAD'
 
-""" Gutentags
+""" ludovicchabant/vim-gutentags
 let g:gutentags_exclude_filetypes = ['gitcommit', 'gitrebase']
 let g:gutentags_ctags_exclude = ['node_modules', 'public', 'tmp']
 
-""" Vim-rooter
+""" airblade/vim-rooter
 let g:rooter_patterns = ['.git/']
 
-""" Easy-align
-" Start interactive EasyAlign in visual mode (e.g. vipga)
+""" junegunn/vim-easy-align
 xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
 """ Quramy/tsuquyomi
 " - see augroup TypeScript
 
-""" HighlightedYank
+""" machakann/vim-highlightedyank
 let g:highlightedyank_highlight_duration = 300
 
-""" Nerdtree-git-plugin
+""" Xuyuanp/nerdtree-git-plugin
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 
-""" NERDTree
+""" scrooloose/nerdtree
 let NERDTreeShowHidden=1
 " close NERDTree after a file is opened
 let g:NERDTreeQuitOnOpen=1
 " change default mapping 'm' to 'M'
 let g:NERDTreeMapMenu = 'M'
 
-""" Indent-Guides
+""" francoiscabrol/ranger.vim
+let g:ranger_map_keys = 0
+
+""" nathanaelkane/vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 0
 
-""" Clever-f
+""" rhysd/clever-f.vim
 let g:clever_f_smart_case = 1
 
-""" LanguageClient
+""" autozimu/LanguageClient-neovim
 let g:LanguageClient_serverCommands = {
     \ 'reason': ['ocaml-language-server', '--stdio'],
     \ 'ocaml': ['ocaml-language-server', '--stdio'],
     \ }
 let g:LanguageClient_autoStart = 1
 
-""" FZF
+""" junegunn/fzf
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 " better command history with q:
 command! CmdHist call fzf#vim#command_history({'right': '40'})
@@ -314,13 +314,13 @@ nnoremap <leader>hs :QHist<CR>
 " use fuzzy completion relative filepaths across directory
 imap <expr> <c-x><c-f> fzf#vim#complete#path('git ls-files $(git rev-parse --show-toplevel)')
 
-""" Mundo
+""" simnalamburt/vim-mundo
 set undodir=~/.config/nvim/undohistory
 set undofile
 set history=1000
 set undolevels=1000
 
-""" Deoplete
+""" Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#var('omni', 'input_patterns', {
   \ 'javascript': '[^. *\t]\.\w*',
@@ -335,21 +335,21 @@ set completeopt=longest,menuone,preview
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 
-""" SuperTab
+""" ervandew/supertab
 autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
-""" Airline
+""" vim-airline/vim-airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#formatter = 'short_path'
 
-""" Ale
+""" dense-analysis/ale
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
@@ -373,23 +373,23 @@ function! LinterStatus() abort
 endfunction
 set statusline=%{LinterStatus()}
 
-""" Neoformat
+""" sbdchd/neoformat
 let g:neoformat_try_formatprg = 1
 
-""" Vim-jsx-pretty
+""" maxmellon/vim-jsx-pretty
 let g:vim_jsx_pretty_colorful_config = 1
 
-""" Elm
+""" elmcast/elm-vim
 let g:elm_format_autosave = 1
 let g:elm_setup_keybindings = 0
 let g:elm_classic_highlighting = 1
 let g:elm_make_show_warnings = 1
 let g:elm_format_fail_silently = 0
 
-""" Mustache-Handlebars
+""" mustache/vim-mustache-handlebars
 let g:mustache_abbreviations = 1
 
-""" Easyclip
+""" svermeulen/vim-easyclip
 let g:EasyClipUseSubstituteDefaults = 1
 let g:EasyClipShareYanks = 1
 " do not autoformat pasted text
@@ -397,7 +397,7 @@ let g:EasyClipAutoFormat = 0
 " disable this feature, see settings at the top (search modern editors)
 let g:EasyClipAlwaysMoveCursorToEndOfPaste = 0
 
-""" CtrlP
+""" kien/ctrlp.vim
 let g:ctrlp_map = '<c-\>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
@@ -407,22 +407,11 @@ let g:ctrlp_match_window_reversed = 0
 " search by filename - can be toggled on/off by pressing <c-d> inside the prompt
 let g:ctrlp_by_filename = 1
 
-""" Tmux-navigator
+""" christoomey/vim-tmux-navigator
 let g:tmux_navigator_disable_when_zoomed = 1
 let g:tmux_navigator_no_mappings = 1
 
-nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <c-g> :TmuxNavigatePrevious<cr>
-
-nnoremap <silent> <leader><leader>h :TmuxNavigateLeft<cr> :vertical resize 121<cr>
-nnoremap <silent> <leader><leader>j :TmuxNavigateDown<cr> :vertical resize 121<cr> <c-w>_
-nnoremap <silent> <leader><leader>k :TmuxNavigateUp<cr> :vertical resize 121<cr> <c-w>_
-nnoremap <silent> <leader><leader>l :TmuxNavigateRight<cr> :vertical resize 121<cr>
-
-""" Rainbow-parentheses
+""" junegunn/rainbow_parentheses.vim
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 
@@ -435,10 +424,10 @@ command! NTF !pkill -f entr; fd . './' -E node_modules | entr -d terminal-notifi
 command! YYMMDD put=strftime('%Y-%m-%d')
 command! DATE put=strftime('%b %d, %Y')
 
-""" Instant Markdown
+""" suan/vim-instant-markdown
 command! MDP InstantMarkdownPreview
 
-" Vim-gitgutter
+""" airblade/vim-gitgutter
 command! GG GitGutter
 command! GGA GitGutterAll
 command! GGT GitGutterToggle
@@ -450,25 +439,25 @@ command! GGPR GitGutterPreviewHunk
 " Suspend vim
 command! SS sus
 
-" Limelight
+" junegunn/limelight.vim
 command! LL Limelight
 command! LLL Limelight!
 
-" Vim-fugitive
+""" tpope/vim-fugitive
 command! GST Gstatus
 command! GC Gcommit
 command! GP Gpush
 
-" Vim-indent-guides
+""" nathanaelkane/vim-indent-guides
 command! VIG IndentGuidesToggle
 command! IND IndentGuidesToggle
 
-" Vim-plug
+" junegunn/vim-plug
 command! PU PlugUpdate | PlugUpgrade
 command! PI PlugInstall
 command! PC PlugClean
 
-" Vimux
+" benmills/vimux
 command! VP VimuxPromptCommand
 command! VL VimuxRunLastCommand
 command! VI VimuxInspectRunner
@@ -476,7 +465,7 @@ command! VZ VimuxZoomRunner
 command! VS VimuxInterruptRunner
 command! VC VimuxCloseRunner
 
-" Ale
+""" dense-analysis/ale
 command! ALE call ale#cursor#ShowCursorDetail()
 command! AF ALEFirst
 command! AN ALENext
@@ -737,13 +726,13 @@ end
 
 " -------------------- Plugin-dependent Mapping --------------------- "
 
-""" Vim-slash
+""" junegunn/vim-slash
 noremap <plug>(slash-after) zz
 
-""" Vim-fugitive
+""" tpope/vim-fugitive
 nmap <expr> <leader>gb &filetype ==# 'fugitiveblame' ? "gq" : ":Gblame\r"
 
-""" Grepper
+""" mhinz/vim-grepper
 nnoremap <leader>gg :Grepper -tool rg<cr>
 nnoremap <leader>GG :Grepper -tool rg -buffers<cr>
 nnoremap <leader>GT :Grepper -tool git<cr>
@@ -752,7 +741,7 @@ xmap gs <plug>(GrepperOperator)
 nnoremap <leader>* :Grepper -tool rg -cword -noprompt<cr>
 command! Todo :Grepper -noprompt -tool git -grepprg git grep -nIi '\(TODO\|FIXME\)'
 
-""" Airline
+""" vim-airline/vim-airline
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
@@ -763,22 +752,17 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 
-""" FZF
-" linewise completion for the win!
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
-""" Easyclip
+""" svermeulen/vim-easyclip
 " easyclip shadows m, rebind m to gm
 nnoremap gm m
 
-""" Nerdtree
+""" Xuyuanp/nerdtree-git-plugin
 nnoremap <leader>nt :NERDTreeToggle<cr>
 
-""" Ranger
-let g:ranger_map_keys = 0
+""" francoiscabrol/ranger.vim
 nnoremap <leader>rg :Ranger<cr>
 
-""" CtrlP
+""" junegunn/fzf
 nnoremap <leader>ff :Files<cr>
 nnoremap <leader>fg :GFiles<cr>
 nnoremap <leader>fs :GFiles?<cr>
@@ -786,19 +770,34 @@ nnoremap <leader>fb :Buffers<cr>
 nnoremap <leader>fr :History<cr>
 nnoremap <leader>ft :Tags<cr>
 nnoremap <leader>fc :Commits<cr>
+" linewise completion for the win!
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+""" kien/ctrlp.vim
 nnoremap <leader>fm :CtrlPMixed<cr>
 
-""" Mundo
+""" simnalamburt/vim-mundo
 nnoremap <leader>uu :MundoToggle<cr>
 nnoremap <leader>ue :earlier 1f<cr>
 nnoremap <leader>ul :later 1f<cr>
 
-""" Neoformat
+""" sbdchd/neoformat
 nnoremap <c-u> :Neoformat<cr>
 nnoremap <f4> :call ToggleNeoFormatOnSave()<cr>
 
-""" Emmet
+""" mattn/emmet-vim
 imap <c-e> <c-y>,
+
+""" christoomey/vim-tmux-navigator
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <c-g> :TmuxNavigatePrevious<cr>
+nnoremap <silent> <leader><leader>h :TmuxNavigateLeft<cr> :vertical resize 121<cr>
+nnoremap <silent> <leader><leader>j :TmuxNavigateDown<cr> :vertical resize 121<cr> <c-w>_
+nnoremap <silent> <leader><leader>k :TmuxNavigateUp<cr> :vertical resize 121<cr> <c-w>_
+nnoremap <silent> <leader><leader>l :TmuxNavigateRight<cr> :vertical resize 121<cr>
 
 " ------------------------ Function Mapping ------------------------- "
 
