@@ -873,8 +873,9 @@ vnoremap L g_
 " a better version of mapping j/k to gj/gk
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
-" jj is escape
-inoremap jj <esc>
+" set jk to exit insert mode and disable actual escape key
+inoremap jk <esc>
+inoremap <esc> <nop>
 " make copy & paste behave like in modern editors
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
