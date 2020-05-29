@@ -7,7 +7,8 @@
 " FIXME: ludovicchabant/vim-gutentags
 " * errors out editing files in apple icloud directories
 " * errors out when inside icloud directory
-" * temporary solution: git checkout 31c0ead
+" * temporary solution: use previous working commit 31c0ead
+" * Plug 'ludovicchabant/vim-gutentags', { 'commit': '31c0ead' }
 
 " NOTE ON MAPPING: Key mappings that can't be used:
 " <c-a> = being used by Tmux
@@ -87,7 +88,7 @@ call plug#begin('~/.local/share/nvim/plugged')
       \ 'branch': 'next',
       \ 'do': 'bash install.sh',
       \ }
-  Plug 'ludovicchabant/vim-gutentags'
+  Plug 'ludovicchabant/vim-gutentags', { 'commit': '31c0ead' }
   Plug 'heavenshell/vim-jsdoc'
   Plug 'junegunn/rainbow_parentheses.vim'
   Plug 'junegunn/vim-easy-align'
