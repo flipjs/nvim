@@ -101,6 +101,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'kana/vim-textobj-entire'
   Plug 'kana/vim-textobj-line'
   Plug 'reedes/vim-textobj-quote'
+  Plug 'christoomey/vim-sort-motion'
   Plug 'junegunn/vim-slash'
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
