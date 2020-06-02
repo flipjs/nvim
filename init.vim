@@ -351,10 +351,18 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 """ vim-airline/vim-airline
 set laststatus=2
-let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#formatter = 'short_path'
+let g:airline_powerline_fonts = 1
+" TODO: Unable to work Powerline Fonts on Windows Subsystem for Linux
+" in Thinkpad X220. Temporary solution is to disable if not macOS.
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname != "Darwin\n"
+    let g:airline_powerline_fonts = 0
+  endif
+endif
 
 """ dense-analysis/ale
 let g:ale_sign_column_always = 1
