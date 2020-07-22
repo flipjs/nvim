@@ -195,6 +195,9 @@ set showmatch
 set showmode
 set lazyredraw
 
+" stop search when hit bottom or top of file
+set nowrapscan
+
 set ignorecase
 set smartcase
 set infercase
