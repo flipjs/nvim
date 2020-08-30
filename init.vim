@@ -10,6 +10,10 @@
 " * temporary solution: use previous working commit 31c0ead
 " * Plug 'ludovicchabant/vim-gutentags', { 'commit': '31c0ead' }
 
+" FIXME: ryanoasis/vim-devicons
+" * error - g:NERDTreeUpdateOnCursorHold' is deprecated, please use 'g:NERDTreeGitStatusUpdateOnCursorHold
+" temp fix: use let g:NERDTreeGitStatusLogLevel = 3
+
 " NOTE ON MAPPING: Key mappings that can't be used:
 " <c-a> = being used by Tmux
 
@@ -210,7 +214,7 @@ set showbreak=»\
 set formatoptions=qrn1
 set list lcs=trail:·,tab:▸·
 " syntax coloring lines that are too long just slows down the world
-" TODO: Uncomment line below when performance degrades
+" TODO: uncomment line below when performance degrades
 " set synmaxcol=120
 " add top and bottom padding (3 lines) when scrolling
 set scrolloff=3
@@ -289,6 +293,8 @@ let g:highlightedyank_highlight_duration = 300
 """ Xuyuanp/nerdtree-git-plugin
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
+" FIXME: check fix on devicons so next line can be deleted
+let g:NERDTreeGitStatusLogLevel = 3
 
 """ scrooloose/nerdtree
 let NERDTreeShowHidden=1
@@ -358,7 +364,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#formatter = 'short_path'
 let g:airline_powerline_fonts = 1
-" TODO: Unable to work Powerline Fonts on Windows Subsystem for Linux
+" FIXME: unable to work Powerline Fonts on Windows Subsystem for Linux
 " in Thinkpad X220. Temporary solution is to disable if not macOS.
 if has("unix")
   let s:uname = system("uname -s")
@@ -774,7 +780,7 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 " easyclip shadows m, rebind m to gm
 nnoremap gm m
 
-""" Xuyuanp/nerdtree-git-plugin
+""" scrooloose/nerdtree
 nnoremap <leader>nt :NERDTreeToggle<cr>
 
 """ francoiscabrol/ranger.vim
@@ -968,7 +974,7 @@ xnoremap . :norm.<CR>
 xnoremap <c-d> :norm.<CR>
 " show current file path
 nnoremap <leader>ep :echo @%<cr>
-" show current branch - TODO: find a better solution
+" show current branch - TODO: find a better implementation
 nnoremap <leader>eb :!git branch<cr>
 
 " elegant way to do these mappings?
