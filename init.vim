@@ -134,6 +134,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vimwiki/vimwiki'
   Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
   " Plug 'ThePrimeagen/vim-be-good'
+  Plug 'mhinz/vim-startify'
 call plug#end()
 
 " --------------------------- Map Leader ---------------------------- "
