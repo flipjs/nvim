@@ -222,7 +222,22 @@ set splitbelow
 set splitright
 
 set mouse=a
-set clipboard=unnamed
+" TODO: vim got slow due to this for some reasosn
+" set clipboard=unnamed
+
+" clipboard settings below made vim startup a lot faster!
+let g:clipboard = {
+  \ 'name': 'pbcopy',
+  \ 'copy': {
+  \    '+': 'pbcopy',
+  \    '*': 'pbcopy',
+  \  },
+  \ 'paste': {
+  \    '+': 'pbpaste',
+  \    '*': 'pbpaste',
+  \ },
+  \ 'cache_enabled': 0,
+  \ }
 
 set nobackup
 set nowritebackup
