@@ -133,6 +133,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'airblade/vim-rooter'
   Plug 'vimwiki/vimwiki'
   Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+  Plug 'vim-test/vim-test'
 call plug#end()
 
 " --------------------------- Map Leader ---------------------------- "
@@ -264,6 +265,9 @@ if !exists("g:syntax_on")
 endif
 
 " ------------------------- Plugin Settings ------------------------- "
+
+""" vim-test/vim-test
+let g:test#javascript#runner = 'jest'
 
 """ suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0
@@ -765,6 +769,13 @@ if exists('$ITERM_PROFILE')
 end
 
 " -------------------- Plugin-dependent Mapping --------------------- "
+
+""" vim-test/vim-test
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
 
 """ junegunn/vim-slash
 noremap <plug>(slash-after) zz
