@@ -866,6 +866,9 @@ nnoremap <leader>de :call DeleteEmptyBuffers()<cr>
 
 cnoremap <expr> %% expand('%:h').'/'
 
+" tags - follow definition of current word (for gergoplex keyboard)
+nnoremap <c-t> <c-]>
+
 " use very magic on search and/or replace
 nnoremap / /\v
 cnoremap %s/ %s/\v
