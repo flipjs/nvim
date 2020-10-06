@@ -10,10 +10,6 @@
 " * temporary solution: use previous working commit 31c0ead
 " * Plug 'ludovicchabant/vim-gutentags', { 'commit': '31c0ead' }
 
-" FIXME: ryanoasis/vim-devicons
-" * error - g:NERDTreeUpdateOnCursorHold' is deprecated, please use 'g:NERDTreeGitStatusUpdateOnCursorHold
-" temp fix: use let g:NERDTreeGitStatusLogLevel = 3
-
 " NOTE ON MAPPING: Key mappings that can't be used:
 " <c-a> = being used by Tmux
 
@@ -311,8 +307,6 @@ let g:highlightedyank_highlight_duration = 300
 """ Xuyuanp/nerdtree-git-plugin
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
-" FIXME: check fix on devicons so next line can be deleted
-let g:NERDTreeGitStatusLogLevel = 3
 
 """ scrooloose/nerdtree
 let NERDTreeShowHidden=1
