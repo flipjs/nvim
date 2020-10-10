@@ -125,6 +125,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vimwiki/vimwiki'
   Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
   Plug 'vim-test/vim-test'
+  Plug 'DougBeney/pickachu'
 call plug#end()
 
 " --------------------------- Map Leader ---------------------------- "

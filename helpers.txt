@@ -41,6 +41,10 @@ Install the following helpers GLOBALLY (google search on how-to):
     https://github.com/ryanoasis/nerd-fonts
     easy install - copy a font that is patched already
 
+* COLOR PICKER (DougBeney/pickachu)
+    OSX
+      brew install zenity
+
 * LANGUAGE SUPPORT
   - ReasonML
     npm install -g ocaml-language-server
