@@ -11,6 +11,7 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'cocopon/iceberg.vim'
+  Plug 'gkeep/iceberg-dark'
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-surround'
   " vim-repeat is at least required by vim-easyclip
@@ -380,6 +381,9 @@ if has("unix")
     let g:airline_powerline_fonts = 0
   endif
 endif
+
+""" gkeep/iceberg-dark
+let g:airline_theme='icebergDark'
 
 """ dense-analysis/ale
 let g:ale_sign_column_always = 1
