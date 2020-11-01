@@ -5,17 +5,21 @@ Cleanup: Fix Python and Vim
 2. xcode-select --install
 3. brew update && brew upgrade
 4. brew upgrade --cask
-5. update PATH
+5. get rid of old pythons
+  sudo rm /usr/local/bin/python*
+  sudo rm /usr/local/bin/pip*
+  sudo rm -Rf /Library/Frameworks/Python.framework/Versions/*
+6. update PATH
   export PATH=/usr/local/bin:/usr/local/sbin:$PATH
   export PATH=$PATH:$HOME/Library/Python/3.7/bin
-6. install python
+7. install python
   brew install python3
   brew install python@2
   pip install neovim
   pip2 install neovim
   pip3 install neovim
   brew install pipenv
-7. Delete all Vim Plug plugins and then :PlugClean
-8. Add all Vim Plug plugins back and then :PlugInstall
+8. Delete all Vim Plug plugins and then :PlugClean
+9. Add all Vim Plug plugins back and then :PlugInstall
 
 source: https://medium.com/faun/the-right-way-to-set-up-python-on-your-mac-e923ffe8cf8e
