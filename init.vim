@@ -333,6 +333,8 @@ let g:LanguageClient_serverCommands = {
 let g:LanguageClient_autoStart = 1
 
 """ junegunn/fzf
+let g:fzf_preview_window = []
+let g:fzf_layout = { 'down': '~40%' }
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 " better command history with q:
 command! CmdHist call fzf#vim#command_history({'right': '40'})
