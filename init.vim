@@ -745,6 +745,7 @@ autocmd FileChangedShellPost *
 
 " Note: some abbreviations are defined inside ftplugin directory
 cnoreabbrev Q q
+cnoreabbrev QQ q!
 cnoreabbrev Qa qa
 cnoreabbrev QA qa
 cnoreabbrev W w
