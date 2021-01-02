@@ -218,7 +218,7 @@ set splitright
 
 set mouse=a
 " TODO: vim got slow due to this for some reasosn
-" set clipboard=unnamed
+set clipboard=unnamed
 
 " clipboard settings below made vim startup a lot faster!
 let g:clipboard = {
@@ -753,6 +753,7 @@ cnoreabbrev QA qa
 cnoreabbrev W w
 cnoreabbrev Wq wq
 cnoreabbrev WQ wq
+cnoreabbrev qw wq
 inoreabbrev funciton function
 inoreabbrev functon function
 
