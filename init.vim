@@ -126,6 +126,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
   Plug 'vim-test/vim-test'
   Plug 'DougBeney/pickachu'
+  Plug 'osyo-manga/vim-anzu'
 call plug#end()
 
 " --------------------------- Map Leader ---------------------------- "
@@ -194,7 +195,8 @@ set showmode
 set lazyredraw
 
 " stop search when hit bottom or top of file
-set nowrapscan
+" disable but keep this for now
+" set nowrapscan
 
 set ignorecase
 set smartcase
@@ -259,6 +261,12 @@ if !exists("g:syntax_on")
 endif
 
 " ------------------------- Plugin Settings ------------------------- "
+
+""" osyo-manga/vim-anzu
+" show search count in status line - seems to be enabled by default
+" set statusline=%{anzu#search_status()}
+" clear search status - seems to be not functioning properly
+" nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
 
 """ vim-test/vim-test
 let g:test#javascript#runner = 'jest'
@@ -888,6 +896,10 @@ nnoremap <c-t> <c-]>
 " use very magic on search and/or replace
 nnoremap / /\v
 cnoremap %s/ %s/\v
+" hotkey for search and replace using very magic
+nnoremap <leader>sr :%s/\v
+" hotkey for tpope's abolish search
+nnoremap <leader>SR :%S/
 
 " tmux send-keys - run previous terminal command
 nnoremap <leader>t1 :!tmux send-keys -t 1 C-p C-j<cr><cr>
