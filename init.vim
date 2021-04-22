@@ -195,8 +195,7 @@ set showmode
 set lazyredraw
 
 " stop search when hit bottom or top of file
-" disable but keep this for now
-" set nowrapscan
+set nowrapscan
 
 set ignorecase
 set smartcase
