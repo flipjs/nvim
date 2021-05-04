@@ -2,5 +2,5 @@
 *.log
 *.swp
 .netrwhist
-undohistory
+undohistory*
 tags

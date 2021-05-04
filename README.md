@@ -2,7 +2,7 @@
 
 ## Pre-install
 
-- Install neovim - `brew install neovim/neovim/neovim`
+- Install neovim 0.5 - `brew install --HEAD neovim`
 - Install python3 - `brew install python`
 - Install python2 - `brew install python@2`
 - Enable python interface - `pip install neovim`

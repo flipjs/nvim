@@ -353,7 +353,7 @@ nnoremap <leader>hs :QHist<CR>
 imap <expr> <c-x><c-f> fzf#vim#complete#path('git ls-files $(git rev-parse --show-toplevel)')
 
 """ simnalamburt/vim-mundo
-set undodir=~/.config/nvim/undohistory
+set undodir=~/.config/nvim/undohistory-0.5
 set undofile
 set history=1000
 set undolevels=1000
