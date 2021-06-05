@@ -793,7 +793,7 @@ nmap <silent> t<C-g> :TestVisit<CR>
 noremap <plug>(slash-after) zz
 
 """ tpope/vim-fugitive
-nmap <expr> <leader>gb &filetype ==# 'fugitiveblame' ? "gq" : ":Gblame\r"
+nmap <expr> <leader>gb &filetype ==# 'fugitiveblame' ? "gq" : ":Git blame\r"
 
 """ mhinz/vim-grepper
 nnoremap <leader>gg :Grepper -tool rg<cr>
