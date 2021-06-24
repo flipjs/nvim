@@ -52,42 +52,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tomtom/tcomment_vim'
   Plug 'wakatime/vim-wakatime'
   Plug 'mattn/emmet-vim'
-  Plug 'wavded/vim-stylus'
-  Plug 'mustache/vim-mustache-handlebars'
-  Plug 'cakebaker/scss-syntax.vim'
-  Plug 'hail2u/vim-css3-syntax'
-  Plug 'ap/vim-css-color'
-  Plug 'kchmck/vim-coffee-script'
-  Plug 'vim-ruby/vim-ruby'
-  Plug 'elixir-lang/vim-elixir'
-  Plug 'elmcast/elm-vim'
-  Plug 'jxnblk/vim-mdx-js'
-  Plug 'tomlion/vim-solidity'
-  Plug 'keith/swift.vim'
-  Plug 'othree/html5.vim'
-  Plug 'rodjek/vim-puppet'
-  Plug 'neovimhaskell/haskell-vim'
-  Plug 'rust-lang/rust.vim'
-  Plug 'jparise/vim-graphql'
-  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-  " typescript tooling
-  Plug 'leafgarland/typescript-vim'
-  Plug 'peitalin/vim-jsx-typescript'
-  Plug 'Quramy/tsuquyomi'
-  " tsuquyomi requires vimproc
-  Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-  " vim-reason-plus requires autozimu/LanguageClient-neovim plugin
-  Plug 'reasonml-editor/vim-reason-plus'
-  " LanguageClient-neovim is at least required by vim-reason-plus
-  Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ }
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'heavenshell/vim-jsdoc'
   Plug 'junegunn/rainbow_parentheses.vim'
   Plug 'junegunn/vim-easy-align'
-  Plug 'skywind3000/asyncrun.vim'
   Plug 'kana/vim-niceblock'
   Plug 'kana/vim-textobj-user'
   Plug 'kana/vim-textobj-function'
@@ -98,13 +66,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'reedes/vim-textobj-quote'
   Plug 'christoomey/vim-sort-motion'
   Plug 'junegunn/vim-slash'
-  Plug 'junegunn/goyo.vim'
-  Plug 'junegunn/limelight.vim'
   Plug 'rizzatti/dash.vim'
   Plug 'wellle/targets.vim'
   Plug 'rhysd/clever-f.vim'
-  Plug 'flipjs/vim-hackernews'
-  Plug 'benmills/vimux'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'ryanoasis/vim-devicons'
   Plug 'scrooloose/nerdtree'
@@ -119,8 +83,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rbgrouleff/bclose.vim'
   Plug 'mhinz/vim-grepper'
   Plug 'jremmen/vim-ripgrep'
-  Plug 'vim-scripts/LogiPat'
-  Plug 'vim-scripts/marvim'
   Plug 'airblade/vim-rooter'
   Plug 'vimwiki/vimwiki'
   Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
@@ -303,9 +265,6 @@ let g:rooter_patterns = ['.git/']
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-""" Quramy/tsuquyomi
-" - see augroup TypeScript
-
 """ machakann/vim-highlightedyank
 let g:highlightedyank_highlight_duration = 300
 
@@ -328,16 +287,6 @@ let g:indent_guides_enable_on_vim_startup = 0
 
 """ rhysd/clever-f.vim
 let g:clever_f_smart_case = 1
-
-""" autozimu/LanguageClient-neovim
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-    \ 'python': ['/usr/local/bin/pyls'],
-    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-    \ }
-let g:LanguageClient_autoStart = 1
 
 """ junegunn/fzf
 let g:fzf_preview_window = []
@@ -405,7 +354,6 @@ let g:ale_sign_warning = '⚠'
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ 'javascript': ['eslint'],
-  \ 'haskell': ['brittany'],
 \}
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
@@ -427,16 +375,6 @@ let g:neoformat_try_formatprg = 1
 
 """ maxmellon/vim-jsx-pretty
 let g:vim_jsx_pretty_colorful_config = 1
-
-""" elmcast/elm-vim
-let g:elm_format_autosave = 1
-let g:elm_setup_keybindings = 0
-let g:elm_classic_highlighting = 1
-let g:elm_make_show_warnings = 1
-let g:elm_format_fail_silently = 0
-
-""" mustache/vim-mustache-handlebars
-let g:mustache_abbreviations = 1
 
 """ svermeulen/vim-easyclip
 let g:EasyClipUseSubstituteDefaults = 1
@@ -623,38 +561,6 @@ endfunction
 
 " -------------------------- Autocommands --------------------------- "
 
-augroup Haskell
-  autocmd!
-  autocmd FileType haskell command! -buffer FIX ALEFix
-  autocmd FileType haskell nnoremap <buffer> K :Dash<cr>
-augroup END
-
-augroup ReasonML
-  autocmd!
-  autocmd Filetype reason nnoremap <buffer> gd :call LanguageClient_textDocument_definition()<cr>
-  autocmd Filetype reason nnoremap <buffer> <c-u> :call LanguageClient_textDocument_formatting()<cr>
-  autocmd Filetype reason nnoremap <buffer> gh :call LanguageClient_textDocument_hover()<cr>
-  autocmd FileType reason nnoremap <buffer> <leader>rr :!clear && node %:r.bs.js<cr>
-  autocmd FileType reason command! -buffer RR call VimuxRunCommand("clear; node " . expand("%:p:r") . ".bs.js")
-augroup END
-
-augroup Elm
-  autocmd!
-  autocmd FileType elm nnoremap <buffer> <leader>rr :ElmMake<cr>
-  autocmd FileType elm nnoremap <buffer> <leader>re :ElmErrorDetail<cr>
-augroup END
-
-augroup Swift
-  autocmd!
-  autocmd FileType swift nnoremap <buffer> <leader>rr :!clear && swift %<cr>
-augroup END
-
-augroup Sass
-  autocmd!
-  autocmd FileType scss nnoremap <buffer> <leader>rr :!clear && sass % -t expanded<cr>
-  autocmd FileType scss nnoremap <buffer> K :Dash<cr>
-augroup END
-
 augroup Css
   autocmd!
   autocmd FileType css nnoremap <buffer> K :Dash<cr>
@@ -680,75 +586,10 @@ augroup JavaScript
   autocmd FileType javascript nnoremap <buffer> K :Dash<cr>
 augroup END
 
-augroup TypeScript
-  autocmd!
-  autocmd FileType typescript nnoremap <buffer> <leader>rr :!clear && ts-node %<cr>
-  autocmd FileType typescript nnoremap <buffer> K :Dash<cr>
-  autocmd FileType typescript nmap <buffer> T : <C-u>echo tsuquyomi#hint()<cr>
-augroup END
-
-augroup CoffeeScript
-  autocmd!
-  autocmd FileType coffee nnoremap <buffer> <leader>rr :CoffeeRun<cr>
-  autocmd FileType coffee nnoremap <buffer> <leader>rl :!clear && coffeelint %<cr>
-  autocmd FileType coffee nnoremap <buffer> <leader>rc :CoffeeCompile vert<cr>
-  autocmd FileType coffee nnoremap <buffer> <leader>rw :CoffeeWatch vert<cr>
-  autocmd FileType coffee nnoremap <buffer> K :Dash<cr>
-augroup END
-
-augroup PHP
-  autocmd!
-  autocmd FileType php nnoremap <buffer> <leader>rr :!clear && php %<cr>
-  autocmd FileType php nnoremap <buffer> K :Dash<cr>
-augroup END
-
-augroup Ruby
-  autocmd!
-  autocmd FileType ruby nnoremap <buffer> <leader>rr :!clear && ruby %<cr>
-  autocmd FileType ruby nnoremap <buffer> K :Dash<cr>
-augroup END
-
-augroup Python
-  autocmd!
-  autocmd FileType python nnoremap <buffer> <leader>rr :!clear && python3 %<cr>
-  autocmd FileType python nnoremap <buffer> <leader>r2 :!clear && python2 %<cr>
-  autocmd FileType python nnoremap <buffer> K :Dash<cr>
-augroup END
-
-augroup Elixir
-  autocmd!
-  autocmd FileType elixir nnoremap <buffer> <leader>rr :!clear && elixir %<cr>
-  autocmd FileType elixir nnoremap <buffer> <leader>re :!clear && mix test<cr>
-  autocmd FileType python nnoremap <buffer> K :Dash<cr>
-augroup END
-
-augroup Handlebars
-  autocmd!
-  autocmd BufNewFile,BufRead *.hbs set filetype=html.handlebars
-  autocmd FileType html.handlebars nnoremap <buffer> K :Dash<cr>
-augroup END
-
 augroup RainbowParentheses
   autocmd!
-  autocmd FileType javascript,javascript.jsx,typescript,typescript.tsx,rust,haskell,scss RainbowParentheses
+  autocmd FileType javascript,javascript.jsx,typescript,typescript.tsx,scss RainbowParentheses
 augroup END
-
-" This seems to cause issues in my work's MBP laptop - commenting out for now
-" augroup KillEntrOnVimExit
-"   autocmd!
-"   autocmd VimLeave * :!pkill -f entr
-" augroup END
-
-" Triger `autoread` when files changes on disk
-" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
-" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
-    autocmd FocusGained,BufEnter,CursorHold,CursorHoldI *
-            \ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
-
-" Notification after file change
-" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
-autocmd FileChangedShellPost *
-  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 " -------------------------- Abbreviations -------------------------- "
 
@@ -984,7 +825,6 @@ nnoremap <leader>ftx :set ft=javascript.jsx<cr>
 nnoremap <leader>fts :set ft=typescript<cr>
 nnoremap <leader>fth :set ft=html<cr>
 nnoremap <leader>ftc :set ft=css<cr>
-nnoremap <leader>ftv :set ft=vue<cr>
 " jsdoc
 nnoremap <leader>jsd :JsDoc<cr>
 nnoremap <leader>jst :TernDoc<cr>
