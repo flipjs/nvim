@@ -595,6 +595,23 @@ augroup RainbowParentheses
   autocmd FileType javascript,javascript.jsx,typescript,typescript.tsx,scss RainbowParentheses
 augroup END
 
+" This seems to cause issues in my work's MBP laptop - commenting out for now
+" augroup KillEntrOnVimExit
+"   autocmd!
+"   autocmd VimLeave * :!pkill -f entr
+" augroup END
+
+" Triger `autoread` when files changes on disk
+" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI *
+  \ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
+
+" Notification after file change
+" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+
 " -------------------------- Abbreviations -------------------------- "
 
 " Note: some abbreviations are defined inside ftplugin directory
