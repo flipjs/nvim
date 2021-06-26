@@ -89,6 +89,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-test/vim-test'
   Plug 'DougBeney/pickachu'
   Plug 'osyo-manga/vim-anzu'
+  Plug 'mbbill/undotree'
 call plug#end()
 
 " --------------------------- Map Leader ---------------------------- "
@@ -403,6 +404,9 @@ let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 
 " ------------------------- Custom Commands ------------------------- "
+
+""" mbbill/undotree
+command! UN UndotreeToggle
 
 """ Terminal Notifier
 command! NTF !pkill -f entr; fd . './' -E node_modules | entr -d terminal-notifier -message "Files updated" &
