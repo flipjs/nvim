@@ -655,6 +655,7 @@ noremap <plug>(slash-after) zz
 nmap <expr> <leader>gb &filetype ==# 'fugitiveblame' ? "gq" : ":Git blame\r"
 
 """ mhinz/vim-grepper
+nnoremap <leader>ga :Grepper -tool ag<cr>
 nnoremap <leader>gg :Grepper -tool rg<cr>
 nnoremap <leader>GG :Grepper -tool rg -buffers<cr>
 nnoremap <leader>GT :Grepper -tool git<cr>
