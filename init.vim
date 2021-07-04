@@ -8,7 +8,7 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'christoomey/vim-tmux-navigator'
-  Plug 'Julpikar/night-owl.nvim'
+  Plug 'cocopon/iceberg.vim'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'mbbill/undotree'
   Plug 'neovim/nvim-lspconfig'
@@ -25,7 +25,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 call plug#end()
 
 lua require('options')
-lua require('night-owl')
 
 " -- Map Leader ----------------------------------------------------- "
 
@@ -50,6 +49,40 @@ inoreabbrev funciton function
 inoreabbrev functon function
 
 " -- Vim Configuration ---------------------------------------------- "
+
+" set vim to use 256 colors
+set t_Co=256
+
+" support for 24-bit/true color
+if (has("nvim"))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+if (has("termguicolors"))
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+" Enable substitution previews with inccommand
+if has("nvim")
+  set inccommand=nosplit
+endif
+
+" Neovim terminal configuration
+if has("nvim")
+  " esc to exit insert mode
+  tnoremap <Esc> <C-\><C-n>
+  " make split navigation mapping consistent across different modes
+  tnoremap <C-h> <C-\><C-N><C-w>h
+  tnoremap <C-j> <C-\><C-N><C-w>j
+  tnoremap <C-k> <C-\><C-N><C-w>k
+  tnoremap <C-l> <C-\><C-N><C-w>l
+  " paste into terminal when on insert mode
+  tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+endif
+
+set background=dark
+colorscheme iceberg
 
 set guifont=FuraCode\ Nerd\ Font:h16
 set encoding=utf8
