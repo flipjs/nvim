@@ -428,7 +428,8 @@ let g:mustache_abbreviations = 1
 
 """ svermeulen/vim-easyclip
 let g:EasyClipUseSubstituteDefaults = 1
-let g:EasyClipShareYanks = 1
+" disable since yank is shared in clipboard anyway
+let g:EasyClipShareYanks = 0
 " do not autoformat pasted text
 let g:EasyClipAutoFormat = 0
 " disable this feature, see settings at the top (search modern editors)
