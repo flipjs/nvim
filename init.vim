@@ -373,7 +373,7 @@ let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 
 """ ervandew/supertab
-autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+" see augroup JavaScript for autocmd settings
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
@@ -666,6 +666,8 @@ augroup JavaScript
   autocmd FileType javascript command! -buffer NRQA call VimuxRunCommand("npm run qa")
   autocmd FileType javascript command! -buffer NRQALP call VimuxRunCommand("npm run qa::lint::print")
   autocmd FileType javascript nnoremap <buffer> K :Dash<cr>
+  """ ervandew/supertab
+  autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 augroup END
 
 augroup TypeScript
