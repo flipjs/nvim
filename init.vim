@@ -127,6 +127,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-test/vim-test'
   Plug 'DougBeney/pickachu'
   Plug 'osyo-manga/vim-anzu'
+  Plug 'tweekmonster/startuptime.vim'
 call plug#end()
 
 " --------------------------- Map Leader ---------------------------- "
