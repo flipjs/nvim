@@ -20,8 +20,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'flipjs/vim-ragtag'
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
-  Plug 'jreybert/vimagit'
-  Plug 'junegunn/gv.vim'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'ervandew/supertab'
   Plug 'SirVer/ultisnips'
@@ -29,7 +27,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
   " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
-  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'dense-analysis/ale'
@@ -41,13 +38,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'pangloss/vim-javascript'
   Plug 'crusoexia/vim-javascript-lib'
   Plug 'maxmellon/vim-jsx-pretty'
-  Plug 'moll/vim-node'
   Plug 'jiangmiao/auto-pairs'
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'simnalamburt/vim-mundo'
   Plug 'elzr/vim-json'
   Plug 'christoomey/vim-tmux-navigator'
-  Plug 'tommcdo/vim-exchange'
   " vim-easyclip requires tpope/repeat plugin
   Plug 'svermeulen/vim-easyclip'
   Plug 'tomtom/tcomment_vim'
@@ -64,12 +58,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'kana/vim-textobj-entire'
   Plug 'kana/vim-textobj-line'
   Plug 'reedes/vim-textobj-quote'
-  Plug 'christoomey/vim-sort-motion'
   Plug 'junegunn/vim-slash'
   Plug 'rizzatti/dash.vim'
   Plug 'wellle/targets.vim'
   Plug 'rhysd/clever-f.vim'
-  Plug 'nathanaelkane/vim-indent-guides'
   Plug 'ryanoasis/vim-devicons'
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -77,17 +69,11 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'machakann/vim-highlightedyank'
   Plug 'vim-scripts/ReplaceWithRegister'
   Plug 'qpkorr/vim-bufkill'
-  " francoiscabrol/ranger.vim requires bclose.vim to work under neovim
-  Plug 'francoiscabrol/ranger.vim'
-  " bclose.vim is required by francoiscabrol/ranger.vim for neovim
-  Plug 'rbgrouleff/bclose.vim'
   Plug 'mhinz/vim-grepper'
   Plug 'jremmen/vim-ripgrep'
   Plug 'airblade/vim-rooter'
   Plug 'vimwiki/vimwiki', { 'on': ['VimwikiIndex', 'VimwikiDiaryIndex'] }
-  Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
   Plug 'vim-test/vim-test'
-  Plug 'DougBeney/pickachu'
   Plug 'tweekmonster/startuptime.vim'
   Plug 'mbbill/undotree'
 call plug#end()
@@ -130,6 +116,11 @@ if has("nvim")
   tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 endif
 
+set undodir=~/.config/nvim/undohistory-0.5
+set undofile
+set history=1000
+set undolevels=1000
+
 set background=dark
 colorscheme iceberg
 " override search higlight from iceberg colorscheme
@@ -171,9 +162,6 @@ set breakindent
 set showbreak=»\
 set formatoptions=qrn1
 set list lcs=trail:·,tab:▸·
-" syntax coloring lines that are too long just slows down the world
-" TODO: uncomment line below when performance degrades
-" set synmaxcol=120
 " add top and bottom padding (3 lines) when scrolling
 set scrolloff=3
 
@@ -181,7 +169,6 @@ set splitbelow
 set splitright
 
 set mouse=a
-" TODO: vim got slow due to this for some reasosn
 set clipboard=unnamed
 
 " clipboard settings below made vim startup a lot faster!
@@ -213,11 +200,6 @@ set path=.,src
 set suffixesadd=.js,.jsx
 set includeexpr=LoadMainNodeModule(v:fname)
 
-" Vim Wiki requires below - but no need to set in neovim
-" set nocompatible " ignored in nvim
-" filetype plugin indent on " enabled by default in nvim
-" syntax on " see syntax enable
-
 if !exists("g:syntax_on")
     syntax enable
 endif
@@ -226,9 +208,6 @@ endif
 
 """ vim-test/vim-test
 let g:test#javascript#runner = 'jest'
-
-""" suan/vim-instant-markdown
-let g:instant_markdown_autostart = 0
 
 """ vimwiki/vimwiki
 " set path to apple icloud location so ios app (iaWriter) can access it
@@ -243,10 +222,6 @@ let g:vimwiki_global_ext = 0
 
 """ tpope/vim-fugitive
 " see augroup Fugitive
-
-""" airblade/vim-gitgutter
-" default is HEAD already - its just here so it can be changed freely when needed
-let g:gitgutter_diff_base = 'HEAD'
 
 """ ludovicchabant/vim-gutentags
 let g:gutentags_exclude_filetypes = ['gitcommit', 'gitrebase']
@@ -273,12 +248,6 @@ let g:NERDTreeQuitOnOpen=1
 " change default mapping 'm' to 'M'
 let g:NERDTreeMapMenu = 'M'
 
-""" francoiscabrol/ranger.vim
-let g:ranger_map_keys = 0
-
-""" nathanaelkane/vim-indent-guides
-let g:indent_guides_enable_on_vim_startup = 0
-
 """ rhysd/clever-f.vim
 let g:clever_f_smart_case = 1
 
@@ -294,12 +263,6 @@ command! QHist call fzf#vim#search_history({'right': '40'})
 nnoremap <leader>hs :QHist<CR>
 " use fuzzy completion relative filepaths across directory
 imap <expr> <c-x><c-f> fzf#vim#complete#path('git ls-files $(git rev-parse --show-toplevel)')
-
-""" simnalamburt/vim-mundo
-set undodir=~/.config/nvim/undohistory-0.5
-set undofile
-set history=1000
-set undolevels=1000
 
 """ Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
@@ -368,16 +331,6 @@ let g:EasyClipAutoFormat = 0
 " disable this feature, see settings at the top (search modern editors)
 let g:EasyClipAlwaysMoveCursorToEndOfPaste = 0
 
-""" kien/ctrlp.vim
-let g:ctrlp_map = '<c-\>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_user_command = 'ag %s -l -U --nocolor -g ""'
-let g:ctrlp_match_window = 'min:4,max:28' "results imposed by max height
-let g:ctrlp_match_window_reversed = 0
-" search by filename - can be toggled on/off by pressing <c-d> inside the prompt
-let g:ctrlp_by_filename = 1
-
 """ christoomey/vim-tmux-navigator
 let g:tmux_navigator_disable_when_zoomed = 1
 let g:tmux_navigator_no_mappings = 1
@@ -391,15 +344,9 @@ let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 """ mbbill/undotree
 command! UN UndotreeToggle
 
-""" Terminal Notifier
-command! NTF !pkill -f entr; fd . './' -E node_modules | entr -d terminal-notifier -message "Files updated" &
-
 """ Insert Dates
 command! YYMMDD put=strftime('%Y-%m-%d')
 command! DATE put=strftime('%b %d, %Y')
-
-""" suan/vim-instant-markdown
-command! MDP InstantMarkdownPreview
 
 """ airblade/vim-gitgutter
 command! GG GitGutter
@@ -413,31 +360,15 @@ command! GGPR GitGutterPreviewHunk
 " Suspend vim
 command! SS sus
 
-" junegunn/limelight.vim
-command! LL Limelight
-command! LLL Limelight!
-
 """ tpope/vim-fugitive
 command! GST Gstatus
 command! GC Gcommit
 command! GP Gpush
 
-""" nathanaelkane/vim-indent-guides
-command! VIG IndentGuidesToggle
-command! IND IndentGuidesToggle
-
 " junegunn/vim-plug
 command! PU PlugUpdate | PlugUpgrade
 command! PI PlugInstall
 command! PC PlugClean
-
-" benmills/vimux
-command! VP VimuxPromptCommand
-command! VL VimuxRunLastCommand
-command! VI VimuxInspectRunner
-command! VZ VimuxZoomRunner
-command! VS VimuxInterruptRunner
-command! VC VimuxCloseRunner
 
 """ dense-analysis/ale
 command! ALE call ale#cursor#ShowCursorDetail()
@@ -664,26 +595,12 @@ xmap gs <plug>(GrepperOperator)
 nnoremap <leader>* :Grepper -tool rg -cword -noprompt<cr>
 command! Todo :Grepper -noprompt -tool git -grepprg git grep -nIi '\(TODO\|FIXME\)'
 
-""" vim-airline/vim-airline
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
-
 """ svermeulen/vim-easyclip
 " easyclip shadows m, rebind m to gm
 nnoremap gm m
 
 """ scrooloose/nerdtree
 nnoremap <leader>nt :NERDTreeToggle<cr>
-
-""" francoiscabrol/ranger.vim
-nnoremap <leader>rg :Ranger<cr>
 
 """ junegunn/fzf
 nnoremap <leader>ff :Files<cr>
@@ -695,14 +612,7 @@ nnoremap <leader>ft :Tags<cr>
 nnoremap <leader>fc :Commits<cr>
 " linewise completion for the win!
 imap <c-x><c-l> <plug>(fzf-complete-line)
-
-""" kien/ctrlp.vim
-nnoremap <leader>fm :CtrlPMixed<cr>
-
-""" simnalamburt/vim-mundo
-nnoremap <leader>uu :MundoToggle<cr>
-nnoremap <leader>ue :earlier 1f<cr>
-nnoremap <leader>ul :later 1f<cr>
+" <c-x><c-f> to search in filenames and return the full path
 
 """ sbdchd/neoformat
 nnoremap <f4> :call ToggleNeoFormatOnSave()<cr>
@@ -876,37 +786,17 @@ nnoremap <leader>ep :echo @%<cr>
 " show current branch - TODO: find a better implementation
 nnoremap <leader>eb :!git branch<cr>
 
-" elegant way to do these mappings?
-nnoremap yir yi]
-nnoremap cir ci]
-nnoremap dir di]
-nnoremap vir vi]
-nnoremap yar ya]
-nnoremap car ca]
-nnoremap dar da]
-nnoremap var va]
-
 " ------------------------------ Notes ------------------------------ "
 
-" New stuff to try
-" <c-x><c-l>
-" <c-x><c-f>
-" q/
-" q:
-" -17,-11t.
-" +18,+22t.
+" When using without your .vimrc (e.g. using other PC), use this quick setup:
 "
-" Creating a repeatable mapping
-" nnoremap <silent> <Plug>TransposeCharacters xp
-"   \:call repeat#set("\<Plug>TransposeCharacters")<CR>
-" nmap cp <Plug>TransposeCharacters
-
-" When using without your .vimrc (e.g. using other PC), use this quick setup
 " set nocompatible
 " set ts=2 sw=2 sts=2 et
 " set backspace=indent,eol,start
 "
-" extra settings below - only if you can remember it
+" And if you can remember the commands below, theyre nice to have too, but not
+" required:
+"
 " syntax on
 " filetype plugin indent on
 " set number
