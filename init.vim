@@ -285,8 +285,7 @@ let g:vimwiki_ext = '.md'
 let g:vimwiki_global_ext = 0
 
 """ tpope/vim-fugitive
-" auto-clean fugitive buffers
-autocmd BufReadPost fugitive://* set bufhidden=delete
+" see augroup Fugitive
 
 """ airblade/vim-gitgutter
 " default is HEAD already - its just here so it can be changed freely when needed
@@ -720,6 +719,12 @@ augroup END
 augroup RainbowParentheses
   autocmd!
   autocmd FileType javascript,javascript.jsx,typescript,typescript.tsx,rust,haskell,scss RainbowParentheses
+augroup END
+
+augroup Fugitive
+  autocmd!
+  " auto-clean fugitive buffers
+  autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END
 
 " This seems to cause issues in my work's MBP laptop - commenting out for now
