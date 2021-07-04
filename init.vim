@@ -107,7 +107,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'benmills/vimux'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'ryanoasis/vim-devicons'
-  Plug 'scrooloose/nerdtree'
+  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'machakann/vim-highlightedyank'
