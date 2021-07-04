@@ -126,7 +126,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
   Plug 'vim-test/vim-test'
   Plug 'DougBeney/pickachu'
-  Plug 'osyo-manga/vim-anzu'
   Plug 'tweekmonster/startuptime.vim'
 call plug#end()
 
@@ -261,12 +260,6 @@ if !exists("g:syntax_on")
 endif
 
 " ------------------------- Plugin Settings ------------------------- "
-
-""" osyo-manga/vim-anzu
-" show search count in status line - seems to be enabled by default
-" set statusline=%{anzu#search_status()}
-" clear search status - seems to be not functioning properly
-" nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
 
 """ vim-test/vim-test
 let g:test#javascript#runner = 'jest'
