@@ -838,7 +838,6 @@ nnoremap <leader>ue :earlier 1f<cr>
 nnoremap <leader>ul :later 1f<cr>
 
 """ sbdchd/neoformat
-nnoremap <c-u> :Neoformat<cr>
 nnoremap <f4> :call ToggleNeoFormatOnSave()<cr>
 
 """ mattn/emmet-vim
@@ -991,8 +990,6 @@ nnoremap <leader>cd ^4x$3Xx
 " ctrl-c to insert semicolon at end of line
 nnoremap <c-c> m`A;<esc>``
 inoremap <c-c> <esc>m`A;<esc>``
-" <c-d> to repeat last command
-nmap <c-d> .
 " format code
 nnoremap g= gg=G``
 nnoremap gG mmgggqG`m
