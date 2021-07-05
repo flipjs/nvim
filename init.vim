@@ -31,8 +31,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'dense-analysis/ale'
   Plug 'sbdchd/neoformat'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+  Plug 'vim-airline/vim-airline', { 'on':  'AirlineToggle' }
+  Plug 'vim-airline/vim-airline-themes', { 'on':  'AirlineToggle' }
   Plug 'jelera/vim-javascript-syntax'
   Plug 'othree/javascript-libraries-syntax.vim'
   Plug 'pangloss/vim-javascript'
