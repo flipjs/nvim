@@ -51,7 +51,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'svermeulen/vim-easyclip'
   Plug 'tomtom/tcomment_vim'
   Plug 'wakatime/vim-wakatime'
-  Plug 'mattn/emmet-vim'
   Plug 'wavded/vim-stylus'
   Plug 'mustache/vim-mustache-handlebars'
   Plug 'cakebaker/scss-syntax.vim'
@@ -843,9 +842,6 @@ nnoremap <leader>ul :later 1f<cr>
 
 """ sbdchd/neoformat
 nnoremap <f4> :call ToggleNeoFormatOnSave()<cr>
-
-""" mattn/emmet-vim
-imap <c-e> <c-y>,
 
 """ christoomey/vim-tmux-navigator
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
