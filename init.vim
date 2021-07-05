@@ -42,6 +42,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'editorconfig/editorconfig-vim'
   Plug 'elzr/vim-json'
   Plug 'christoomey/vim-tmux-navigator'
+  Plug 'tommcdo/vim-exchange'
   " vim-easyclip requires tpope/repeat plugin
   Plug 'svermeulen/vim-easyclip'
   Plug 'tomtom/tcomment_vim'
