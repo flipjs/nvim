@@ -122,7 +122,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-scripts/LogiPat'
   Plug 'vim-scripts/marvim'
   Plug 'airblade/vim-rooter'
-  Plug 'vimwiki/vimwiki'
+  Plug 'vimwiki/vimwiki', { 'on': ['VimwikiIndex', 'VimwikiDiaryIndex'] }
   Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
   Plug 'vim-test/vim-test'
   Plug 'DougBeney/pickachu'
@@ -774,6 +774,10 @@ if exists('$ITERM_PROFILE')
 end
 
 " -------------------- Plugin-dependent Mapping --------------------- "
+
+""" vimwiki/vimwiki
+nnoremap <leader>ww :VimwikiIndex<cr>
+nnoremap <leader>wi :VimwikiDiaryIndex<cr>
 
 """ vim-test/vim-test
 nmap <silent> t<C-n> :TestNearest<CR>
