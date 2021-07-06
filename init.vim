@@ -17,6 +17,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   " vim-repeat is at least required by vim-easyclip
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-abolish'
+  Plug 'flipjs/vim-ragtag'
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
   Plug 'jreybert/vimagit'
