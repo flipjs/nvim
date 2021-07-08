@@ -37,6 +37,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'othree/javascript-libraries-syntax.vim'
   Plug 'pangloss/vim-javascript'
   Plug 'crusoexia/vim-javascript-lib'
+  Plug 'norcalli/nvim-colorizer.lua'
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'jiangmiao/auto-pairs'
   Plug 'editorconfig/editorconfig-vim'
@@ -98,6 +99,9 @@ if (has("termguicolors"))
   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
+" requires termguicolors to be set first
+lua require'colorizer'.setup()
 
 " Enable substitution previews with inccommand
 if has("nvim")
