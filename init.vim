@@ -342,6 +342,11 @@ let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
 
 " ------------------------- Custom Commands ------------------------- "
 
+""" junegunn/fzf
+command! FF Files
+command! FB Buffers
+command! FR History
+
 """ mbbill/undotree
 command! UN UndotreeToggle
 
