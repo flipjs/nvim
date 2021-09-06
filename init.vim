@@ -1013,6 +1013,8 @@ xnoremap <c-d> :norm.<CR>
 nnoremap <leader>ep :echo @%<cr>
 " show current branch - TODO: find a better implementation
 nnoremap <leader>eb :!git branch<cr>
+" macro to git branch -D a list of branch names
+command! GBD :norm Igit branch -D <esc>j0
 
 " elegant way to do these mappings?
 nnoremap yir yi]
