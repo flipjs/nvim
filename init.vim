@@ -22,6 +22,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'jreybert/vimagit'
   Plug 'junegunn/gv.vim'
+  Plug 'shumphrey/fugitive-gitlab.vim'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'ervandew/supertab'
   Plug 'SirVer/ultisnips'
@@ -284,6 +285,9 @@ let g:vimwiki_global_ext = 0
 """ airblade/vim-gitgutter
 " default is HEAD already - its just here so it can be changed freely when needed
 let g:gitgutter_diff_base = 'HEAD'
+
+""" shumphrey/fugitive-gitlab.vim
+let g:fugitive_gitlab_domains = ['https://git.gogoair.com']
 
 """ ludovicchabant/vim-gutentags
 let g:gutentags_exclude_filetypes = ['gitcommit', 'gitrebase']
