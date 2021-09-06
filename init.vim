@@ -23,6 +23,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'jreybert/vimagit'
   Plug 'junegunn/gv.vim'
   Plug 'shumphrey/fugitive-gitlab.vim'
+  Plug 'tpope/vim-rhubarb'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'ervandew/supertab'
   Plug 'SirVer/ultisnips'
