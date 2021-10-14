@@ -279,6 +279,8 @@ let g:vimwiki_list = [{
 let g:vimwiki_ext = '.md'
 " make sure vimwiki doesn't own all .md files
 let g:vimwiki_global_ext = 0
+" turn off link shortening
+let g:vimwiki_url_maxsave=0
 
 """ tpope/vim-fugitive
 " see augroup Fugitive
