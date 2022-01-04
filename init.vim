@@ -409,6 +409,7 @@ let g:ale_fixers = {
 \}
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
+  \ 'json': ['jsonlint'],
 \ }
 
 """ sbdchd/neoformat
