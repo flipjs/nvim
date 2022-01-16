@@ -136,6 +136,14 @@ call plug#end()
 " mapleader is space
 let mapleader = "\<space>"
 
+" -------------------------- QMK/ZMK Fix ---------------------------- "
+
+" FIX: This is a special case with my custom split keyboard where CTRL and C
+" are mapped to the same key. Sometimes, when pressing C and A in succession
+" causing QMK/ZMK to send it as "CTRL-A". To resolve this temporarily, if Vim
+" receives CTRL-A in insert mode, force it to type "ca" instead.
+inoremap <c-a> ca
+
 " ---------------------- Custom Configuration ----------------------- "
 
 " set vim to use 256 colors
