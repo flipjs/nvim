@@ -28,18 +28,16 @@ Install the following helpers GLOBALLY (google search on how-to):
 * CTAGS
     OSX
       brew install --HEAD universal-ctags/universal-ctags/universal-ctags
-      Note: run `brew install ctags-exuberant` FIRST if its installed
 
 * JSCTAGS
     npm install -g git+https://github.com/ramitos/jsctags.git
 
-* POWERLINE FONTS
+* POWERLINE FONTS - optional?
     git clone https://github.com/powerline/fonts.git
     run ./install.sh
 
 * NERD FONT
-    https://github.com/ryanoasis/nerd-fonts
-    easy install - copy a font that is patched already
+    brew tap homebrew/cask-fonts && brew install font-Fira-Code-nerd-font
 
 * COLOR PICKER (DougBeney/pickachu)
     OSX
