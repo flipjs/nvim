@@ -117,6 +117,22 @@ NPM Packages: (npm install -g)
 COPY PASTE THIS:
 npm install -g npm neovim gulp grunt-cli webpack webpack-dev-server jscs jsonlint eslint eslint-watch eslint-plugin-react eslint-plugin-babel eslint-plugin-prettier @babel/core @babel/cli @babel/node node-gyp http-server typescript ts-node jq-cli-wrapper json-server commitizen jsdoc elm elm-test elm-oracle prettier tern yarn create-react-app nodemon ocaml-language-server reason-cli@latest-macos elm-format git+https://github.com/ramitos/jsctags.git solium instant-markdown-d parcel-bundler
 
+
+How to install Python 2:
+$ brew install pyenv
+
+# Any modern version python should do. I don't think Python 2 is required any more.
+$ pyenv install 3.10.3
+$ pyenv global 3.10.3
+
+# Add pyenv to your PATH so that you can reference python (not python3)
+$ echo "export PATH=\"\${HOME}/.pyenv/shims:\${PATH}\"" >> ~/.zshrc
+
+# open a new terminal window and confirm your pyenv version is mapped to python
+$ which python
+$ python --version
+
+
 Tip: Run :CheckHealth and see what needs fixing
 You will need to do the following from time to time:
 - pip install --upgrade neovim
