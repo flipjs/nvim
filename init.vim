@@ -78,13 +78,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'Quramy/tsuquyomi'
   " tsuquyomi requires vimproc
   Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-  " vim-reason-plus requires autozimu/LanguageClient-neovim plugin
-  Plug 'reasonml-editor/vim-reason-plus'
-  " LanguageClient-neovim is at least required by vim-reason-plus
-  Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ }
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'heavenshell/vim-jsdoc'
   Plug 'junegunn/rainbow_parentheses.vim'
@@ -336,16 +329,6 @@ let g:indent_guides_enable_on_vim_startup = 0
 
 """ rhysd/clever-f.vim
 let g:clever_f_smart_case = 1
-
-""" autozimu/LanguageClient-neovim
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-    \ 'python': ['/usr/local/bin/pyls'],
-    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-    \ }
-let g:LanguageClient_autoStart = 1
 
 """ junegunn/fzf
 let g:fzf_preview_window = []
@@ -626,15 +609,6 @@ augroup Haskell
   autocmd!
   autocmd FileType haskell command! -buffer FIX ALEFix
   autocmd FileType haskell nnoremap <buffer> K :Dash<cr>
-augroup END
-
-augroup ReasonML
-  autocmd!
-  autocmd Filetype reason nnoremap <buffer> gd :call LanguageClient_textDocument_definition()<cr>
-  autocmd Filetype reason nnoremap <buffer> <c-u> :call LanguageClient_textDocument_formatting()<cr>
-  autocmd Filetype reason nnoremap <buffer> gh :call LanguageClient_textDocument_hover()<cr>
-  autocmd FileType reason nnoremap <buffer> <leader>rr :!clear && node %:r.bs.js<cr>
-  autocmd FileType reason command! -buffer RR call VimuxRunCommand("clear; node " . expand("%:p:r") . ".bs.js")
 augroup END
 
 augroup Elm
