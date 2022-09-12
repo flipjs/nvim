@@ -350,6 +350,7 @@ set history=1000
 set undolevels=1000
 
 """ Shougo/deoplete.nvim
+let g:python3_host_prog = "/opt/homebrew/bin/python3"
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#var('omni', 'input_patterns', {
   \ 'javascript': '[^. *\t]\.\w*',
