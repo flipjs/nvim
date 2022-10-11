@@ -273,7 +273,7 @@ let g:instant_markdown_autostart = 0
 """ vimwiki/vimwiki
 " set path to apple icloud location so ios app (iaWriter) can access it
 let g:vimwiki_list = [{
-      \ 'path': '$WIKI',
+      \ 'path': '$ICLOUD_WIKI',
       \ 'syntax': 'markdown'
       \ }]
 " set extension to .md
