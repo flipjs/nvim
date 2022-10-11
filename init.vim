@@ -291,7 +291,7 @@ let g:vimwiki_url_maxsave=0
 let g:gitgutter_diff_base = 'HEAD'
 
 """ shumphrey/fugitive-gitlab.vim
-let g:fugitive_gitlab_domains = ['https://git.gogoair.com']
+let g:fugitive_gitlab_domains = ['https://git.ca.intelsat.com']
 
 """ ludovicchabant/vim-gutentags
 let g:gutentags_exclude_filetypes = ['gitcommit', 'gitrebase']
