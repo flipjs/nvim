@@ -739,7 +739,6 @@ augroup END
 " Note: some abbreviations are defined inside ftplugin directory
 cnoreabbrev Q q
 cnoreabbrev QQ cq!
-cnoreabbrev qq cq!
 cnoreabbrev qui cq!
 cnoreabbrev q1 cq!
 cnoreabbrev Qa qa
