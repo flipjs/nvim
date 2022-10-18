@@ -78,13 +78,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'Quramy/tsuquyomi'
   " tsuquyomi requires vimproc
   Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-  " vim-reason-plus requires autozimu/LanguageClient-neovim plugin
-  Plug 'reasonml-editor/vim-reason-plus'
-  " LanguageClient-neovim is at least required by vim-reason-plus
-  Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ }
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'heavenshell/vim-jsdoc'
   Plug 'junegunn/rainbow_parentheses.vim'
@@ -182,7 +175,7 @@ colorscheme iceberg
 " override search higlight from iceberg colorscheme
 hi! Search ctermbg=235 ctermfg=yellow guibg=#1e2132 guifg=yellow gui=underline
 
-set guifont=FuraCode\ Nerd\ Font:h15
+" set guifont=FuraCode\ Nerd\ Font:h15
 
 " no error bell, no visual bell
 set noeb vb t_vb=
@@ -280,7 +273,7 @@ let g:instant_markdown_autostart = 0
 """ vimwiki/vimwiki
 " set path to apple icloud location so ios app (iaWriter) can access it
 let g:vimwiki_list = [{
-      \ 'path': '$HOME/Library/Mobile Documents/27N4MQEA55~pro~writer/Documents',
+      \ 'path': '$ICLOUD_WIKI',
       \ 'syntax': 'markdown'
       \ }]
 " set extension to .md
@@ -298,7 +291,7 @@ let g:vimwiki_url_maxsave=0
 let g:gitgutter_diff_base = 'HEAD'
 
 """ shumphrey/fugitive-gitlab.vim
-let g:fugitive_gitlab_domains = ['https://git.gogoair.com']
+let g:fugitive_gitlab_domains = ['https://git.ca.intelsat.com']
 
 """ ludovicchabant/vim-gutentags
 let g:gutentags_exclude_filetypes = ['gitcommit', 'gitrebase']
@@ -337,16 +330,6 @@ let g:indent_guides_enable_on_vim_startup = 0
 """ rhysd/clever-f.vim
 let g:clever_f_smart_case = 1
 
-""" autozimu/LanguageClient-neovim
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-    \ 'python': ['/usr/local/bin/pyls'],
-    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-    \ }
-let g:LanguageClient_autoStart = 1
-
 """ junegunn/fzf
 let g:fzf_preview_window = []
 let g:fzf_layout = { 'down': '~40%' }
@@ -367,6 +350,7 @@ set history=1000
 set undolevels=1000
 
 """ Shougo/deoplete.nvim
+let g:python3_host_prog = "/opt/homebrew/bin/python3"
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#var('omni', 'input_patterns', {
   \ 'javascript': '[^. *\t]\.\w*',
@@ -628,15 +612,6 @@ augroup Haskell
   autocmd FileType haskell nnoremap <buffer> K :Dash<cr>
 augroup END
 
-augroup ReasonML
-  autocmd!
-  autocmd Filetype reason nnoremap <buffer> gd :call LanguageClient_textDocument_definition()<cr>
-  autocmd Filetype reason nnoremap <buffer> <c-u> :call LanguageClient_textDocument_formatting()<cr>
-  autocmd Filetype reason nnoremap <buffer> gh :call LanguageClient_textDocument_hover()<cr>
-  autocmd FileType reason nnoremap <buffer> <leader>rr :!clear && node %:r.bs.js<cr>
-  autocmd FileType reason command! -buffer RR call VimuxRunCommand("clear; node " . expand("%:p:r") . ".bs.js")
-augroup END
-
 augroup Elm
   autocmd!
   autocmd FileType elm nnoremap <buffer> <leader>rr :ElmMake<cr>
@@ -764,7 +739,6 @@ augroup END
 " Note: some abbreviations are defined inside ftplugin directory
 cnoreabbrev Q q
 cnoreabbrev QQ cq!
-cnoreabbrev q1 cq!
 cnoreabbrev qui cq!
 cnoreabbrev q1 cq!
 cnoreabbrev Qa qa
