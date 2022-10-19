@@ -270,14 +270,8 @@ let g:test#javascript#runner = 'jest'
 """ suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0
 
-
-if system('arch') == "arm64"
-   ...
-endif
-
-
 """ vimwiki/vimwiki
-" set path to either icloud or static git repo
+" set path to either icloud or static git repo (personal m1 laptop vs work laptop)
 let g:vimwiki_list = [{
       \ 'path': system('arch') == "arm64" ? 'ICLOUD_WIKI' : '$GOGO_WIKI',
       \ 'syntax': 'markdown'
@@ -356,7 +350,7 @@ set history=1000
 set undolevels=1000
 
 """ Shougo/deoplete.nvim
-let g:python3_host_prog = "/usr/local/bin/python3"
+let g:python3_host_prog = system('arch') == "arm64" ? "/opt/homebrew/bin/python3" : "/usr/local/bin/python3"
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#var('omni', 'input_patterns', {
   \ 'javascript': '[^. *\t]\.\w*',
