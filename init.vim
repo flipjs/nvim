@@ -270,10 +270,16 @@ let g:test#javascript#runner = 'jest'
 """ suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0
 
+
+if system('arch') == "arm64"
+   ...
+endif
+
+
 """ vimwiki/vimwiki
-" set path to apple icloud location so ios app (iaWriter) can access it
+" set path to either icloud or static git repo
 let g:vimwiki_list = [{
-      \ 'path': '$ICLOUD_WIKI',
+      \ 'path': system('arch') == "arm64" ? 'ICLOUD_WIKI' : '$GOGO_WIKI',
       \ 'syntax': 'markdown'
       \ }]
 " set extension to .md
@@ -350,7 +356,7 @@ set history=1000
 set undolevels=1000
 
 """ Shougo/deoplete.nvim
-let g:python3_host_prog = "/opt/homebrew/bin/python3"
+let g:python3_host_prog = "/usr/local/bin/python3"
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#var('omni', 'input_patterns', {
   \ 'javascript': '[^. *\t]\.\w*',
