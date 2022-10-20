@@ -273,7 +273,7 @@ let g:instant_markdown_autostart = 0
 """ vimwiki/vimwiki
 " set path to either icloud or static git repo (personal m1 laptop vs work laptop)
 let g:vimwiki_list = [{
-      \ 'path': system('arch') == "arm64" ? 'ICLOUD_WIKI' : '$GOGO_WIKI',
+      \ 'path': system('arch') == "arm64" ? '$ICLOUD_WIKI' : '$GOGO_WIKI',
       \ 'syntax': 'markdown'
       \ }]
 " set extension to .md
