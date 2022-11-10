@@ -103,7 +103,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'ryanoasis/vim-devicons'
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  " TODO: change tiagofumo to johnstef99 for now to resolve annoying error message
+  " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  Plug 'johnstef99/vim-nerdtree-syntax-highlight'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'machakann/vim-highlightedyank'
   Plug 'vim-scripts/ReplaceWithRegister'
