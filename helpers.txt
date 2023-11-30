@@ -113,10 +113,13 @@ NPM Packages: (npm install -g)
 * solium
 * instant-markdown-d
 * parcel-bundler
+* node-gyp
 
 COPY PASTE THIS:
-npm install -g neovim gulp grunt-cli webpack webpack-dev-server jscs jsonlint eslint eslint-watch eslint-plugin-react eslint-plugin-babel eslint-plugin-prettier @babel/core @babel/cli @babel/node node-gyp http-server typescript ts-node jq-cli-wrapper json-server commitizen jsdoc elm elm-test elm-oracle prettier tern yarn create-react-app nodemon ocaml-language-server reason-cli@latest-macos elm-format git+https://github.com/ramitos/jsctags.git solium instant-markdown-d parcel-bundler
 
+npm install -g neovim gulp grunt-cli webpack webpack-dev-server jscs jsonlint eslint eslint-watch eslint-plugin-react eslint-plugin-babel eslint-plugin-prettier @babel/core @babel/cli @babel/node node-gyp http-server typescript ts-node jq-cli-wrapper json-server commitizen jsdoc elm elm-test elm-oracle prettier tern yarn create-react-app nodemon ocaml-language-server reason-cli@latest-macos elm-format solium instant-markdown-d parcel-bundler node-gyp
+
+npm install -g git+https://github.com/ramitos/jsctags.git
 
 How to install Python 2:
 $ brew install pyenv

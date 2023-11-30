@@ -124,6 +124,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-test/vim-test'
   Plug 'DougBeney/pickachu'
   Plug 'tweekmonster/startuptime.vim'
+  Plug 'mattn/emmet-vim'
 call plug#end()
 
 " --------------------------- Map Leader ---------------------------- "
@@ -469,6 +470,9 @@ command! GGS GitGutterStageHunk
 command! GGN GitGutterNextHunk
 command! GGP GitGutterPrevHunk
 command! GGPR GitGutterPreviewHunk
+
+"""sbdchd/neoformat
+command! FORM Neoformat
 
 " Suspend vim
 command! SS sus
